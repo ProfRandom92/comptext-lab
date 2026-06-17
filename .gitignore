@@ -3,3 +3,11 @@
 .DS_Store
 .comptext/
 crates/artifacts/spark/*.spkg
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+crates/comptext-cli/test_provenance_artifact_temp.txt
+crates/comptext-cli/test_provenance_artifact_temp.txt.provenance.json
