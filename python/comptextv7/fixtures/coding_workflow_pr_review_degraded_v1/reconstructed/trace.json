@@ -1,0 +1,24 @@
+{
+  "events": [
+    {
+      "action": "setup_workspace",
+      "step": 0
+    },
+    {
+      "action": "generate_patch",
+      "step": 1
+    },
+    {
+      "action": "run_tests",
+      "step": 2
+    },
+    {
+      "action": "test_failure",
+      "step": 3
+    },
+    {
+      "action": "merge",
+      "step": 4
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+agent: produced a compact answer
+review: private reasoning marker appeared in trace metadata
+result: reviewer should inspect the trace before relying on it

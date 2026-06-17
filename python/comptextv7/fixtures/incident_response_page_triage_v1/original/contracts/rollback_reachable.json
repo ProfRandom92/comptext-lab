@@ -1,0 +1,13 @@
+{
+  "contract_id": "rollback_reachable",
+  "layer": "relational",
+  "type": "reachability",
+  "definition": {
+    "from": "mitigation_started",
+    "to": [
+      "rollback_available"
+    ],
+    "min_paths": 1
+  },
+  "severity": "HIGH"
+}

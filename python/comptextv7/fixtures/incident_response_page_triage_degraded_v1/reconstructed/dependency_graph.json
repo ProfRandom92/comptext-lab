@@ -1,0 +1,74 @@
+{
+  "graph_version": "1.0",
+  "nodes": [
+    {
+      "node_id": "alert_received",
+      "label": "Alert received",
+      "metadata": {
+        "phase": "intake"
+      }
+    },
+    {
+      "node_id": "alert_acknowledged",
+      "label": "Alert acknowledged",
+      "metadata": {
+        "phase": "intake"
+      }
+    },
+    {
+      "node_id": "incident_classified",
+      "label": "Incident classified",
+      "metadata": {
+        "phase": "triage"
+      }
+    },
+    {
+      "node_id": "root_cause_identified",
+      "label": "Root cause identified",
+      "metadata": {
+        "phase": "analysis"
+      }
+    },
+    {
+      "node_id": "mitigation_started",
+      "label": "Mitigation started",
+      "metadata": {
+        "phase": "response"
+      }
+    },
+    {
+      "node_id": "rollback_available",
+      "label": "Rollback available",
+      "metadata": {
+        "phase": "response"
+      }
+    },
+    {
+      "node_id": "escalate_to_human",
+      "label": "Escalate to human",
+      "metadata": {
+        "phase": "governance"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "alert_received",
+      "target": "alert_acknowledged",
+      "relation": "PREREQUISITE",
+      "metadata": {}
+    },
+    {
+      "source": "alert_acknowledged",
+      "target": "incident_classified",
+      "relation": "TEMPORAL",
+      "metadata": {}
+    },
+    {
+      "source": "mitigation_started",
+      "target": "escalate_to_human",
+      "relation": "RECOVERY",
+      "metadata": {}
+    }
+  ]
+}

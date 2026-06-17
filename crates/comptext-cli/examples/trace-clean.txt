@@ -1,0 +1,3 @@
+event=startup_check status=ok
+event=context_pack status=prepared
+event=validation status=passed

@@ -1,0 +1,13 @@
+{
+  "contract_id": "alert_ack_before_mitigation",
+  "layer": "operational",
+  "type": "ordering",
+  "definition": {
+    "required_sequence": [
+      "alert_received",
+      "alert_acknowledged",
+      "mitigation_started"
+    ]
+  },
+  "severity": "CRITICAL"
+}

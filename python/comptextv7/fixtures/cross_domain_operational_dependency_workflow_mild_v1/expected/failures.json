@@ -1,0 +1,7 @@
+{
+  "expected_failures": [
+    "INVARIANT_VIOLATION",
+    "RECOVERY_PATH_INVALID"
+  ],
+  "disallowed_failures": []
+}

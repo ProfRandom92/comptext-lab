@@ -1,0 +1,11 @@
+{
+  "contract_id": "security_causal_block",
+  "layer": "relational",
+  "type": "causality",
+  "definition": {
+    "required_causal_edges": [
+      ["security_scan_failed", "deploy_blocked"]
+    ]
+  },
+  "severity": "HIGH"
+}

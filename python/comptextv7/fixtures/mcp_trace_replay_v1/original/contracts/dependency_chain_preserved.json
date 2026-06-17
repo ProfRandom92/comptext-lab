@@ -1,0 +1,22 @@
+{
+  "contract_id": "dependency_chain_preserved",
+  "layer": "relational",
+  "type": "causality",
+  "definition": {
+    "required_causal_edges": [
+      [
+        "capability_scope_checked",
+        "validate_external_action"
+      ],
+      [
+        "validate_external_action",
+        "execute_external_action"
+      ],
+      [
+        "execute_external_action",
+        "verify_result"
+      ]
+    ]
+  },
+  "severity": "HIGH"
+}

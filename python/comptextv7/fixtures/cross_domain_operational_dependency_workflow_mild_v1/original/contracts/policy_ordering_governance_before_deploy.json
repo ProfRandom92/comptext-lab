@@ -1,0 +1,15 @@
+{
+  "contract_id": "policy_ordering_governance_before_deploy",
+  "layer": "operational",
+  "type": "ordering",
+  "definition": {
+    "required_sequence": [
+      "code_review_handoff",
+      "security_approval",
+      "migration_validate",
+      "deploy_readiness",
+      "deploy_execute"
+    ]
+  },
+  "severity": "CRITICAL"
+}

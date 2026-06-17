@@ -1,0 +1,16 @@
+{
+  "contract_id": "dependency_chain_preserved",
+  "layer": "relational",
+  "type": "invariant",
+  "definition": {
+    "rule": "required_dependency_edges_preserved",
+    "required_edges": [
+      [
+        "read_context",
+        "validate_external_action"
+      ]
+    ]
+  },
+  "severity": "HIGH",
+  "failure_label_on_violation": "DEPENDENCY_CHAIN_BREAK"
+}

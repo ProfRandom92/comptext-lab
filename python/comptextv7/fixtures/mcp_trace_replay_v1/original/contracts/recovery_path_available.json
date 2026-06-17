@@ -1,0 +1,13 @@
+{
+  "contract_id": "recovery_path_available",
+  "layer": "relational",
+  "type": "reachability",
+  "definition": {
+    "from": "execute_external_action",
+    "to": [
+      "recovery_path_registered"
+    ],
+    "min_paths": 1
+  },
+  "severity": "HIGH"
+}

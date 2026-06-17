@@ -1,0 +1,44 @@
+{
+  "artifact_id": "agent_artifact_bundle_example_v1",
+  "bundle": {
+    "branch": "feat/agent-artifact-bundle-example",
+    "changed_files": [
+      "artifacts/agent_artifact_bundle_example.json",
+      "scripts/generate_agent_artifact_bundle_example.py",
+      "tests/test_agent_artifact_bundle.py"
+    ],
+    "mcp_context_output_ref": "artifacts/mcp_context_layer_example.json",
+    "ok": true,
+    "result": "PASS",
+    "safe_pr_gate": {
+      "allow_dirty": false,
+      "allowed_prefixes": [],
+      "branch": "feat/agent-artifact-bundle-example",
+      "changed_paths": [
+        "artifacts/agent_artifact_bundle_example.json",
+        "scripts/generate_agent_artifact_bundle_example.py",
+        "tests/test_agent_artifact_bundle.py"
+      ],
+      "ok": true,
+      "problems": [],
+      "result": "PASS",
+      "status_short": []
+    },
+    "validation_evidence": [
+      {
+        "command": "python -m compileall -q scripts/agent_artifact_bundle.py scripts/generate_agent_artifact_bundle_example.py",
+        "result": "pass"
+      },
+      {
+        "command": "pytest tests/test_agent_artifact_bundle.py -q",
+        "result": "pass"
+      }
+    ]
+  },
+  "evaluation_mode": "deterministic",
+  "external_apis": "none",
+  "generated_by": "AgentArtifactBundleExampleGenerator",
+  "llm_judges": "none",
+  "schema_version": "agent_artifact_bundle_example.v1",
+  "version": "1.0"
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": "0.1",
+  "artifact_path": "test_provenance_artifact_temp.txt",
+  "sha256": "e5d30fa92cf92ae4b15c8ac85174211d29c1e3eddd5346b61da4d884af20bb29",
+  "parent_link": "parent_task_123",
+  "metadata": {
+    "timestamp": "2026-06-05T10:57:20Z"
+  }
+}

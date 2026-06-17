@@ -1,0 +1,14 @@
+{
+  "contract_id": "tool_call_order_preserved",
+  "layer": "operational",
+  "type": "ordering",
+  "definition": {
+    "required_sequence": [
+      "tool_schema_validated",
+      "read_context"
+    ],
+    "rule": "required_action_order_preserved"
+  },
+  "severity": "CRITICAL",
+  "failure_label_on_violation": "TOOL_ORDER_VIOLATION"
+}

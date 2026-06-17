@@ -1,0 +1,138 @@
+{
+  "graph_version": "1.0",
+  "nodes": [
+    {
+      "node_id": "generate_patch",
+      "label": "Generate patch",
+      "metadata": {
+        "phase": "build"
+      }
+    },
+    {
+      "node_id": "run_tests",
+      "label": "Run tests",
+      "metadata": {
+        "phase": "verify"
+      }
+    },
+    {
+      "node_id": "test_failure",
+      "label": "Test failure",
+      "metadata": {
+        "phase": "verify"
+      }
+    },
+    {
+      "node_id": "rollback",
+      "label": "Rollback",
+      "metadata": {
+        "phase": "recovery"
+      }
+    },
+    {
+      "node_id": "security_scan_failed",
+      "label": "Security scan failed",
+      "metadata": {
+        "phase": "security"
+      }
+    },
+    {
+      "node_id": "deploy_blocked",
+      "label": "Deploy blocked",
+      "metadata": {
+        "phase": "security"
+      }
+    },
+    {
+      "node_id": "escalate_to_human",
+      "label": "Escalate to human",
+      "metadata": {
+        "phase": "recovery"
+      }
+    },
+    {
+      "node_id": "human_review",
+      "label": "Human review",
+      "metadata": {
+        "phase": "governance"
+      }
+    },
+    {
+      "node_id": "merge",
+      "label": "Merge",
+      "metadata": {
+        "phase": "release"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "generate_patch",
+      "target": "run_tests",
+      "relation": "PREREQUISITE",
+      "metadata": {}
+    },
+    {
+      "source": "run_tests",
+      "target": "test_failure",
+      "relation": "CAUSAL",
+      "metadata": {}
+    },
+    {
+      "source": "run_tests",
+      "target": "security_scan_failed",
+      "relation": "DATA_FLOW",
+      "metadata": {}
+    },
+    {
+      "source": "security_scan_failed",
+      "target": "deploy_blocked",
+      "relation": "CAUSAL",
+      "metadata": {}
+    },
+    {
+      "source": "rollback",
+      "target": "human_review",
+      "relation": "TEMPORAL",
+      "metadata": {}
+    },
+    {
+      "source": "escalate_to_human",
+      "target": "human_review",
+      "relation": "TEMPORAL",
+      "metadata": {}
+    },
+    {
+      "source": "human_review",
+      "target": "merge",
+      "relation": "PREREQUISITE",
+      "metadata": {}
+    },
+    {
+      "source": "run_tests",
+      "target": "merge",
+      "relation": "PREREQUISITE",
+      "metadata": {}
+    },
+    {
+      "source": "deploy_blocked",
+      "target": "merge",
+      "relation": "BLOCKER",
+      "metadata": {
+        "state": "prevented"
+      }
+    },
+    {
+      "source": "run_tests",
+      "target": "rollback",
+      "relation": "TEMPORAL",
+      "metadata": {}
+    },
+    {
+      "source": "run_tests",
+      "target": "escalate_to_human",
+      "relation": "TEMPORAL",
+      "metadata": {}
+    }
+  ]
+}

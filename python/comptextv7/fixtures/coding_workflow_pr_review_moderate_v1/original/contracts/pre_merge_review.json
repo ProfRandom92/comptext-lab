@@ -1,0 +1,14 @@
+{
+  "contract_id": "pre_merge_review",
+  "layer": "operational",
+  "type": "ordering",
+  "definition": {
+    "required_sequence": [
+      "generate_patch",
+      "run_tests",
+      "human_review",
+      "merge"
+    ]
+  },
+  "severity": "CRITICAL"
+}

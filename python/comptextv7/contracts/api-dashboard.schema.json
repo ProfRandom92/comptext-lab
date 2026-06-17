@@ -1,0 +1,28 @@
+{
+  "title": "API Dashboard Contract",
+  "description": "Synthetic contract for Comptextv7 API routes, dashboard views, export formats, and sanitized report integration points.",
+  "type": "object",
+  "required": [
+    "target_repo",
+    "contract_type",
+    "synthetic",
+    "generated_at",
+    "api_routes",
+    "dashboard_views",
+    "export_formats",
+    "report_integration_points",
+    "security_notes"
+  ],
+  "properties": {
+    "target_repo": {"type": "string"},
+    "contract_type": {"type": "string"},
+    "synthetic": {"type": "boolean"},
+    "generated_at": {"type": "string"},
+    "api_routes": {"type": "array"},
+    "dashboard_views": {"type": "array"},
+    "export_formats": {"type": "array"},
+    "report_integration_points": {"type": "array"},
+    "security_notes": {"type": "array"}
+  },
+  "additionalProperties": false
+}

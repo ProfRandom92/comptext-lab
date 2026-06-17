@@ -1,0 +1,13 @@
+{
+  "fixture_id": "mcp_trace_replay_v1",
+  "fixture_version": "1.0.0",
+  "expected_admissible": true,
+  "must_hold_contracts": [
+    "capability_boundary_respected",
+    "dependency_chain_preserved",
+    "recovery_path_available",
+    "tool_call_order_preserved",
+    "validation_before_unsafe_action"
+  ],
+  "expected_failure_labels": []
+}

@@ -1,0 +1,86 @@
+{
+  "artifact_id": "mcp_context_layer_example_v1",
+  "evaluation_mode": "deterministic",
+  "example": {
+    "fixture_id": "mcp_trace_replay_v1",
+    "prompt_context": "task: mcp_trace_replay_v1\nadmissible: true\nconstraints:\n- execute_external_action:requires_human_approval\n- execute_external_action:requires_validation_passed\nrequired_order:\n- user_request_received\n- capability_scope_checked\n- tool_schema_validated\n- read_context\n- validate_external_action\n- execute_external_action\n- verify_result\n- recovery_path_registered\ndependencies:\n- capability_scope_checked -> execute_external_action\n- capability_scope_checked -> tool_schema_validated\n- capability_scope_checked -> validate_external_action\n- execute_external_action -> recovery_path_registered\n- execute_external_action -> verify_result\n- read_context -> validate_external_action\n- tool_schema_validated -> read_context\n- user_request_received -> capability_scope_checked\n- validate_external_action -> execute_external_action\nblockers:\n- capability_scope_checked -> execute_external_action\nrecovery:\n- execute_external_action -> recovery_path_registered",
+    "replay_payload": {
+      "blockers": [
+        [
+          "capability_scope_checked",
+          "execute_external_action"
+        ]
+      ],
+      "constraints": [
+        "execute_external_action:requires_human_approval",
+        "execute_external_action:requires_validation_passed"
+      ],
+      "dependency_chains": [
+        [
+          "capability_scope_checked",
+          "execute_external_action"
+        ],
+        [
+          "capability_scope_checked",
+          "tool_schema_validated"
+        ],
+        [
+          "capability_scope_checked",
+          "validate_external_action"
+        ],
+        [
+          "execute_external_action",
+          "recovery_path_registered"
+        ],
+        [
+          "execute_external_action",
+          "verify_result"
+        ],
+        [
+          "read_context",
+          "validate_external_action"
+        ],
+        [
+          "tool_schema_validated",
+          "read_context"
+        ],
+        [
+          "user_request_received",
+          "capability_scope_checked"
+        ],
+        [
+          "validate_external_action",
+          "execute_external_action"
+        ]
+      ],
+      "recovery": [
+        [
+          "execute_external_action",
+          "recovery_path_registered"
+        ]
+      ],
+      "required_order": [
+        "user_request_received",
+        "capability_scope_checked",
+        "tool_schema_validated",
+        "read_context",
+        "validate_external_action",
+        "execute_external_action",
+        "verify_result",
+        "recovery_path_registered"
+      ],
+      "task": "mcp_trace_replay_v1"
+    },
+    "source_fixture_path": "fixtures/mcp_trace_replay_v1/original",
+    "validation": {
+      "admissible": true,
+      "failure_labels": [],
+      "issues": []
+    }
+  },
+  "external_apis": "none",
+  "generated_by": "McpContextLayerExampleArtifactGenerator",
+  "llm_judges": "none",
+  "schema_version": "mcp_context_layer_example.v1",
+  "version": "1.0"
+}

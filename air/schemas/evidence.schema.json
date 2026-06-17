@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CompText AIR Evidence Event",
+  "description": "Schema for verifiable evidence events associated with AIR plan artifacts.",
+  "definitions": {
+    "typed_hash": {
+      "type": "object",
+      "required": ["algorithm", "canonicalization", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "algorithm": {
+          "type": "string",
+          "enum": ["sha256"]
+        },
+        "canonicalization": {
+          "type": "string",
+          "enum": ["json-c14n-v1"]
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "required": [
+    "event_id",
+    "air_ref",
+    "timestamp",
+    "executor",
+    "event_type",
+    "event_hash"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "parent_event_hash": {
+      "$ref": "#/definitions/typed_hash"
+    },
+    "air_ref": {
+      "type": "object",
+      "required": ["path", "hash"],
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "hash": {
+          "$ref": "#/definitions/typed_hash"
+        }
+      }
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "executor": {
+      "type": "object",
+      "required": ["id", "type"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["agent", "human", "system"]
+        }
+      }
+    },
+    "event_type": {
+      "type": "string",
+      "enum": ["start", "step", "artifact", "end", "error", "verification"]
+    },
+    "action": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "hash"],
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "hash": {
+            "$ref": "#/definitions/typed_hash"
+          }
+        }
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "hash"],
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "hash": {
+            "$ref": "#/definitions/typed_hash"
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "event_hash": {
+      "$ref": "#/definitions/typed_hash"
+    }
+  }
+}

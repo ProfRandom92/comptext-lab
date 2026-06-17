@@ -1,0 +1,17 @@
+PAPER_ID: fate
+TITLE: FATE: Future-State-Aware Scheduling for Heterogeneous LLM Workflows
+
+SECTION: problem
+FATE addresses scheduling for heterogeneous LLM workflow DAGs where each stage may run on different accelerators or models. A locally optimal dispatch can harm downstream execution because the workflow inherits state from earlier placement decisions.
+
+SECTION: method
+The formulation models each workflow as a directed acyclic graph with ready stages, parent outputs, device choices, and execution-state variables. FATE schedules with awareness of future-state effects such as model residency, parent-output locality, prefix reuse, and future device reachability rather than only current queue pressure.
+
+SECTION: metrics
+The benchmark construction compares future-state-aware scheduling against baseline schedulers on heterogeneous LLM workflow traces. The replay-relevant entities are workflow DAG, execution state, model residency, prefix reuse, locality, device reachability, latency, throughput, and queueing behavior.
+
+SECTION: limitations
+The approach depends on accurate workflow metadata, hardware-state visibility, and workload assumptions. It may require online updates when device availability, model mix, batch sizes, or downstream DAG structure differ from benchmark conditions.
+
+SECTION: deployment_relevance
+FATE is relevant to operational-state preservation because the important information is not the raw request history but the typed scheduling state that must be reconstructed: graph edges, ready stages, parent-output locality, future resource constraints, and replayable placement rationale.

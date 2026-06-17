@@ -1,0 +1,116 @@
+{
+  "checks": {
+    "api_export_validation_report": {
+      "description": "Synthetic API/export contract validation report.",
+      "key": "api_export_validation_report",
+      "path": "docs/reports/api-export-validation-report.md",
+      "present": true,
+      "required": true,
+      "size_bytes": 738,
+      "status": "present"
+    },
+    "contract_fixture_generation_report": {
+      "description": "Synthetic API/dashboard fixture generation report.",
+      "key": "contract_fixture_generation_report",
+      "path": "docs/reports/contract-fixture-generation-report.md",
+      "present": true,
+      "required": true,
+      "size_bytes": 617,
+      "status": "present"
+    },
+    "contract_validation_report": {
+      "description": "Contract schema validation report.",
+      "key": "contract_validation_report",
+      "path": "docs/reports/contract-validation-report.md",
+      "present": true,
+      "required": true,
+      "size_bytes": 1403,
+      "status": "present"
+    },
+    "cross_repo_release_checklist": {
+      "description": "Cross-repo release checklist for sanitized promotion evidence.",
+      "key": "cross_repo_release_checklist",
+      "path": "docs/CROSS_REPO_RELEASE_CHECKLIST.md",
+      "present": true,
+      "required": true,
+      "size_bytes": 9343,
+      "status": "present"
+    },
+    "project_health_report": {
+      "description": "Generated project health and release status report.",
+      "key": "project_health_report",
+      "path": "docs/reports/project-health-report.md",
+      "present": true,
+      "required": true,
+      "size_bytes": 4121,
+      "status": "present"
+    }
+  },
+  "generated_at": "2026-01-01T00:00:00Z",
+  "missing_artifacts": {
+    "optional_cross_repo": [
+      "benchmark-summary.json",
+      "regression-summary.json",
+      "sanitization-summary.json",
+      "report-contract-validation-report.md"
+    ],
+    "required_local": []
+  },
+  "next_recommended_actions": [
+    "Render docs/reports/dashboard-health-summary.json in future dashboard/UI work as a static release-readiness widget.",
+    "Attach optional sanitized cross-repo benchmark, regression, sanitization, and report-contract summaries when promotion evidence is available.",
+    "Keep API/export contract validation and fixture generation in CI before release promotion."
+  ],
+  "optional_cross_repo_artifacts": [
+    {
+      "description": "Optional sanitized benchmark promotion summary from the experiment repository.",
+      "key": "benchmark_summary",
+      "path": "benchmark-summary.json",
+      "present": false,
+      "required": false,
+      "status": "missing"
+    },
+    {
+      "description": "Optional sanitized regression promotion summary from the experiment repository.",
+      "key": "regression_summary",
+      "path": "regression-summary.json",
+      "present": false,
+      "required": false,
+      "status": "missing"
+    },
+    {
+      "description": "Optional sanitized data-handling summary from the experiment repository.",
+      "key": "sanitization_summary",
+      "path": "sanitization-summary.json",
+      "present": false,
+      "required": false,
+      "status": "missing"
+    },
+    {
+      "description": "Optional report-contract validation evidence from the experiment repository.",
+      "key": "report_contract_validation_report",
+      "path": "report-contract-validation-report.md",
+      "present": false,
+      "required": false,
+      "status": "missing"
+    }
+  ],
+  "overall_status": "yellow",
+  "related_experiment_repo": "ProfRandom92/Comptext-Daimler-Experiment-",
+  "required_artifacts_present": [
+    "docs/reports/project-health-report.md",
+    "docs/reports/contract-validation-report.md",
+    "docs/reports/api-export-validation-report.md",
+    "docs/reports/contract-fixture-generation-report.md",
+    "docs/CROSS_REPO_RELEASE_CHECKLIST.md"
+  ],
+  "safety_notes": [
+    "Synthetic/static metadata only; generated_at is deterministic.",
+    "No real Daimler data, customer payloads, secrets, cookies, tokens, raw production logs, or proprietary documents are included.",
+    "No live server, network access, external dependencies, or experiment-repository checkout is required.",
+    "The generator uses file-existence and small filesystem metadata checks only and does not read report bodies."
+  ],
+  "summary_type": "dashboard_release_health",
+  "synthetic": true,
+  "target_repo": "ProfRandom92/Comptextv7"
+}

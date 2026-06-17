@@ -1,0 +1,528 @@
+{
+  "benchmark": "iterative_replay_degradation_bench",
+  "config": {
+    "fatal_failure_modes": [],
+    "max_cycles": 3,
+    "max_operational_drift_rate": 1.0,
+    "min_high_critical_evidence_survival_rate": 0.0,
+    "min_replay_consistency": 0.0
+  },
+  "runs": [
+    {
+      "collapse_cycle": null,
+      "collapsed": false,
+      "cycles": [
+        {
+          "blocker_survival_rate": 1.0,
+          "constraint_survival_rate": 1.0,
+          "cycle": 1,
+          "evidence_survival_rate": 1.0,
+          "failure_labels": [],
+          "failure_mode_counts": {
+            "BLOCKER_DETACHMENT": 0,
+            "CONSTRAINT_DRIFT": 0,
+            "EVIDENCE_LOSS": 0,
+            "HIGH_CRITICAL_EVIDENCE_LOSS": 0
+          },
+          "has_high_critical_evidence": false,
+          "high_critical_evidence_survival_rate": 0.0,
+          "operational_drift_rate": 0.0,
+          "replay_consistency": 1.0
+        },
+        {
+          "blocker_survival_rate": 1.0,
+          "constraint_survival_rate": 1.0,
+          "cycle": 2,
+          "evidence_survival_rate": 1.0,
+          "failure_labels": [],
+          "failure_mode_counts": {
+            "BLOCKER_DETACHMENT": 0,
+            "CONSTRAINT_DRIFT": 0,
+            "EVIDENCE_LOSS": 0,
+            "HIGH_CRITICAL_EVIDENCE_LOSS": 0
+          },
+          "has_high_critical_evidence": false,
+          "high_critical_evidence_survival_rate": 0.0,
+          "operational_drift_rate": 0.0,
+          "replay_consistency": 1.0
+        },
+        {
+          "blocker_survival_rate": 1.0,
+          "constraint_survival_rate": 1.0,
+          "cycle": 3,
+          "evidence_survival_rate": 1.0,
+          "failure_labels": [],
+          "failure_mode_counts": {
+            "BLOCKER_DETACHMENT": 0,
+            "CONSTRAINT_DRIFT": 0,
+            "EVIDENCE_LOSS": 0,
+            "HIGH_CRITICAL_EVIDENCE_LOSS": 0
+          },
+          "has_high_critical_evidence": false,
+          "high_critical_evidence_survival_rate": 0.0,
+          "operational_drift_rate": 0.0,
+          "replay_consistency": 1.0
+        }
+      ],
+      "fixture_id": "coding_agent_trace",
+      "fixture_kind": "agent_trace",
+      "stop_reason": "max_cycles"
+    },
+    {
+      "collapse_cycle": null,
+      "collapsed": false,
+      "cycles": [
+        {
+          "blocker_survival_rate": 1.0,
+          "constraint_survival_rate": 1.0,
+          "cycle": 1,
+          "evidence_survival_rate": 1.0,
+          "failure_labels": [],
+          "failure_mode_counts": {
+            "BLOCKER_DETACHMENT": 0,
+            "CONSTRAINT_DRIFT": 0,
+            "EVIDENCE_LOSS": 0,
+            "HIGH_CRITICAL_EVIDENCE_LOSS": 0
+          },
+          "has_high_critical_evidence": false,
+          "high_critical_evidence_survival_rate": 0.0,
+          "operational_drift_rate": 0.0,
+          "replay_consistency": 1.0
+        },
+        {
+          "blocker_survival_rate": 1.0,
+          "constraint_survival_rate": 1.0,
+          "cycle": 2,
+          "evidence_survival_rate": 1.0,
+          "failure_labels": [],
+          "failure_mode_counts": {
+            "BLOCKER_DETACHMENT": 0,
+            "CONSTRAINT_DRIFT": 0,
+            "EVIDENCE_LOSS": 0,
+            "HIGH_CRITICAL_EVIDENCE_LOSS": 0
+          },
+          "has_high_critical_evidence": false,
+          "high_critical_evidence_survival_rate": 0.0,
+          "operational_drift_rate": 0.0,
+          "replay_consistency": 1.0
+        },
+        {
+          "blocker_survival_rate": 1.0,
+          "constraint_survival_rate": 1.0,
+          "cycle": 3,
+          "evidence_survival_rate": 1.0,
+          "failure_labels": [],
+          "failure_mode_counts": {
+            "BLOCKER_DETACHMENT": 0,
+            "CONSTRAINT_DRIFT": 0,
+            "EVIDENCE_LOSS": 0,
+            "HIGH_CRITICAL_EVIDENCE_LOSS": 0
+          },
+          "has_high_critical_evidence": false,
+          "high_critical_evidence_survival_rate": 0.0,
+          "operational_drift_rate": 0.0,
+          "replay_consistency": 1.0
+        }
+      ],
+      "fixture_id": "ci_failure_trace",
+      "fixture_kind": "agent_trace",
+      "stop_reason": "max_cycles"
+    },
+    {
+      "collapse_cycle": null,
+      "collapsed": false,
+      "cycles": [
+        {
+          "blocker_survival_rate": 1.0,
+          "constraint_survival_rate": 1.0,
+          "cycle": 1,
+          "evidence_survival_rate": 1.0,
+          "failure_labels": [],
+          "failure_mode_counts": {
+            "BLOCKER_DETACHMENT": 0,
+            "CONSTRAINT_DRIFT": 0,
+            "EVIDENCE_LOSS": 0,
+            "HIGH_CRITICAL_EVIDENCE_LOSS": 0
+          },
+          "has_high_critical_evidence": false,
+          "high_critical_evidence_survival_rate": 0.0,
+          "operational_drift_rate": 0.0,
+          "replay_consistency": 1.0
+        },
+        {
+          "blocker_survival_rate": 1.0,
+          "constraint_survival_rate": 1.0,
+          "cycle": 2,
+          "evidence_survival_rate": 1.0,
+          "failure_labels": [],
+          "failure_mode_counts": {
+            "BLOCKER_DETACHMENT": 0,
+            "CONSTRAINT_DRIFT": 0,
+            "EVIDENCE_LOSS": 0,
+            "HIGH_CRITICAL_EVIDENCE_LOSS": 0
+          },
+          "has_high_critical_evidence": false,
+          "high_critical_evidence_survival_rate": 0.0,
+          "operational_drift_rate": 0.0,
+          "replay_consistency": 1.0
+        },
+        {
+          "blocker_survival_rate": 1.0,
+          "constraint_survival_rate": 1.0,
+          "cycle": 3,
+          "evidence_survival_rate": 1.0,
+          "failure_labels": [],
+          "failure_mode_counts": {
+            "BLOCKER_DETACHMENT": 0,
+            "CONSTRAINT_DRIFT": 0,
+            "EVIDENCE_LOSS": 0,
+            "HIGH_CRITICAL_EVIDENCE_LOSS": 0
+          },
+          "has_high_critical_evidence": false,
+          "high_critical_evidence_survival_rate": 0.0,
+          "operational_drift_rate": 0.0,
+          "replay_consistency": 1.0
+        }
+      ],
+      "fixture_id": "workflow_recovery_trace",
+      "fixture_kind": "agent_trace",
+      "stop_reason": "max_cycles"
+    },
+    {
+      "collapse_cycle": null,
+      "collapsed": false,
+      "cycles": [
+        {
+          "blocker_survival_rate": 1.0,
+          "constraint_survival_rate": 1.0,
+          "cycle": 1,
+          "evidence_survival_rate": 0.5,
+          "failure_labels": [
+            "EVIDENCE_LOSS"
+          ],
+          "failure_mode_counts": {
+            "BLOCKER_DETACHMENT": 0,
+            "CONSTRAINT_DRIFT": 0,
+            "EVIDENCE_LOSS": 1,
+            "HIGH_CRITICAL_EVIDENCE_LOSS": 0
+          },
+          "has_high_critical_evidence": false,
+          "high_critical_evidence_survival_rate": 0.0,
+          "operational_drift_rate": 0.25,
+          "replay_consistency": 0.75
+        },
+        {
+          "blocker_survival_rate": 1.0,
+          "constraint_survival_rate": 1.0,
+          "cycle": 2,
+          "evidence_survival_rate": 0.5,
+          "failure_labels": [
+            "EVIDENCE_LOSS"
+          ],
+          "failure_mode_counts": {
+            "BLOCKER_DETACHMENT": 0,
+            "CONSTRAINT_DRIFT": 0,
+            "EVIDENCE_LOSS": 1,
+            "HIGH_CRITICAL_EVIDENCE_LOSS": 0
+          },
+          "has_high_critical_evidence": false,
+          "high_critical_evidence_survival_rate": 0.0,
+          "operational_drift_rate": 0.25,
+          "replay_consistency": 0.75
+        },
+        {
+          "blocker_survival_rate": 1.0,
+          "constraint_survival_rate": 1.0,
+          "cycle": 3,
+          "evidence_survival_rate": 0.5,
+          "failure_labels": [
+            "EVIDENCE_LOSS"
+          ],
+          "failure_mode_counts": {
+            "BLOCKER_DETACHMENT": 0,
+            "CONSTRAINT_DRIFT": 0,
+            "EVIDENCE_LOSS": 1,
+            "HIGH_CRITICAL_EVIDENCE_LOSS": 0
+          },
+          "has_high_critical_evidence": false,
+          "high_critical_evidence_survival_rate": 0.0,
+          "operational_drift_rate": 0.25,
+          "replay_consistency": 0.75
+        }
+      ],
+      "fixture_id": "prefixguard",
+      "fixture_kind": "paper",
+      "stop_reason": "max_cycles"
+    },
+    {
+      "collapse_cycle": null,
+      "collapsed": false,
+      "cycles": [
+        {
+          "blocker_survival_rate": 1.0,
+          "constraint_survival_rate": 1.0,
+          "cycle": 1,
+          "evidence_survival_rate": 1.0,
+          "failure_labels": [],
+          "failure_mode_counts": {
+            "BLOCKER_DETACHMENT": 0,
+            "CONSTRAINT_DRIFT": 0,
+            "EVIDENCE_LOSS": 0,
+            "HIGH_CRITICAL_EVIDENCE_LOSS": 0
+          },
+          "has_high_critical_evidence": false,
+          "high_critical_evidence_survival_rate": 0.0,
+          "operational_drift_rate": 0.125,
+          "replay_consistency": 0.875
+        },
+        {
+          "blocker_survival_rate": 1.0,
+          "constraint_survival_rate": 1.0,
+          "cycle": 2,
+          "evidence_survival_rate": 1.0,
+          "failure_labels": [],
+          "failure_mode_counts": {
+            "BLOCKER_DETACHMENT": 0,
+            "CONSTRAINT_DRIFT": 0,
+            "EVIDENCE_LOSS": 0,
+            "HIGH_CRITICAL_EVIDENCE_LOSS": 0
+          },
+          "has_high_critical_evidence": false,
+          "high_critical_evidence_survival_rate": 0.0,
+          "operational_drift_rate": 0.125,
+          "replay_consistency": 0.875
+        },
+        {
+          "blocker_survival_rate": 1.0,
+          "constraint_survival_rate": 1.0,
+          "cycle": 3,
+          "evidence_survival_rate": 1.0,
+          "failure_labels": [],
+          "failure_mode_counts": {
+            "BLOCKER_DETACHMENT": 0,
+            "CONSTRAINT_DRIFT": 0,
+            "EVIDENCE_LOSS": 0,
+            "HIGH_CRITICAL_EVIDENCE_LOSS": 0
+          },
+          "has_high_critical_evidence": false,
+          "high_critical_evidence_survival_rate": 0.0,
+          "operational_drift_rate": 0.125,
+          "replay_consistency": 0.875
+        }
+      ],
+      "fixture_id": "fate",
+      "fixture_kind": "paper",
+      "stop_reason": "max_cycles"
+    },
+    {
+      "collapse_cycle": null,
+      "collapsed": false,
+      "cycles": [
+        {
+          "blocker_survival_rate": 1.0,
+          "constraint_survival_rate": 1.0,
+          "cycle": 1,
+          "evidence_survival_rate": 1.0,
+          "failure_labels": [],
+          "failure_mode_counts": {
+            "BLOCKER_DETACHMENT": 0,
+            "CONSTRAINT_DRIFT": 0,
+            "EVIDENCE_LOSS": 0,
+            "HIGH_CRITICAL_EVIDENCE_LOSS": 0
+          },
+          "has_high_critical_evidence": false,
+          "high_critical_evidence_survival_rate": 0.0,
+          "operational_drift_rate": 0.25,
+          "replay_consistency": 0.75
+        },
+        {
+          "blocker_survival_rate": 1.0,
+          "constraint_survival_rate": 1.0,
+          "cycle": 2,
+          "evidence_survival_rate": 1.0,
+          "failure_labels": [],
+          "failure_mode_counts": {
+            "BLOCKER_DETACHMENT": 0,
+            "CONSTRAINT_DRIFT": 0,
+            "EVIDENCE_LOSS": 0,
+            "HIGH_CRITICAL_EVIDENCE_LOSS": 0
+          },
+          "has_high_critical_evidence": false,
+          "high_critical_evidence_survival_rate": 0.0,
+          "operational_drift_rate": 0.25,
+          "replay_consistency": 0.75
+        },
+        {
+          "blocker_survival_rate": 1.0,
+          "constraint_survival_rate": 1.0,
+          "cycle": 3,
+          "evidence_survival_rate": 1.0,
+          "failure_labels": [],
+          "failure_mode_counts": {
+            "BLOCKER_DETACHMENT": 0,
+            "CONSTRAINT_DRIFT": 0,
+            "EVIDENCE_LOSS": 0,
+            "HIGH_CRITICAL_EVIDENCE_LOSS": 0
+          },
+          "has_high_critical_evidence": false,
+          "high_critical_evidence_survival_rate": 0.0,
+          "operational_drift_rate": 0.25,
+          "replay_consistency": 0.75
+        }
+      ],
+      "fixture_id": "self_consolidating",
+      "fixture_kind": "paper",
+      "stop_reason": "max_cycles"
+    }
+  ],
+  "sensitivity_analysis": {
+    "benchmark": "iterative_replay_degradation_bench_sensitivity_analysis",
+    "cases": [
+      {
+        "aggregate": {
+          "aggregated_failure_labels": [
+            "EVIDENCE_LOSS"
+          ],
+          "collapse_rate": 0.0,
+          "evidence_survival_rate": 0.75,
+          "operational_drift_rate": 0.291667,
+          "replay_consistency": 0.708333
+        },
+        "case_order": 1,
+        "final_failure_labels_by_fixture": {
+          "ci_failure_trace": [],
+          "coding_agent_trace": [],
+          "fate": [
+            "EVIDENCE_LOSS"
+          ],
+          "prefixguard": [
+            "EVIDENCE_LOSS"
+          ],
+          "self_consolidating": [],
+          "workflow_recovery_trace": []
+        },
+        "fixture_count": 6,
+        "parameters": {
+          "case_id": "baseline_budget",
+          "compression_budget_scale": 1.0,
+          "max_bursts": 24,
+          "max_context_units": 96,
+          "max_families": 24,
+          "replay_cycles": 3,
+          "replay_window_seconds": 900,
+          "trend_expectation": "internal fixture baseline with the widest sensitivity budget"
+        }
+      },
+      {
+        "aggregate": {
+          "aggregated_failure_labels": [
+            "EVIDENCE_LOSS"
+          ],
+          "collapse_rate": 0.0,
+          "evidence_survival_rate": 0.5,
+          "operational_drift_rate": 0.5,
+          "replay_consistency": 0.5
+        },
+        "case_order": 2,
+        "final_failure_labels_by_fixture": {
+          "ci_failure_trace": [],
+          "coding_agent_trace": [],
+          "fate": [
+            "EVIDENCE_LOSS"
+          ],
+          "prefixguard": [
+            "EVIDENCE_LOSS"
+          ],
+          "self_consolidating": [
+            "EVIDENCE_LOSS"
+          ],
+          "workflow_recovery_trace": []
+        },
+        "fixture_count": 6,
+        "parameters": {
+          "case_id": "budget_scale_0_75",
+          "compression_budget_scale": 0.75,
+          "max_bursts": 18,
+          "max_context_units": 72,
+          "max_families": 18,
+          "replay_cycles": 3,
+          "replay_window_seconds": 675,
+          "trend_expectation": "moderate budget pressure should not improve degradation metrics over baseline"
+        }
+      },
+      {
+        "aggregate": {
+          "aggregated_failure_labels": [
+            "EVIDENCE_LOSS"
+          ],
+          "collapse_rate": 0.0,
+          "evidence_survival_rate": 0.5,
+          "operational_drift_rate": 0.541667,
+          "replay_consistency": 0.458333
+        },
+        "case_order": 3,
+        "final_failure_labels_by_fixture": {
+          "ci_failure_trace": [],
+          "coding_agent_trace": [],
+          "fate": [
+            "EVIDENCE_LOSS"
+          ],
+          "prefixguard": [
+            "EVIDENCE_LOSS"
+          ],
+          "self_consolidating": [
+            "EVIDENCE_LOSS"
+          ],
+          "workflow_recovery_trace": []
+        },
+        "fixture_count": 6,
+        "parameters": {
+          "case_id": "budget_scale_0_50",
+          "compression_budget_scale": 0.5,
+          "max_bursts": 12,
+          "max_context_units": 48,
+          "max_families": 12,
+          "replay_cycles": 3,
+          "replay_window_seconds": 450,
+          "trend_expectation": "stronger budget pressure should preserve monotonic or explainable degradation"
+        }
+      },
+      {
+        "aggregate": {
+          "aggregated_failure_labels": [
+            "EVIDENCE_LOSS"
+          ],
+          "collapse_rate": 0.0,
+          "evidence_survival_rate": 0.75,
+          "operational_drift_rate": 0.291667,
+          "replay_consistency": 0.708333
+        },
+        "case_order": 4,
+        "final_failure_labels_by_fixture": {
+          "ci_failure_trace": [],
+          "coding_agent_trace": [],
+          "fate": [
+            "EVIDENCE_LOSS"
+          ],
+          "prefixguard": [
+            "EVIDENCE_LOSS"
+          ],
+          "self_consolidating": [],
+          "workflow_recovery_trace": []
+        },
+        "fixture_count": 6,
+        "parameters": {
+          "case_id": "extended_replay_cycles",
+          "compression_budget_scale": 1.0,
+          "max_bursts": 24,
+          "max_context_units": 96,
+          "max_families": 24,
+          "replay_cycles": 5,
+          "replay_window_seconds": 900,
+          "trend_expectation": "cycle-only extension checks whether additional deterministic replays accumulate drift"
+        }
+      }
+    ],
+    "scope": "fixture-bound deterministic replay sensitivity analysis"
+  }
+}

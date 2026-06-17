@@ -1,0 +1,67 @@
+{
+  "trace": "coding_agent_trace",
+  "scenario": "Implement a deterministic benchmark change in a Python repository without introducing autonomous runtime behavior.",
+  "tasks": [
+    {
+      "id": "task-001",
+      "title": "Inspect existing replay benchmark structure",
+      "status": "completed",
+      "details": "Locate paper replay runner, metric tests, artifact schema, and documentation conventions before adding any new benchmark files."
+    },
+    {
+      "id": "task-002",
+      "title": "Add typed agent trace replay runner",
+      "status": "active",
+      "details": "Extract operational workflow state from checked-in JSON traces, compact it, replay it, and derive deterministic continuity metrics."
+    },
+    {
+      "id": "task-003",
+      "title": "Generate stable CI artifact",
+      "status": "pending",
+      "details": "Write pretty sorted JSON to artifacts/agent_trace_replay_results.json for reviewable benchmark diffs."
+    }
+  ],
+  "decisions": [
+    "Reuse pytest fixture style from paper replay benchmark.",
+    "Represent replay state as normalized JSON primitives only.",
+    "Keep all validation deterministic and derived from exact operational fields."
+  ],
+  "constraints": [
+    "Do not add embeddings or semantic similarity.",
+    "Do not call external APIs during benchmark generation.",
+    "Keep implementation typed, lightweight, deterministic, and CI-friendly.",
+    "Use fixed precision with at most six decimal places for all metric outputs."
+  ],
+  "tool_calls": [
+    {"index": 1, "tool": "shell", "command": "rg --files tests docs artifacts", "result": "success"},
+    {"index": 2, "tool": "shell", "command": "sed -n '1,240p' tests/utils/paper_replay_runner.py", "result": "success"},
+    {"index": 3, "tool": "editor", "command": "create tests/utils/agent_trace_replay_runner.py", "result": "success"},
+    {"index": 4, "tool": "pytest", "command": "pytest tests/test_agent_trace_replay.py", "result": "pending"}
+  ],
+  "failures": [
+    "Initial implementation risk: compact schema could accidentally preserve transcript-shaped noise instead of operational state."
+  ],
+  "recoveries": [
+    "Limit compact representation to active task, constraints, architecture nodes, dependencies, tool sequence, blockers, deployment requirements, and recovery actions.",
+    "Validate no operational field is empty before writing artifact."
+  ],
+  "architecture_references": [
+    {"node": "tests/utils/agent_trace_replay_runner.py", "role": "deterministic extraction, compaction, replay, and metrics"},
+    {"node": "tests/fixtures/agent_traces", "role": "checked-in source traces"},
+    {"node": "artifacts/agent_trace_replay_results.json", "role": "CI generated benchmark artifact"}
+  ],
+  "deployment_requirements": [
+    "Python standard library only for benchmark runner.",
+    "Benchmark must run under pytest in cloud CI.",
+    "Artifact serialization must be sorted, pretty printed, and newline terminated."
+  ],
+  "unresolved_blockers": [
+    "Confirm full repository pytest suite remains green after adding benchmark.",
+    "Confirm generated artifact is committed with stable ordering."
+  ],
+  "dependencies": [
+    {"id": "dep-001", "from": "task-002", "to": "task-001", "type": "requires", "detail": "Runner follows existing replay benchmark conventions."},
+    {"id": "dep-002", "from": "task-003", "to": "task-002", "type": "requires", "detail": "Artifact generation depends on replay metric output."}
+  ],
+  "transcript_noise": "The developer discussed naming options, line wrapping preferences, and unrelated UI copy that must not be necessary for replay continuity."
+}

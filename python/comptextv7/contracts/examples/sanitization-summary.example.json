@@ -1,0 +1,14 @@
+{
+  "source_repo": "ProfRandom92/Comptext-Daimler-Experiment-",
+  "report_type": "sanitization_summary",
+  "synthetic": true,
+  "generated_at": "2026-01-01T00:10:00Z",
+  "scanned_paths": [
+    "synthetic/benchmark-summary.json",
+    "synthetic/regression-summary.json"
+  ],
+  "findings_count": 0,
+  "findings_masked": 0,
+  "status": "pass",
+  "notes": "Synthetic sanitization example only; no secrets, raw logs, or proprietary documents."
+}

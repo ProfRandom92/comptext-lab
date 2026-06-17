@@ -1,0 +1,80 @@
+{
+  "api_routes": [
+    {
+      "purpose": "Synthetic dashboard evidence payload for local review.",
+      "requires_live_server": false,
+      "route": "GET /api/dashboard"
+    },
+    {
+      "purpose": "Synthetic machine-readable export payload shape.",
+      "requires_live_server": false,
+      "route": "GET /export.json"
+    },
+    {
+      "purpose": "Synthetic spreadsheet-friendly export payload shape.",
+      "requires_live_server": false,
+      "route": "GET /export.csv"
+    }
+  ],
+  "contract_type": "api-dashboard-export",
+  "dashboard_views": [
+    {
+      "fields": [
+        "latency_status",
+        "replay_status",
+        "validation_status"
+      ],
+      "name": "operations_summary",
+      "synthetic_records": 3
+    },
+    {
+      "fields": [
+        "p50_ms",
+        "p95_ms",
+        "p99_ms",
+        "error_rate"
+      ],
+      "name": "benchmark_evidence",
+      "synthetic_records": 2
+    }
+  ],
+  "export_formats": [
+    {
+      "content_type": "application/json",
+      "deterministic": true,
+      "format": "json",
+      "route": "GET /export.json"
+    },
+    {
+      "content_type": "text/csv",
+      "deterministic": true,
+      "format": "csv",
+      "route": "GET /export.csv"
+    }
+  ],
+  "generated_at": "2026-01-01T00:00:00Z",
+  "report_integration_points": [
+    {
+      "data_classification": "synthetic",
+      "input": "contracts/examples/benchmark-summary.example.json",
+      "name": "benchmark_summary"
+    },
+    {
+      "data_classification": "synthetic",
+      "input": "contracts/examples/regression-summary.example.json",
+      "name": "regression_summary"
+    },
+    {
+      "data_classification": "synthetic",
+      "input": "contracts/examples/sanitization-summary.example.json",
+      "name": "sanitization_summary"
+    }
+  ],
+  "security_notes": [
+    "Synthetic fixture only; no real Daimler data is included.",
+    "No secrets, tokens, cookies, customer data, raw production logs, or proprietary documents are included.",
+    "Fixture generation does not require a live server or external dependencies."
+  ],
+  "synthetic": true,
+  "target_repo": "ProfRandom92/Comptextv7"
+}

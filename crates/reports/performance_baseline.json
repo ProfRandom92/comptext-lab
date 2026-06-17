@@ -1,0 +1,17 @@
+{
+  "phase": "6J",
+  "status": "PASS",
+  "run_ms": 3927,
+  "context_all_ms": 900,
+  "latest_report_valid": true,
+  "performance_report_valid": true,
+  "context_render_bytes": 1757,
+  "checked_artifacts": [
+    "artifacts/spark/extraction.spkg",
+    "artifacts/spark/context.json",
+    "artifacts/spark/context_render.txt",
+    "reports/latest.json",
+    "reports/performance_baseline.json"
+  ],
+  "notes": "Performance baseline measured on local validation environment. No performance optimization was performed in this phase. Measurements are local and environment-specific."
+}

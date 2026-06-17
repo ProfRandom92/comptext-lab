@@ -1,0 +1,47 @@
+{
+  "title": "Benchmark Summary Contract",
+  "description": "Synthetic, machine-readable benchmark handoff summary for Comptextv7 review automation. Examples must not contain real Daimler, customer, secret, or production data.",
+  "type": "object",
+  "required": [
+    "source_repo",
+    "target_repo",
+    "report_type",
+    "synthetic",
+    "generated_at",
+    "endpoint",
+    "metrics",
+    "status",
+    "notes"
+  ],
+  "properties": {
+    "source_repo": {"type": "string"},
+    "target_repo": {"type": "string"},
+    "report_type": {"type": "string"},
+    "synthetic": {"type": "boolean"},
+    "generated_at": {"type": "string"},
+    "endpoint": {"type": "string"},
+    "metrics": {
+      "type": "object",
+      "required": [
+        "p50_ms",
+        "p95_ms",
+        "p99_ms",
+        "rps",
+        "error_rate",
+        "payload_size_bytes"
+      ],
+      "properties": {
+        "p50_ms": {"type": "number"},
+        "p95_ms": {"type": "number"},
+        "p99_ms": {"type": "number"},
+        "rps": {"type": "number"},
+        "error_rate": {"type": "number"},
+        "payload_size_bytes": {"type": "integer"}
+      },
+      "additionalProperties": false
+    },
+    "status": {"type": "string"},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": false
+}

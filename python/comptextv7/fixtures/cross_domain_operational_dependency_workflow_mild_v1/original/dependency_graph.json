@@ -1,0 +1,100 @@
+{
+  "graph_version": "1.0",
+  "nodes": [
+    {
+      "node_id": "code_review_handoff",
+      "label": "Code review handoff",
+      "metadata": {
+        "phase": "handoff"
+      }
+    },
+    {
+      "node_id": "security_approval",
+      "label": "Security approval",
+      "metadata": {
+        "phase": "governance"
+      }
+    },
+    {
+      "node_id": "migration_validate",
+      "label": "Migration validation",
+      "metadata": {
+        "phase": "verification"
+      }
+    },
+    {
+      "node_id": "deploy_readiness",
+      "label": "Deployment readiness",
+      "metadata": {
+        "phase": "release"
+      }
+    },
+    {
+      "node_id": "rollback_available",
+      "label": "Rollback available",
+      "metadata": {
+        "phase": "recovery"
+      }
+    },
+    {
+      "node_id": "human_escalation",
+      "label": "Human escalation",
+      "metadata": {
+        "phase": "recovery"
+      }
+    },
+    {
+      "node_id": "deploy_execute",
+      "label": "Deploy execute",
+      "metadata": {
+        "phase": "release"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "code_review_handoff",
+      "target": "security_approval",
+      "relation": "PREREQUISITE",
+      "metadata": {}
+    },
+    {
+      "source": "security_approval",
+      "target": "migration_validate",
+      "relation": "CAUSAL",
+      "metadata": {}
+    },
+    {
+      "source": "migration_validate",
+      "target": "deploy_readiness",
+      "relation": "CAUSAL",
+      "metadata": {}
+    },
+    {
+      "source": "deploy_readiness",
+      "target": "deploy_execute",
+      "relation": "CAUSAL",
+      "metadata": {}
+    },
+    {
+      "source": "migration_validate",
+      "target": "rollback_available",
+      "relation": "RECOVERY",
+      "metadata": {}
+    },
+    {
+      "source": "migration_validate",
+      "target": "human_escalation",
+      "relation": "RECOVERY",
+      "metadata": {}
+    },
+    {
+      "source": "security_approval",
+      "target": "deploy_execute",
+      "relation": "BLOCKER",
+      "metadata": {
+        "state": "approved"
+      }
+    }
+  ]
+}

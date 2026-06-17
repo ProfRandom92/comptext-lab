@@ -1,0 +1,13 @@
+{
+  "fixture_id": "incident_response_page_triage_v1",
+  "fixture_version": "1.0.0",
+  "expected_admissible": true,
+  "must_hold_contracts": [
+    "alert_ack_before_mitigation",
+    "no_orphan_mitigation_steps",
+    "rollback_reachable",
+    "root_cause_links_incident"
+  ],
+  "must_fail_contracts": [],
+  "expected_failure_labels": []
+}

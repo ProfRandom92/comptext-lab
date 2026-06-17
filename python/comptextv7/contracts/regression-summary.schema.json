@@ -1,0 +1,49 @@
+{
+  "title": "Regression Summary Contract",
+  "description": "Synthetic, machine-readable regression handoff summary for comparing benchmark runs without runtime coupling to an experiment repository.",
+  "type": "object",
+  "required": [
+    "source_repo",
+    "target_repo",
+    "report_type",
+    "synthetic",
+    "generated_at",
+    "baseline_available",
+    "regression_detected",
+    "compared_runs",
+    "thresholds",
+    "decision",
+    "notes"
+  ],
+  "properties": {
+    "source_repo": {"type": "string"},
+    "target_repo": {"type": "string"},
+    "report_type": {"type": "string"},
+    "synthetic": {"type": "boolean"},
+    "generated_at": {"type": "string"},
+    "baseline_available": {"type": "boolean"},
+    "regression_detected": {"type": "boolean"},
+    "compared_runs": {
+      "type": "object",
+      "required": ["baseline", "candidate"],
+      "properties": {
+        "baseline": {"type": "string"},
+        "candidate": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "thresholds": {
+      "type": "object",
+      "required": ["p95_ms_delta", "p99_ms_delta", "error_rate_delta"],
+      "properties": {
+        "p95_ms_delta": {"type": "number"},
+        "p99_ms_delta": {"type": "number"},
+        "error_rate_delta": {"type": "number"}
+      },
+      "additionalProperties": false
+    },
+    "decision": {"type": "string"},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": false
+}

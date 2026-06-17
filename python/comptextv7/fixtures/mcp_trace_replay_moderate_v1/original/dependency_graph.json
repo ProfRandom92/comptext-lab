@@ -1,0 +1,132 @@
+{
+  "graph_version": "1.0",
+  "nodes": [
+    {
+      "node_id": "system_start",
+      "label": "System start",
+      "metadata": {
+        "phase": "system"
+      }
+    },
+    {
+      "node_id": "user_request_received",
+      "label": "User request received",
+      "metadata": {
+        "phase": "intake"
+      }
+    },
+    {
+      "node_id": "capability_scope_checked",
+      "label": "Capability scope checked",
+      "metadata": {
+        "phase": "governance"
+      }
+    },
+    {
+      "node_id": "tool_schema_validated",
+      "label": "Tool schema validated",
+      "metadata": {
+        "phase": "validation"
+      }
+    },
+    {
+      "node_id": "read_context",
+      "label": "Read context",
+      "metadata": {
+        "phase": "context"
+      }
+    },
+    {
+      "node_id": "validate_external_action",
+      "label": "Validate external action",
+      "metadata": {
+        "phase": "validation"
+      }
+    },
+    {
+      "node_id": "execute_external_action",
+      "label": "Execute external action",
+      "metadata": {
+        "phase": "execution"
+      }
+    },
+    {
+      "node_id": "verify_result",
+      "label": "Verify result",
+      "metadata": {
+        "phase": "verification"
+      }
+    },
+    {
+      "node_id": "recovery_path_registered",
+      "label": "Recovery path registered",
+      "metadata": {
+        "phase": "recovery"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "system_start",
+      "target": "user_request_received",
+      "relation": "TEMPORAL",
+      "metadata": {}
+    },
+    {
+      "source": "user_request_received",
+      "target": "capability_scope_checked",
+      "relation": "PREREQUISITE",
+      "metadata": {}
+    },
+    {
+      "source": "capability_scope_checked",
+      "target": "tool_schema_validated",
+      "relation": "PREREQUISITE",
+      "metadata": {}
+    },
+    {
+      "source": "tool_schema_validated",
+      "target": "read_context",
+      "relation": "DATA_FLOW",
+      "metadata": {}
+    },
+    {
+      "source": "read_context",
+      "target": "validate_external_action",
+      "relation": "PREREQUISITE",
+      "metadata": {}
+    },
+    {
+      "source": "validate_external_action",
+      "target": "execute_external_action",
+      "relation": "CAUSAL",
+      "metadata": {}
+    },
+    {
+      "source": "execute_external_action",
+      "target": "verify_result",
+      "relation": "CAUSAL",
+      "metadata": {}
+    },
+    {
+      "source": "execute_external_action",
+      "target": "recovery_path_registered",
+      "relation": "RECOVERY",
+      "metadata": {}
+    },
+    {
+      "source": "capability_scope_checked",
+      "target": "execute_external_action",
+      "relation": "BLOCKER",
+      "metadata": {
+        "state": "enforced"
+      }
+    },
+    {
+      "source": "capability_scope_checked",
+      "target": "validate_external_action",
+      "relation": "CAUSAL",
+      "metadata": {}
+    }
+  ]
+}

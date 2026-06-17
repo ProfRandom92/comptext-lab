@@ -1,0 +1,32 @@
+{
+  "events": [
+    {
+      "action": "alert_received",
+      "step": 1
+    },
+    {
+      "action": "alert_acknowledged",
+      "step": 2
+    },
+    {
+      "action": "incident_classified",
+      "step": 3
+    },
+    {
+      "action": "root_cause_identified",
+      "step": 4
+    },
+    {
+      "action": "mitigation_started",
+      "step": 5
+    },
+    {
+      "action": "rollback_available",
+      "step": 6
+    },
+    {
+      "action": "escalate_to_human",
+      "step": 7
+    }
+  ]
+}

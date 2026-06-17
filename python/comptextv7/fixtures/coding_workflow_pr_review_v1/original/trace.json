@@ -1,0 +1,13 @@
+{
+  "events": [
+    {"action": "generate_patch", "step": 1},
+    {"action": "run_tests", "step": 2},
+    {"action": "test_failure", "step": 3},
+    {"action": "rollback", "step": 4},
+    {"action": "security_scan_failed", "step": 5},
+    {"action": "deploy_blocked", "step": 6},
+    {"action": "escalate_to_human", "step": 7},
+    {"action": "human_review", "step": 8},
+    {"action": "merge", "step": 9}
+  ]
+}

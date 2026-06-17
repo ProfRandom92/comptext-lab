@@ -1,0 +1,14 @@
+{
+  "contract_id": "recovery_path_available",
+  "layer": "relational",
+  "type": "reachability",
+  "definition": {
+    "from": "test_failure",
+    "to": [
+      "rollback",
+      "escalate_to_human"
+    ],
+    "min_paths": 1
+  },
+  "severity": "HIGH"
+}

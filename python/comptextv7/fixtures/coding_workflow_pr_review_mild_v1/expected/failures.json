@@ -1,0 +1,18 @@
+{
+  "expected_failures": [
+    "RECOVERY_PATH_INVALID"
+  ],
+  "allowed_failures": [
+    "ORPHAN_DEPENDENCY",
+    "DETACHED_DEPENDENCY",
+    "GRAPH_FRAGMENTATION",
+    "TEMPORAL_ORDER_VIOLATION"
+  ],
+  "disallowed_failures": [
+    "POLICY_ORDER_BROKEN",
+    "INVARIANT_VIOLATION",
+    "CYCLE_INTRODUCED",
+    "REPLAY_NON_REPRODUCIBLE",
+    "ARTIFACT_INTEGRITY_VIOLATION"
+  ]
+}

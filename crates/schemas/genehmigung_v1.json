@@ -1,0 +1,23 @@
+{
+  "schema": "SPARK-V7-SCHEMA",
+  "version": 1,
+  "name": "genehmigung_v1",
+  "fixture_type": "synthetic_spark_style",
+  "required_field_paths": [
+    "$.case_id",
+    "$.document_type",
+    "$.authority",
+    "$.procedure_type",
+    "$.applicant",
+    "$.extraction.fields.parcel_id",
+    "$.extraction.fields.location",
+    "$.extraction.fields.project_type",
+    "$.extraction.fields.decision_recommendation",
+    "$.metadata.source_pdf_sha256"
+  ],
+  "non_claims": [
+    "not_official_spark_schema",
+    "not_legal_completeness_check",
+    "not_eu_ai_act_compliance"
+  ]
+}

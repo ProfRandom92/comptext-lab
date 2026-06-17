@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ProfRandom92/Comptextv7/contracts/hash-chilli-cloud-ci-result.schema.json",
+  "title": "Hash/chilli Cloud CI Result Contract",
+  "description": "Authoritative, compact Cloud/GitHub CI result handoff for the local Hash companion and chilli UI. The payload is produced and validated in cloud CI; local consumers display it without running local validation.",
+  "type": "object",
+  "required": [
+    "contract",
+    "contract_version",
+    "result_id",
+    "runner",
+    "execution_target",
+    "provider",
+    "workflow",
+    "status",
+    "commit_sha",
+    "branch",
+    "run_url",
+    "artifact_url",
+    "requested_at",
+    "completed_at",
+    "summary",
+    "local_execution"
+  ],
+  "properties": {
+    "contract": {
+      "type": "string",
+      "const": "hash_chilli_cloud_ci_result"
+    },
+    "contract_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "result_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._:-]{1,96}$"
+    },
+    "request_id": {
+      "type": ["string", "null"],
+      "pattern": "^[A-Za-z0-9._:-]{1,96}$"
+    },
+    "runner": {
+      "type": "string",
+      "enum": ["validation_runner"]
+    },
+    "execution_target": {
+      "type": "string",
+      "const": "cloud_ci"
+    },
+    "provider": {
+      "type": "string",
+      "enum": ["github_actions"]
+    },
+    "workflow": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 96
+    },
+    "status": {
+      "type": "string",
+      "enum": ["queued", "in_progress", "passed", "failed", "cancelled", "degraded"]
+    },
+    "commit_sha": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{40}$"
+    },
+    "branch": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "run_url": {
+      "type": "string",
+      "format": "uri",
+      "maxLength": 2048
+    },
+    "artifact_url": {
+      "type": ["string", "null"],
+      "format": "uri",
+      "maxLength": 2048
+    },
+    "requested_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "completed_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "local_execution": {
+      "type": "string",
+      "const": "disabled"
+    }
+  },
+  "additionalProperties": false
+}

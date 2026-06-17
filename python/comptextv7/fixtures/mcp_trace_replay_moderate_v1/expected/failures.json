@@ -1,0 +1,17 @@
+{
+  "expected_failures": [
+    "APPROVAL_GATE_LOSS",
+    "DEPENDENCY_CHAIN_BREAK"
+  ],
+  "allowed_failures": [
+    "ORPHAN_DEPENDENCY",
+    "DETACHED_DEPENDENCY",
+    "GRAPH_FRAGMENTATION",
+    "TEMPORAL_ORDER_VIOLATION"
+  ],
+  "disallowed_failures": [
+    "CYCLE_INTRODUCED",
+    "REPLAY_NON_REPRODUCIBLE",
+    "ARTIFACT_INTEGRITY_VIOLATION"
+  ]
+}

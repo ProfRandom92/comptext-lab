@@ -1,0 +1,33 @@
+{
+  "state_version": "1.0",
+  "entities": {},
+  "capability_boundaries": [
+    [
+      "agent",
+      "execute_external_action"
+    ],
+    [
+      "execute_external_action",
+      "unapproved_admin_console"
+    ]
+  ],
+  "allowed_tools": [
+    "execute_external_action",
+    "unapproved_admin_console"
+  ],
+  "resource_boundaries": [
+    [
+      "unapproved_admin_console",
+      "production_credentials"
+    ]
+  ],
+  "permission_scopes": {
+    "execute_external_action": []
+  },
+  "capability_scope": {
+    "agent": [
+      "execute_external_action",
+      "unapproved_admin_console"
+    ]
+  }
+}

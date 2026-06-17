@@ -1,0 +1,17 @@
+PAPER_ID: prefixguard
+TITLE: PrefixGuard: From LLM-Agent Traces to Online Failure-Warning Monitors
+
+SECTION: problem
+PrefixGuard studies online failure-warning for LLM agents while a task is still unfolding. The operational question is whether a partial agent trace contains enough typed evidence to warn before a final failure, rather than merely serialize a completed conversation.
+
+SECTION: method
+The method converts raw LLM-agent trajectories into a canonical StepView representation. StepView canonicalization preserves typed trace fields such as observation, action, tool call, tool result, state transition, prefix index, and final outcome. PrefixGuard then trains prefix-risk monitors over this typed evidence; finite-state variants expose DFA-style monitor structure for audit and deployment.
+
+SECTION: metrics
+The evaluation reports prefix warning quality with AUPRC and compares monitor variants across WebArena, TerminalBench, tau2-Bench, and SkillsBench. RQ2 asks whether typed StepView evidence improves beyond plain serialization. RQ3 asks whether finite-state compression preserves the failure-warning signal while reducing monitor complexity.
+
+SECTION: limitations
+Deployment limitations include dependence on trace instrumentation, benchmark-specific transition patterns, possible distribution shift across agents and tools, and finite-state abstraction loss when traces contain rare actions or hidden environment state.
+
+SECTION: deployment_relevance
+The paper is relevant to enterprise replay because it separates operational state from raw transcript text: typed events, warning thresholds, prefixes, AUPRC evidence, and DFA monitor artifacts are the state that must survive compression and replay.

@@ -1,0 +1,407 @@
+{
+  "artifact_name": "mcp_corruption_coverage",
+  "coverage_summary": {
+    "adapter_gaps": 0,
+    "coverage_ratio": 1.0,
+    "failure_label_count": 6,
+    "fixture_family_count": 3,
+    "native_contract_covered": 18,
+    "operator_count": 6,
+    "total_corruptions": 18
+  },
+  "deterministic": true,
+  "entries": [
+    {
+      "adapter_gap": false,
+      "contracts_evaluated": 6,
+      "corruption_id": "mcp_trace_replay_degraded_v1::collapse_capability_boundary",
+      "deterministic_evidence_keys": [
+        "missing_boundaries",
+        "required_boundaries",
+        "rule"
+      ],
+      "expected_failure_label": "CAPABILITY_BOUNDARY_LOSS",
+      "failing_contracts": [
+        "capability_boundary_respected"
+      ],
+      "materialized_fixture": "fixtures/mcp_trace_replay_corruptions/mcp_trace_replay_degraded_v1/collapse_capability_boundary",
+      "native_contract_covered": true,
+      "observed_failure_labels": [
+        "CAPABILITY_BOUNDARY_LOSS"
+      ],
+      "operator": "COLLAPSE_CAPABILITY_BOUNDARY",
+      "source_fixture": "fixtures/mcp_trace_replay_degraded_v1"
+    },
+    {
+      "adapter_gap": false,
+      "contracts_evaluated": 6,
+      "corruption_id": "mcp_trace_replay_degraded_v1::drop_approval_gate",
+      "deterministic_evidence_keys": [
+        "missing_boundaries",
+        "required_boundaries",
+        "rule"
+      ],
+      "expected_failure_label": "APPROVAL_GATE_LOSS",
+      "failing_contracts": [
+        "approval_gate_preserved"
+      ],
+      "materialized_fixture": "fixtures/mcp_trace_replay_corruptions/mcp_trace_replay_degraded_v1/drop_approval_gate",
+      "native_contract_covered": true,
+      "observed_failure_labels": [
+        "APPROVAL_GATE_LOSS"
+      ],
+      "operator": "DROP_APPROVAL_GATE",
+      "source_fixture": "fixtures/mcp_trace_replay_degraded_v1"
+    },
+    {
+      "adapter_gap": false,
+      "contracts_evaluated": 6,
+      "corruption_id": "mcp_trace_replay_degraded_v1::insert_unvalidated_action",
+      "deterministic_evidence_keys": [
+        "observed_sequence",
+        "required_sequence"
+      ],
+      "expected_failure_label": "POLICY_ENFORCEMENT_GAP",
+      "failing_contracts": [
+        "validation_before_unsafe_action"
+      ],
+      "materialized_fixture": "fixtures/mcp_trace_replay_corruptions/mcp_trace_replay_degraded_v1/insert_unvalidated_action",
+      "native_contract_covered": true,
+      "observed_failure_labels": [
+        "POLICY_ENFORCEMENT_GAP"
+      ],
+      "operator": "INSERT_UNVALIDATED_ACTION",
+      "source_fixture": "fixtures/mcp_trace_replay_degraded_v1"
+    },
+    {
+      "adapter_gap": false,
+      "contracts_evaluated": 6,
+      "corruption_id": "mcp_trace_replay_degraded_v1::remove_dependency_edge",
+      "deterministic_evidence_keys": [
+        "missing_edges",
+        "required_edges",
+        "rule"
+      ],
+      "expected_failure_label": "DEPENDENCY_CHAIN_BREAK",
+      "failing_contracts": [
+        "dependency_chain_preserved"
+      ],
+      "materialized_fixture": "fixtures/mcp_trace_replay_corruptions/mcp_trace_replay_degraded_v1/remove_dependency_edge",
+      "native_contract_covered": true,
+      "observed_failure_labels": [
+        "DEPENDENCY_CHAIN_BREAK"
+      ],
+      "operator": "REMOVE_DEPENDENCY_EDGE",
+      "source_fixture": "fixtures/mcp_trace_replay_degraded_v1"
+    },
+    {
+      "adapter_gap": false,
+      "contracts_evaluated": 6,
+      "corruption_id": "mcp_trace_replay_degraded_v1::swap_tool_order",
+      "deterministic_evidence_keys": [
+        "observed_sequence",
+        "required_sequence"
+      ],
+      "expected_failure_label": "TOOL_ORDER_VIOLATION",
+      "failing_contracts": [
+        "tool_call_order_preserved"
+      ],
+      "materialized_fixture": "fixtures/mcp_trace_replay_corruptions/mcp_trace_replay_degraded_v1/swap_tool_order",
+      "native_contract_covered": true,
+      "observed_failure_labels": [
+        "TOOL_ORDER_VIOLATION"
+      ],
+      "operator": "SWAP_TOOL_ORDER",
+      "source_fixture": "fixtures/mcp_trace_replay_degraded_v1"
+    },
+    {
+      "adapter_gap": false,
+      "contracts_evaluated": 6,
+      "corruption_id": "mcp_trace_replay_degraded_v1::truncate_recovery_path",
+      "deterministic_evidence_keys": [
+        "observed_sequence",
+        "required_sequence"
+      ],
+      "expected_failure_label": "RECOVERY_PATH_INVALID",
+      "failing_contracts": [
+        "recovery_path_available"
+      ],
+      "materialized_fixture": "fixtures/mcp_trace_replay_corruptions/mcp_trace_replay_degraded_v1/truncate_recovery_path",
+      "native_contract_covered": true,
+      "observed_failure_labels": [
+        "RECOVERY_PATH_INVALID"
+      ],
+      "operator": "TRUNCATE_RECOVERY_PATH",
+      "source_fixture": "fixtures/mcp_trace_replay_degraded_v1"
+    },
+    {
+      "adapter_gap": false,
+      "contracts_evaluated": 6,
+      "corruption_id": "mcp_trace_replay_mild_v1::collapse_capability_boundary",
+      "deterministic_evidence_keys": [
+        "missing_boundaries",
+        "required_boundaries",
+        "rule"
+      ],
+      "expected_failure_label": "CAPABILITY_BOUNDARY_LOSS",
+      "failing_contracts": [
+        "capability_boundary_respected"
+      ],
+      "materialized_fixture": "fixtures/mcp_trace_replay_corruptions/mcp_trace_replay_mild_v1/collapse_capability_boundary",
+      "native_contract_covered": true,
+      "observed_failure_labels": [
+        "CAPABILITY_BOUNDARY_LOSS"
+      ],
+      "operator": "COLLAPSE_CAPABILITY_BOUNDARY",
+      "source_fixture": "fixtures/mcp_trace_replay_mild_v1"
+    },
+    {
+      "adapter_gap": false,
+      "contracts_evaluated": 6,
+      "corruption_id": "mcp_trace_replay_mild_v1::drop_approval_gate",
+      "deterministic_evidence_keys": [
+        "missing_boundaries",
+        "required_boundaries",
+        "rule"
+      ],
+      "expected_failure_label": "APPROVAL_GATE_LOSS",
+      "failing_contracts": [
+        "approval_gate_preserved"
+      ],
+      "materialized_fixture": "fixtures/mcp_trace_replay_corruptions/mcp_trace_replay_mild_v1/drop_approval_gate",
+      "native_contract_covered": true,
+      "observed_failure_labels": [
+        "APPROVAL_GATE_LOSS"
+      ],
+      "operator": "DROP_APPROVAL_GATE",
+      "source_fixture": "fixtures/mcp_trace_replay_mild_v1"
+    },
+    {
+      "adapter_gap": false,
+      "contracts_evaluated": 6,
+      "corruption_id": "mcp_trace_replay_mild_v1::insert_unvalidated_action",
+      "deterministic_evidence_keys": [
+        "observed_sequence",
+        "required_sequence"
+      ],
+      "expected_failure_label": "POLICY_ENFORCEMENT_GAP",
+      "failing_contracts": [
+        "validation_before_unsafe_action"
+      ],
+      "materialized_fixture": "fixtures/mcp_trace_replay_corruptions/mcp_trace_replay_mild_v1/insert_unvalidated_action",
+      "native_contract_covered": true,
+      "observed_failure_labels": [
+        "POLICY_ENFORCEMENT_GAP"
+      ],
+      "operator": "INSERT_UNVALIDATED_ACTION",
+      "source_fixture": "fixtures/mcp_trace_replay_mild_v1"
+    },
+    {
+      "adapter_gap": false,
+      "contracts_evaluated": 6,
+      "corruption_id": "mcp_trace_replay_mild_v1::remove_dependency_edge",
+      "deterministic_evidence_keys": [
+        "missing_edges",
+        "required_edges",
+        "rule"
+      ],
+      "expected_failure_label": "DEPENDENCY_CHAIN_BREAK",
+      "failing_contracts": [
+        "dependency_chain_preserved"
+      ],
+      "materialized_fixture": "fixtures/mcp_trace_replay_corruptions/mcp_trace_replay_mild_v1/remove_dependency_edge",
+      "native_contract_covered": true,
+      "observed_failure_labels": [
+        "DEPENDENCY_CHAIN_BREAK"
+      ],
+      "operator": "REMOVE_DEPENDENCY_EDGE",
+      "source_fixture": "fixtures/mcp_trace_replay_mild_v1"
+    },
+    {
+      "adapter_gap": false,
+      "contracts_evaluated": 6,
+      "corruption_id": "mcp_trace_replay_mild_v1::swap_tool_order",
+      "deterministic_evidence_keys": [
+        "observed_sequence",
+        "required_sequence"
+      ],
+      "expected_failure_label": "TOOL_ORDER_VIOLATION",
+      "failing_contracts": [
+        "tool_call_order_preserved"
+      ],
+      "materialized_fixture": "fixtures/mcp_trace_replay_corruptions/mcp_trace_replay_mild_v1/swap_tool_order",
+      "native_contract_covered": true,
+      "observed_failure_labels": [
+        "TOOL_ORDER_VIOLATION"
+      ],
+      "operator": "SWAP_TOOL_ORDER",
+      "source_fixture": "fixtures/mcp_trace_replay_mild_v1"
+    },
+    {
+      "adapter_gap": false,
+      "contracts_evaluated": 6,
+      "corruption_id": "mcp_trace_replay_mild_v1::truncate_recovery_path",
+      "deterministic_evidence_keys": [
+        "observed_sequence",
+        "required_sequence"
+      ],
+      "expected_failure_label": "RECOVERY_PATH_INVALID",
+      "failing_contracts": [
+        "recovery_path_available"
+      ],
+      "materialized_fixture": "fixtures/mcp_trace_replay_corruptions/mcp_trace_replay_mild_v1/truncate_recovery_path",
+      "native_contract_covered": true,
+      "observed_failure_labels": [
+        "RECOVERY_PATH_INVALID"
+      ],
+      "operator": "TRUNCATE_RECOVERY_PATH",
+      "source_fixture": "fixtures/mcp_trace_replay_mild_v1"
+    },
+    {
+      "adapter_gap": false,
+      "contracts_evaluated": 6,
+      "corruption_id": "mcp_trace_replay_moderate_v1::collapse_capability_boundary",
+      "deterministic_evidence_keys": [
+        "missing_boundaries",
+        "required_boundaries",
+        "rule"
+      ],
+      "expected_failure_label": "CAPABILITY_BOUNDARY_LOSS",
+      "failing_contracts": [
+        "capability_boundary_respected"
+      ],
+      "materialized_fixture": "fixtures/mcp_trace_replay_corruptions/mcp_trace_replay_moderate_v1/collapse_capability_boundary",
+      "native_contract_covered": true,
+      "observed_failure_labels": [
+        "CAPABILITY_BOUNDARY_LOSS"
+      ],
+      "operator": "COLLAPSE_CAPABILITY_BOUNDARY",
+      "source_fixture": "fixtures/mcp_trace_replay_moderate_v1"
+    },
+    {
+      "adapter_gap": false,
+      "contracts_evaluated": 6,
+      "corruption_id": "mcp_trace_replay_moderate_v1::drop_approval_gate",
+      "deterministic_evidence_keys": [
+        "missing_boundaries",
+        "required_boundaries",
+        "rule"
+      ],
+      "expected_failure_label": "APPROVAL_GATE_LOSS",
+      "failing_contracts": [
+        "approval_gate_preserved"
+      ],
+      "materialized_fixture": "fixtures/mcp_trace_replay_corruptions/mcp_trace_replay_moderate_v1/drop_approval_gate",
+      "native_contract_covered": true,
+      "observed_failure_labels": [
+        "APPROVAL_GATE_LOSS"
+      ],
+      "operator": "DROP_APPROVAL_GATE",
+      "source_fixture": "fixtures/mcp_trace_replay_moderate_v1"
+    },
+    {
+      "adapter_gap": false,
+      "contracts_evaluated": 6,
+      "corruption_id": "mcp_trace_replay_moderate_v1::insert_unvalidated_action",
+      "deterministic_evidence_keys": [
+        "observed_sequence",
+        "required_sequence"
+      ],
+      "expected_failure_label": "POLICY_ENFORCEMENT_GAP",
+      "failing_contracts": [
+        "validation_before_unsafe_action"
+      ],
+      "materialized_fixture": "fixtures/mcp_trace_replay_corruptions/mcp_trace_replay_moderate_v1/insert_unvalidated_action",
+      "native_contract_covered": true,
+      "observed_failure_labels": [
+        "POLICY_ENFORCEMENT_GAP"
+      ],
+      "operator": "INSERT_UNVALIDATED_ACTION",
+      "source_fixture": "fixtures/mcp_trace_replay_moderate_v1"
+    },
+    {
+      "adapter_gap": false,
+      "contracts_evaluated": 6,
+      "corruption_id": "mcp_trace_replay_moderate_v1::remove_dependency_edge",
+      "deterministic_evidence_keys": [
+        "missing_edges",
+        "required_edges",
+        "rule"
+      ],
+      "expected_failure_label": "DEPENDENCY_CHAIN_BREAK",
+      "failing_contracts": [
+        "dependency_chain_preserved"
+      ],
+      "materialized_fixture": "fixtures/mcp_trace_replay_corruptions/mcp_trace_replay_moderate_v1/remove_dependency_edge",
+      "native_contract_covered": true,
+      "observed_failure_labels": [
+        "DEPENDENCY_CHAIN_BREAK"
+      ],
+      "operator": "REMOVE_DEPENDENCY_EDGE",
+      "source_fixture": "fixtures/mcp_trace_replay_moderate_v1"
+    },
+    {
+      "adapter_gap": false,
+      "contracts_evaluated": 6,
+      "corruption_id": "mcp_trace_replay_moderate_v1::swap_tool_order",
+      "deterministic_evidence_keys": [
+        "observed_sequence",
+        "required_sequence"
+      ],
+      "expected_failure_label": "TOOL_ORDER_VIOLATION",
+      "failing_contracts": [
+        "tool_call_order_preserved"
+      ],
+      "materialized_fixture": "fixtures/mcp_trace_replay_corruptions/mcp_trace_replay_moderate_v1/swap_tool_order",
+      "native_contract_covered": true,
+      "observed_failure_labels": [
+        "TOOL_ORDER_VIOLATION"
+      ],
+      "operator": "SWAP_TOOL_ORDER",
+      "source_fixture": "fixtures/mcp_trace_replay_moderate_v1"
+    },
+    {
+      "adapter_gap": false,
+      "contracts_evaluated": 6,
+      "corruption_id": "mcp_trace_replay_moderate_v1::truncate_recovery_path",
+      "deterministic_evidence_keys": [
+        "observed_sequence",
+        "required_sequence"
+      ],
+      "expected_failure_label": "RECOVERY_PATH_INVALID",
+      "failing_contracts": [
+        "recovery_path_available"
+      ],
+      "materialized_fixture": "fixtures/mcp_trace_replay_corruptions/mcp_trace_replay_moderate_v1/truncate_recovery_path",
+      "native_contract_covered": true,
+      "observed_failure_labels": [
+        "RECOVERY_PATH_INVALID"
+      ],
+      "operator": "TRUNCATE_RECOVERY_PATH",
+      "source_fixture": "fixtures/mcp_trace_replay_moderate_v1"
+    }
+  ],
+  "failure_label_coverage": {
+    "APPROVAL_GATE_LOSS": 3,
+    "CAPABILITY_BOUNDARY_LOSS": 3,
+    "DEPENDENCY_CHAIN_BREAK": 3,
+    "POLICY_ENFORCEMENT_GAP": 3,
+    "RECOVERY_PATH_INVALID": 3,
+    "TOOL_ORDER_VIOLATION": 3
+  },
+  "fixture_family_coverage": {
+    "mcp_trace_replay_degraded_v1": 6,
+    "mcp_trace_replay_mild_v1": 6,
+    "mcp_trace_replay_moderate_v1": 6
+  },
+  "operator_coverage": {
+    "COLLAPSE_CAPABILITY_BOUNDARY": 3,
+    "DROP_APPROVAL_GATE": 3,
+    "INSERT_UNVALIDATED_ACTION": 3,
+    "REMOVE_DEPENDENCY_EDGE": 3,
+    "SWAP_TOOL_ORDER": 3,
+    "TRUNCATE_RECOVERY_PATH": 3
+  },
+  "schema_version": "1.0",
+  "source_manifest": "artifacts/mcp_trace_corruption_manifest.json"
+}

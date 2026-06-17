@@ -1,0 +1,35 @@
+{
+  "version": "air-v0.1",
+  "intent": {
+    "type": "audit",
+    "risk_category": "integrity"
+  },
+  "goal": "Verify replay artifacts and hash-chain continuity.",
+  "inputs": [
+    {
+      "kind": "path",
+      "value": "evidence/run.json"
+    }
+  ],
+  "pipeline": [
+    "discover_artifacts",
+    "verify_hash_chain",
+    "validate_contracts",
+    "summarize"
+  ],
+  "contracts": [
+    "no_missing_parent_event",
+    "hash_chain_contiguous",
+    "required_artifacts_present"
+  ],
+  "outputs": [
+    {
+      "kind": "markdown",
+      "path": "reports/audit.md"
+    }
+  ],
+  "metadata": {
+    "fixture": true,
+    "purpose": "minimal valid AIR audit plan"
+  }
+}

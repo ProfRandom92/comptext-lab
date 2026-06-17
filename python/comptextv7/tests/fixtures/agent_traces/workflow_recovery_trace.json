@@ -1,0 +1,55 @@
+{
+  "trace": "workflow_recovery_trace",
+  "scenario": "Recover a partially completed deployment workflow after a blocked dependency and continue with deterministic operational context.",
+  "tasks": [
+    {"id": "wf-001", "title": "Validate release contract", "status": "completed", "details": "Check required artifact schema, benchmark name, and aggregate field names."},
+    {"id": "wf-002", "title": "Resolve dependency lock mismatch", "status": "active", "details": "Pin benchmark code to standard-library modules and avoid adding package dependencies."},
+    {"id": "wf-003", "title": "Document operational replay semantics", "status": "pending", "details": "Explain why replaying operational state differs from storing full chat transcript history."},
+    {"id": "wf-004", "title": "Prepare cloud-first review", "status": "pending", "details": "Commit artifact, tests, fixtures, and benchmark documentation in one focused PR."}
+  ],
+  "decisions": [
+    "Model continuity as preservation of operational fields across compression and replay.",
+    "Use field-level survival rather than subjective quality scores.",
+    "Represent dependency relationships as sorted records with stable identifiers."
+  ],
+  "constraints": [
+    "Do not introduce orchestration runtimes or planning engines.",
+    "Do not ingest PDFs or generate embeddings.",
+    "Keep benchmark data small enough for fast pull request review.",
+    "Use deterministic token counting based on regex word tokens."
+  ],
+  "tool_calls": [
+    {"index": 1, "tool": "shell", "command": "python -m py_compile tests/utils/agent_trace_replay_runner.py", "result": "pending"},
+    {"index": 2, "tool": "pytest", "command": "pytest tests/test_agent_trace_replay.py", "result": "pending"},
+    {"index": 3, "tool": "shell", "command": "python tests/utils/agent_trace_replay_runner.py", "result": "pending"}
+  ],
+  "failures": [
+    "Dependency lock mismatch blocks adding third-party replay libraries.",
+    "Deployment checklist cannot proceed until artifact schema is stable."
+  ],
+  "recoveries": [
+    "Use only Python dataclasses, json, math, pathlib, and re.",
+    "Encode compact replay state with abbreviated deterministic JSON keys.",
+    "Validate aggregate averages by recomputing from per-trace rows."
+  ],
+  "architecture_references": [
+    {"node": "OperationalState", "role": "typed extracted state container"},
+    {"node": "ReplayRun", "role": "test-visible original, compact, and replay objects"},
+    {"node": "docs/benchmarks/agent_trace_replay.md", "role": "benchmark rationale and review guide"}
+  ],
+  "deployment_requirements": [
+    "Cloud CI must be able to regenerate artifact with a single Python command.",
+    "No benchmark output may depend on filesystem traversal order.",
+    "Reviewers must be able to inspect compact replay-safe representation."
+  ],
+  "unresolved_blockers": [
+    "Deployment remains blocked until py_compile, pytest, and artifact generation pass.",
+    "Future traces need the same required operational fields to participate in aggregate metrics."
+  ],
+  "dependencies": [
+    {"id": "wf-dep-001", "from": "wf-002", "to": "wf-001", "type": "requires", "detail": "Dependency recovery depends on confirmed release contract."},
+    {"id": "wf-dep-002", "from": "wf-003", "to": "wf-002", "type": "requires", "detail": "Documentation must reflect dependency-light implementation."},
+    {"id": "wf-dep-003", "from": "wf-004", "to": "wf-003", "type": "requires", "detail": "Cloud review depends on benchmark rationale."}
+  ],
+  "transcript_noise": "Non-operational apologies, salutations, and cosmetic discussion are retained in the fixture only to prove extraction ignores transcript storage."
+}

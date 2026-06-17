@@ -1,0 +1,1 @@
+pub const DEFAULT_MAX_FILE_BYTES: u64 = 64 * 1024;

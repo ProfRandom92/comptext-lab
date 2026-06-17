@@ -1,0 +1,92 @@
+{
+  "schema_version": "PDF-EXTRACTION-V1",
+  "source_file": "examples/spark/synthetic_bauantrag_fixture.pdf",
+  "document_type": "synthetic_public_admin_planning_fixture",
+  "license_or_usage_note": "Synthetic fixture for local contract testing only.",
+  "sanitization_status": "synthetic_no_real_personal_data",
+  "contains_personal_data_risk": "low",
+  "pages": [
+    {
+      "page_number": 1,
+      "text_summary": "Synthetic building and planning application overview with authority, procedure goal, zoning placeholder, and deadline note.",
+      "field_refs": [
+        "procedure_goal",
+        "authority",
+        "public_sector_context"
+      ]
+    },
+    {
+      "page_number": 2,
+      "text_summary": "Synthetic review appendix with environmental note, protected-area placeholder, flood-zone placeholder, required attachments, and decision points.",
+      "field_refs": [
+        "decision_points",
+        "required_documents",
+        "review_required"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "table_id": "table_required_documents_v1",
+      "page_number": 2,
+      "caption": "Synthetic required attachments for planning review",
+      "columns": [
+        "document",
+        "status",
+        "review_note"
+      ],
+      "rows": [
+        [
+          "site_plan",
+          "required",
+          "Check zoning placeholder reference ZONE-A"
+        ],
+        [
+          "environmental_note",
+          "required",
+          "Review protected-area placeholder reference ENV-P"
+        ],
+        [
+          "flood_zone_statement",
+          "conditional",
+          "Review flood-zone placeholder reference FLOOD-X"
+        ]
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "figure_id": "figure_site_context_v1",
+      "page_number": 1,
+      "description": "Synthetic site-context sketch descriptor; no image or source PDF is committed."
+    }
+  ],
+  "extracted_fields": {
+    "procedure_goal": "Assess a synthetic building and planning application for review routing and evidence packaging.",
+    "authority": "Synthetic Municipal Planning Office",
+    "decision_points": [
+      "Confirm zoning placeholder reference ZONE-A is addressed.",
+      "Check environmental note for protected-area placeholder reference ENV-P.",
+      "Decide whether flood-zone placeholder reference FLOOD-X requires additional review.",
+      "Record deadline note before moving to human review."
+    ],
+    "required_documents": [
+      "site_plan",
+      "environmental_note",
+      "flood_zone_statement",
+      "deadline_note"
+    ],
+    "review_required": true,
+    "public_sector_context": "Synthetic administrative planning workflow for local evidence-packet contract testing."
+  },
+  "warnings": [
+    "Manual fixture; not extracted from a real PDF.",
+    "Synthetic administrative content only; no protected personal data is included."
+  ],
+  "tool_metadata": {
+    "converter": "manual",
+    "converter_version": "fixture-v1",
+    "extraction_mode": "manual_fixture",
+    "notes": "Prepared by hand to exercise the PDF-EXTRACTION-V1 adapter contract."
+  }
+}

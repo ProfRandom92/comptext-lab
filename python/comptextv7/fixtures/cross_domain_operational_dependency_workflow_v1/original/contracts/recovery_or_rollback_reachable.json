@@ -1,0 +1,14 @@
+{
+  "contract_id": "recovery_or_rollback_reachable",
+  "layer": "relational",
+  "type": "reachability",
+  "definition": {
+    "from": "migration_validate",
+    "to": [
+      "rollback_available",
+      "human_escalation"
+    ],
+    "min_paths": 1
+  },
+  "severity": "HIGH"
+}

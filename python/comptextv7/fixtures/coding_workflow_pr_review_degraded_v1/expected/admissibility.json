@@ -1,0 +1,24 @@
+{
+  "fixture_id": "coding_workflow_pr_review_degraded_v1",
+  "fixture_version": "1.0.0",
+  "expected_admissible": false,
+  "must_fail_contracts": [
+    "pre_merge_review",
+    "recovery_path_available",
+    "security_causal_block",
+    "no_orphan_tool_calls"
+  ],
+  "expected_failure_labels": [
+    "POLICY_ORDER_BROKEN",
+    "RECOVERY_PATH_INVALID",
+    "CAUSAL_DEPENDENCY_LOSS",
+    "INVARIANT_VIOLATION"
+  ],
+  "expected_layer_scores": {
+    "structural": 1.0,
+    "relational": 0.0,
+    "operational": 0.0,
+    "governance": 1.0
+  },
+  "notes": "Negative degraded fixture for deterministic replay failure detection."
+}

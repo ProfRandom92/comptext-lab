@@ -1,0 +1,7 @@
+{
+  "version": "air-v0.1",
+  "intent": {
+    "type": "audit"
+  },
+  "goal": "Invalid fixture missing pipeline and outputs."
+}

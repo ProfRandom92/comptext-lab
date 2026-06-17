@@ -1,0 +1,32 @@
+{
+  "events": [
+    {
+      "action": "code_review_handoff",
+      "step": 1
+    },
+    {
+      "action": "security_approval",
+      "step": 2
+    },
+    {
+      "action": "migration_validate",
+      "step": 3
+    },
+    {
+      "action": "deploy_readiness",
+      "step": 4
+    },
+    {
+      "action": "rollback_available",
+      "step": 5
+    },
+    {
+      "action": "human_escalation",
+      "step": 6
+    },
+    {
+      "action": "deploy_execute",
+      "step": 7
+    }
+  ]
+}

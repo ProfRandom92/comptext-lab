@@ -1,0 +1,16 @@
+{
+  "contract_id": "tool_call_order_preserved",
+  "layer": "operational",
+  "type": "ordering",
+  "definition": {
+    "required_sequence": [
+      "capability_scope_checked",
+      "tool_schema_validated",
+      "read_context",
+      "validate_external_action",
+      "execute_external_action",
+      "verify_result"
+    ]
+  },
+  "severity": "CRITICAL"
+}

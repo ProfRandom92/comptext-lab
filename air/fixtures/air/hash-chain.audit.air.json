@@ -1,0 +1,40 @@
+{
+  "version": "air-v0.1",
+  "intent": {
+    "type": "audit",
+    "risk_category": "integrity"
+  },
+  "goal": "Validate an evidence event chain without trusting chain-of-thought.",
+  "inputs": [
+    {
+      "kind": "artifact",
+      "value": "fixtures/evidence/hash-chain.events.json"
+    }
+  ],
+  "pipeline": [
+    "load_evidence_events",
+    "verify_parent_links",
+    "verify_hash_chain",
+    "emit_validation_report"
+  ],
+  "contracts": [
+    "no_missing_parent_event",
+    "hash_chain_contiguous",
+    "event_hash_present",
+    "final_report_references_evidence"
+  ],
+  "outputs": [
+    {
+      "kind": "json",
+      "path": "reports/hash-chain.validation.json"
+    },
+    {
+      "kind": "markdown",
+      "path": "reports/hash-chain.validation.md"
+    }
+  ],
+  "metadata": {
+    "fixture": true,
+    "purpose": "AIR plan for validating evidence hash chains"
+  }
+}

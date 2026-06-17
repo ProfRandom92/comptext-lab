@@ -1,0 +1,13 @@
+{
+  "fixture_id": "mcp_trace_replay_moderate_v1",
+  "fixture_version": "1.0.0",
+  "expected_admissible": false,
+  "must_fail_contracts": [
+    "dependency_chain_preserved",
+    "capability_boundary_respected"
+  ],
+  "expected_failure_labels": [
+    "APPROVAL_GATE_LOSS",
+    "DEPENDENCY_CHAIN_BREAK"
+  ]
+}

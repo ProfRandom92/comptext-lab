@@ -1,0 +1,15 @@
+{
+  "contract_id": "recovery_path_available",
+  "layer": "relational",
+  "type": "ordering",
+  "definition": {
+    "required_sequence": [
+      "execute_external_action",
+      "recovery_path_registered"
+    ],
+    "rule": "required_terminal_action_preserved",
+    "terminal_action": "recovery_path_registered"
+  },
+  "severity": "HIGH",
+  "failure_label_on_violation": "RECOVERY_PATH_INVALID"
+}

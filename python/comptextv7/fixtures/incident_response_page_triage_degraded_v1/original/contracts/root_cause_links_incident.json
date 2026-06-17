@@ -1,0 +1,14 @@
+{
+  "contract_id": "root_cause_links_incident",
+  "layer": "relational",
+  "type": "causality",
+  "definition": {
+    "required_causal_edges": [
+      [
+        "root_cause_identified",
+        "mitigation_started"
+      ]
+    ]
+  },
+  "severity": "HIGH"
+}

@@ -1,0 +1,263 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://comptext.local/schemas/spark/pdf_extraction_v1.schema.json",
+  "title": "SPARK-Style PDF Extraction V1",
+  "description": "Deterministic structured-data contract for external or manual PDF extraction outputs used as input evidence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "source_file",
+    "document_type",
+    "pages",
+    "tables",
+    "figures",
+    "extracted_fields",
+    "warnings",
+    "tool_metadata"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "PDF-EXTRACTION-V1"
+    },
+    "source_file": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "source_url": {
+      "type": "string",
+      "minLength": 1
+    },
+    "license_or_usage_note": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sanitization_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contains_personal_data_risk": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "unknown"
+      ]
+    },
+    "document_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/page"
+      }
+    },
+    "tables": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/table"
+      }
+    },
+    "figures": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/figure"
+      }
+    },
+    "extracted_fields": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "procedure_goal",
+        "authority",
+        "decision_points",
+        "required_documents",
+        "review_required",
+        "public_sector_context"
+      ],
+      "properties": {
+        "procedure_goal": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_points": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required_documents": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review_required": {
+          "const": true
+        },
+        "public_sector_context": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "tool_metadata": {
+      "$ref": "#/$defs/tool_metadata"
+    }
+  },
+  "$defs": {
+    "page": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "page_number",
+        "text_summary"
+      ],
+      "properties": {
+        "page_number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "text_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "field_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "table": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "table_id",
+        "page_number",
+        "caption",
+        "columns",
+        "rows"
+      ],
+      "properties": {
+        "table_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "page_number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "caption": {
+          "type": "string",
+          "minLength": 1
+        },
+        "columns": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "figure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "figure_id",
+        "page_number",
+        "description"
+      ],
+      "properties": {
+        "figure_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "page_number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "tool_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "converter",
+        "converter_version",
+        "extraction_mode"
+      ],
+      "properties": {
+        "converter": {
+          "type": "string",
+          "enum": [
+            "manual",
+            "docling",
+            "mineru",
+            "marker",
+            "pdftotext",
+            "other"
+          ]
+        },
+        "converter_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "extraction_mode": {
+          "type": "string",
+          "enum": [
+            "synthetic_fixture",
+            "manual_fixture",
+            "external_tool"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

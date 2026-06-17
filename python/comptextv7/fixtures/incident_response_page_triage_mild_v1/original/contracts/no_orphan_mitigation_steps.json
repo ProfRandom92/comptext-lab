@@ -1,0 +1,9 @@
+{
+  "contract_id": "no_orphan_mitigation_steps",
+  "layer": "relational",
+  "type": "invariant",
+  "definition": {
+    "rule": "no_orphan_dependencies"
+  },
+  "severity": "HIGH"
+}

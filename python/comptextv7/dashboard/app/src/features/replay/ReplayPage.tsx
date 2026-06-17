@@ -1,0 +1,7 @@
+import { BarChart } from '../../components/charts/BarChart';
+import { percent, relativeTime } from '../../lib/format';
+import type { DashboardPayload } from '../../types/domain';
+
+export function ReplayPage({ payload }: { payload: DashboardPayload }) {
+  return <div className="grid"><section className="grid cols-4"><article className="card"><h3>Determinism</h3><div className="metric">{payload.replay.stable ? 'Stable' : 'Drift'}</div><span className={`badge ${payload.replay.stable ? 'nominal' : 'critical'}`}>{payload.replay.mismatches} mismatches</span></article><article className="card"><h3>Replay passes</h3><div className="metric">{payload.replay.passes}</div><p>Last run {relativeTime(payload.replay.last_run_at)}</p></article><article className="card"><h3>Corpus size</h3><div className="metric">{payload.replay.corpus_size}</div><p>Golden replay fixtures</p></article><article className="card"><h3>Tokenizer</h3><div className="metric">{payload.audit_summary.tokenizer_version}</div><p className="mono">{payload.audit_summary.tokenizer_drift_fingerprint.slice(0, 24)}</p></article></section><article className="card"><div className="card-header"><div><h3>Drift severity timeline</h3><p>Dataset-level findings from typed replay and forensic APIs.</p></div></div><BarChart data={payload.drift_severity_timeline.map((point) => ({ label: point.dataset, value: point.critical * 4 + point.high * 2 + point.medium, auxiliary: point.low }))} valueLabel={(value) => percent(value, 0)} /></article></div>;
+}

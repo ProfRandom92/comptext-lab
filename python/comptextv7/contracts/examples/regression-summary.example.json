@@ -1,0 +1,20 @@
+{
+  "source_repo": "ProfRandom92/Comptext-Daimler-Experiment-",
+  "target_repo": "ProfRandom92/Comptextv7",
+  "report_type": "regression_summary",
+  "synthetic": true,
+  "generated_at": "2026-01-01T00:05:00Z",
+  "baseline_available": true,
+  "regression_detected": false,
+  "compared_runs": {
+    "baseline": "synthetic-baseline-run",
+    "candidate": "synthetic-candidate-run"
+  },
+  "thresholds": {
+    "p95_ms_delta": 10.0,
+    "p99_ms_delta": 20.0,
+    "error_rate_delta": 0.01
+  },
+  "decision": "pass",
+  "notes": "Synthetic regression example only; no real production or customer data."
+}

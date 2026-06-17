@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://comptext.dev/schemas/adapter.schema.json",
+  "title": "CompText AIR Runtime Adapter",
+  "description": "Schema for describing how AIR plans map to a specific runtime execution surface.",
+  "type": "object",
+  "required": [
+    "adapter_id",
+    "adapter_kind",
+    "supported_air_version",
+    "command_surface",
+    "input_mapping",
+    "output_mapping"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "adapter_id": {
+      "type": "string",
+      "description": "Unique identifier for the adapter."
+    },
+    "adapter_kind": {
+      "type": "string",
+      "enum": ["local-cli", "mcp-proxy", "internal-vfs", "unknown"],
+      "description": "The category of runtime this adapter describes."
+    },
+    "supported_air_version": {
+      "type": "string",
+      "enum": ["air-v0.1"],
+      "description": "The AIR version this adapter is designed for."
+    },
+    "command_surface": {
+      "type": "object",
+      "required": ["binary", "commands"],
+      "additionalProperties": false,
+      "properties": {
+        "binary": {
+          "type": "string",
+          "description": "The primary binary or entry point."
+        },
+        "commands": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "description"],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "args": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "input_mapping": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["air_input_kind", "runtime_flag"],
+        "additionalProperties": false,
+        "properties": {
+          "air_input_kind": {
+            "type": "string"
+          },
+          "runtime_flag": {
+            "type": "string"
+          },
+          "transform": {
+            "type": "string",
+            "description": "Optional descriptive transformation logic."
+          }
+        }
+      }
+    },
+    "output_mapping": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["runtime_key", "air_output_kind"],
+        "additionalProperties": false,
+        "properties": {
+          "runtime_key": {
+            "type": "string"
+          },
+          "air_output_kind": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "evidence_mapping": {
+      "type": "object",
+      "description": "How runtime events map to evidence event types.",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "disabled_capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "boundaries": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    }
+  }
+}

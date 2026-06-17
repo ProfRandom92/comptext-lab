@@ -1,0 +1,12 @@
+{
+  "contract_id": "validation_before_unsafe_action",
+  "layer": "operational",
+  "type": "ordering",
+  "definition": {
+    "required_sequence": [
+      "validate_external_action",
+      "execute_external_action"
+    ]
+  },
+  "severity": "CRITICAL"
+}

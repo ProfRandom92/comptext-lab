@@ -1,0 +1,23 @@
+{
+  "evidence": {
+    "incident_id": "INC-2026-fixture",
+    "priority": "P1",
+    "service": "api-gateway"
+  },
+  "constraints": {
+    "requires_alert_ack": true,
+    "requires_human_escalation_path": true
+  },
+  "recovery_paths": {
+    "mitigation_started": [
+      "rollback_available",
+      "escalate_to_human"
+    ]
+  },
+  "dependencies": {
+    "mitigation_started": [
+      "alert_acknowledged",
+      "root_cause_identified"
+    ]
+  }
+}

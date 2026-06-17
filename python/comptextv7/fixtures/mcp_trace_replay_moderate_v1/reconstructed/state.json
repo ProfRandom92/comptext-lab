@@ -1,0 +1,49 @@
+{
+  "state_version": "1.0",
+  "entities": {},
+  "capability_boundaries": [
+    [
+      "agent",
+      "capability_scope_checked"
+    ],
+    [
+      "capability_scope_checked",
+      "validate_external_action"
+    ],
+    [
+      "execute_external_action",
+      "unapproved_admin_console"
+    ]
+  ],
+  "allowed_tools": [
+    "read_context",
+    "validate_external_action",
+    "execute_external_action",
+    "verify_result",
+    "unapproved_admin_console"
+  ],
+  "resource_boundaries": [
+    [
+      "execute_external_action",
+      "approved_external_resource"
+    ],
+    [
+      "unapproved_admin_console",
+      "production_credentials"
+    ]
+  ],
+  "permission_scopes": {
+    "execute_external_action": [
+      "requires_validation_passed"
+    ]
+  },
+  "capability_scope": {
+    "agent": [
+      "read_context",
+      "validate_external_action",
+      "execute_external_action",
+      "verify_result",
+      "unapproved_admin_console"
+    ]
+  }
+}

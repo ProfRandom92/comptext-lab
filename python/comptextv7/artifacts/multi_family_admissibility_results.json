@@ -1,0 +1,421 @@
+{
+  "artifact_id": "multi_family_admissibility_results_v1",
+  "families": [
+    {
+      "curve": {
+        "curve_id": "coding_workflow_pr_review_curve_v1",
+        "generated_by": "DegradationCurveGenerator",
+        "points": [
+          {
+            "expected_admissible": true,
+            "failed_contracts": [],
+            "failure_labels": [],
+            "fixture_id": "coding_workflow_pr_review_v1",
+            "fixture_path": "fixtures/coding_workflow_pr_review_v1",
+            "fixture_version": "1.0.0",
+            "governance_score": 1.0,
+            "observed_admissible": true,
+            "operational_score": 1.0,
+            "overall_admissibility_score": 1.0,
+            "passed_contracts": [
+              "no_orphan_tool_calls",
+              "pre_merge_review",
+              "recovery_path_available",
+              "security_causal_block"
+            ],
+            "relational_score": 1.0,
+            "structural_score": 1.0
+          },
+          {
+            "expected_admissible": false,
+            "failed_contracts": [
+              "recovery_path_available"
+            ],
+            "failure_labels": [
+              "RECOVERY_PATH_INVALID"
+            ],
+            "fixture_id": "coding_workflow_pr_review_mild_v1",
+            "fixture_path": "fixtures/coding_workflow_pr_review_mild_v1",
+            "fixture_version": "1.0.0",
+            "governance_score": 1.0,
+            "observed_admissible": false,
+            "operational_score": 1.0,
+            "overall_admissibility_score": 0.9166666666666666,
+            "passed_contracts": [
+              "no_orphan_tool_calls",
+              "pre_merge_review",
+              "security_causal_block"
+            ],
+            "relational_score": 0.6666666666666666,
+            "structural_score": 1.0
+          },
+          {
+            "expected_admissible": false,
+            "failed_contracts": [
+              "recovery_path_available",
+              "security_causal_block"
+            ],
+            "failure_labels": [
+              "CAUSAL_DEPENDENCY_LOSS",
+              "RECOVERY_PATH_INVALID"
+            ],
+            "fixture_id": "coding_workflow_pr_review_moderate_v1",
+            "fixture_path": "fixtures/coding_workflow_pr_review_moderate_v1",
+            "fixture_version": "1.0.0",
+            "governance_score": 1.0,
+            "observed_admissible": false,
+            "operational_score": 1.0,
+            "overall_admissibility_score": 0.8333333333333334,
+            "passed_contracts": [
+              "no_orphan_tool_calls",
+              "pre_merge_review"
+            ],
+            "relational_score": 0.3333333333333333,
+            "structural_score": 1.0
+          },
+          {
+            "expected_admissible": false,
+            "failed_contracts": [
+              "no_orphan_tool_calls",
+              "pre_merge_review",
+              "recovery_path_available",
+              "security_causal_block"
+            ],
+            "failure_labels": [
+              "CAUSAL_DEPENDENCY_LOSS",
+              "INVARIANT_VIOLATION",
+              "POLICY_ORDER_BROKEN",
+              "RECOVERY_PATH_INVALID"
+            ],
+            "fixture_id": "coding_workflow_pr_review_degraded_v1",
+            "fixture_path": "fixtures/coding_workflow_pr_review_degraded_v1",
+            "fixture_version": "1.0.0",
+            "governance_score": 1.0,
+            "observed_admissible": false,
+            "operational_score": 0.0,
+            "overall_admissibility_score": 0.5,
+            "passed_contracts": [],
+            "relational_score": 0.0,
+            "structural_score": 1.0
+          }
+        ],
+        "version": "1.0"
+      },
+      "family": "coding_workflow_pr_review"
+    },
+    {
+      "curve": {
+        "curve_id": "cross_domain_operational_dependency_workflow_curve_v1",
+        "generated_by": "DegradationCurveGenerator",
+        "points": [
+          {
+            "expected_admissible": true,
+            "failed_contracts": [],
+            "failure_labels": [],
+            "fixture_id": "cross_domain_operational_dependency_workflow_v1",
+            "fixture_path": "fixtures/cross_domain_operational_dependency_workflow_v1",
+            "fixture_version": "1.0.0",
+            "governance_score": 1.0,
+            "observed_admissible": true,
+            "operational_score": 1.0,
+            "overall_admissibility_score": 1.0,
+            "passed_contracts": [
+              "dependency_chain_preserved",
+              "no_orphan_operational_steps",
+              "policy_ordering_governance_before_deploy",
+              "recovery_or_rollback_reachable"
+            ],
+            "relational_score": 1.0,
+            "structural_score": 1.0
+          },
+          {
+            "expected_admissible": false,
+            "failed_contracts": [
+              "no_orphan_operational_steps",
+              "recovery_or_rollback_reachable"
+            ],
+            "failure_labels": [
+              "INVARIANT_VIOLATION",
+              "RECOVERY_PATH_INVALID"
+            ],
+            "fixture_id": "cross_domain_operational_dependency_workflow_mild_v1",
+            "fixture_path": "fixtures/cross_domain_operational_dependency_workflow_mild_v1",
+            "fixture_version": "1.0.0",
+            "governance_score": 1.0,
+            "observed_admissible": false,
+            "operational_score": 1.0,
+            "overall_admissibility_score": 0.8333333333333334,
+            "passed_contracts": [
+              "dependency_chain_preserved",
+              "policy_ordering_governance_before_deploy"
+            ],
+            "relational_score": 0.3333333333333333,
+            "structural_score": 1.0
+          },
+          {
+            "expected_admissible": false,
+            "failed_contracts": [
+              "dependency_chain_preserved",
+              "no_orphan_operational_steps",
+              "recovery_or_rollback_reachable"
+            ],
+            "failure_labels": [
+              "CAUSAL_DEPENDENCY_LOSS",
+              "INVARIANT_VIOLATION",
+              "RECOVERY_PATH_INVALID"
+            ],
+            "fixture_id": "cross_domain_operational_dependency_workflow_moderate_v1",
+            "fixture_path": "fixtures/cross_domain_operational_dependency_workflow_moderate_v1",
+            "fixture_version": "1.0.0",
+            "governance_score": 1.0,
+            "observed_admissible": false,
+            "operational_score": 1.0,
+            "overall_admissibility_score": 0.75,
+            "passed_contracts": [
+              "policy_ordering_governance_before_deploy"
+            ],
+            "relational_score": 0.0,
+            "structural_score": 1.0
+          },
+          {
+            "expected_admissible": false,
+            "failed_contracts": [
+              "dependency_chain_preserved",
+              "no_orphan_operational_steps",
+              "policy_ordering_governance_before_deploy",
+              "recovery_or_rollback_reachable"
+            ],
+            "failure_labels": [
+              "CAUSAL_DEPENDENCY_LOSS",
+              "INVARIANT_VIOLATION",
+              "POLICY_ORDER_BROKEN",
+              "RECOVERY_PATH_INVALID"
+            ],
+            "fixture_id": "cross_domain_operational_dependency_workflow_degraded_v1",
+            "fixture_path": "fixtures/cross_domain_operational_dependency_workflow_degraded_v1",
+            "fixture_version": "1.0.0",
+            "governance_score": 1.0,
+            "observed_admissible": false,
+            "operational_score": 0.0,
+            "overall_admissibility_score": 0.5,
+            "passed_contracts": [],
+            "relational_score": 0.0,
+            "structural_score": 1.0
+          }
+        ],
+        "version": "1.0"
+      },
+      "family": "cross_domain_operational_dependency_workflow"
+    },
+    {
+      "curve": {
+        "curve_id": "incident_response_page_triage_curve_v1",
+        "generated_by": "DegradationCurveGenerator",
+        "points": [
+          {
+            "expected_admissible": true,
+            "failed_contracts": [],
+            "failure_labels": [],
+            "fixture_id": "incident_response_page_triage_v1",
+            "fixture_path": "fixtures/incident_response_page_triage_v1",
+            "fixture_version": "1.0.0",
+            "governance_score": 1.0,
+            "observed_admissible": true,
+            "operational_score": 1.0,
+            "overall_admissibility_score": 1.0,
+            "passed_contracts": [
+              "alert_ack_before_mitigation",
+              "no_orphan_mitigation_steps",
+              "rollback_reachable",
+              "root_cause_links_incident"
+            ],
+            "relational_score": 1.0,
+            "structural_score": 1.0
+          },
+          {
+            "expected_admissible": false,
+            "failed_contracts": [
+              "rollback_reachable"
+            ],
+            "failure_labels": [
+              "RECOVERY_PATH_INVALID"
+            ],
+            "fixture_id": "incident_response_page_triage_mild_v1",
+            "fixture_path": "fixtures/incident_response_page_triage_mild_v1",
+            "fixture_version": "1.0.0",
+            "governance_score": 1.0,
+            "observed_admissible": false,
+            "operational_score": 1.0,
+            "overall_admissibility_score": 0.9166666666666666,
+            "passed_contracts": [
+              "alert_ack_before_mitigation",
+              "no_orphan_mitigation_steps",
+              "root_cause_links_incident"
+            ],
+            "relational_score": 0.6666666666666666,
+            "structural_score": 1.0
+          },
+          {
+            "expected_admissible": false,
+            "failed_contracts": [
+              "no_orphan_mitigation_steps",
+              "rollback_reachable"
+            ],
+            "failure_labels": [
+              "INVARIANT_VIOLATION",
+              "RECOVERY_PATH_INVALID"
+            ],
+            "fixture_id": "incident_response_page_triage_moderate_v1",
+            "fixture_path": "fixtures/incident_response_page_triage_moderate_v1",
+            "fixture_version": "1.0.0",
+            "governance_score": 1.0,
+            "observed_admissible": false,
+            "operational_score": 1.0,
+            "overall_admissibility_score": 0.8333333333333334,
+            "passed_contracts": [
+              "alert_ack_before_mitigation",
+              "root_cause_links_incident"
+            ],
+            "relational_score": 0.3333333333333333,
+            "structural_score": 1.0
+          },
+          {
+            "expected_admissible": false,
+            "failed_contracts": [
+              "alert_ack_before_mitigation",
+              "no_orphan_mitigation_steps",
+              "rollback_reachable",
+              "root_cause_links_incident"
+            ],
+            "failure_labels": [
+              "CAUSAL_DEPENDENCY_LOSS",
+              "INVARIANT_VIOLATION",
+              "POLICY_ORDER_BROKEN",
+              "RECOVERY_PATH_INVALID"
+            ],
+            "fixture_id": "incident_response_page_triage_degraded_v1",
+            "fixture_path": "fixtures/incident_response_page_triage_degraded_v1",
+            "fixture_version": "1.0.0",
+            "governance_score": 1.0,
+            "observed_admissible": false,
+            "operational_score": 0.0,
+            "overall_admissibility_score": 0.5,
+            "passed_contracts": [],
+            "relational_score": 0.0,
+            "structural_score": 1.0
+          }
+        ],
+        "version": "1.0"
+      },
+      "family": "incident_response_page_triage"
+    },
+    {
+      "curve": {
+        "curve_id": "mcp_trace_replay_curve_v1",
+        "generated_by": "DegradationCurveGenerator",
+        "points": [
+          {
+            "expected_admissible": true,
+            "failed_contracts": [],
+            "failure_labels": [],
+            "fixture_id": "mcp_trace_replay_v1",
+            "fixture_path": "fixtures/mcp_trace_replay_v1",
+            "fixture_version": "1.0.0",
+            "governance_score": 1.0,
+            "observed_admissible": true,
+            "operational_score": 1.0,
+            "overall_admissibility_score": 1.0,
+            "passed_contracts": [
+              "capability_boundary_respected",
+              "dependency_chain_preserved",
+              "recovery_path_available",
+              "tool_call_order_preserved",
+              "validation_before_unsafe_action"
+            ],
+            "relational_score": 1.0,
+            "structural_score": 1.0
+          },
+          {
+            "expected_admissible": true,
+            "failed_contracts": [],
+            "failure_labels": [],
+            "fixture_id": "mcp_trace_replay_mild_v1",
+            "fixture_path": "fixtures/mcp_trace_replay_mild_v1",
+            "fixture_version": "1.0.0",
+            "governance_score": 1.0,
+            "observed_admissible": true,
+            "operational_score": 1.0,
+            "overall_admissibility_score": 1.0,
+            "passed_contracts": [
+              "approval_gate_preserved",
+              "capability_boundary_respected",
+              "dependency_chain_preserved",
+              "recovery_path_available",
+              "tool_call_order_preserved",
+              "validation_before_unsafe_action"
+            ],
+            "relational_score": 1.0,
+            "structural_score": 1.0
+          },
+          {
+            "expected_admissible": false,
+            "failed_contracts": [
+              "approval_gate_preserved",
+              "dependency_chain_preserved"
+            ],
+            "failure_labels": [
+              "APPROVAL_GATE_LOSS",
+              "DEPENDENCY_CHAIN_BREAK"
+            ],
+            "fixture_id": "mcp_trace_replay_moderate_v1",
+            "fixture_path": "fixtures/mcp_trace_replay_moderate_v1",
+            "fixture_version": "1.0.0",
+            "governance_score": 0.0,
+            "observed_admissible": false,
+            "operational_score": 1.0,
+            "overall_admissibility_score": 0.6666666666666666,
+            "passed_contracts": [
+              "capability_boundary_respected",
+              "recovery_path_available",
+              "tool_call_order_preserved",
+              "validation_before_unsafe_action"
+            ],
+            "relational_score": 0.6666666666666666,
+            "structural_score": 1.0
+          },
+          {
+            "expected_admissible": false,
+            "failed_contracts": [
+              "approval_gate_preserved",
+              "capability_boundary_respected",
+              "validation_before_unsafe_action"
+            ],
+            "failure_labels": [
+              "APPROVAL_GATE_LOSS",
+              "CAPABILITY_BOUNDARY_LOSS",
+              "POLICY_ENFORCEMENT_GAP"
+            ],
+            "fixture_id": "mcp_trace_replay_degraded_v1",
+            "fixture_path": "fixtures/mcp_trace_replay_degraded_v1",
+            "fixture_version": "1.0.0",
+            "governance_score": 0.0,
+            "observed_admissible": false,
+            "operational_score": 0.5,
+            "overall_admissibility_score": 0.5416666666666666,
+            "passed_contracts": [
+              "dependency_chain_preserved",
+              "recovery_path_available",
+              "tool_call_order_preserved"
+            ],
+            "relational_score": 0.6666666666666666,
+            "structural_score": 1.0
+          }
+        ],
+        "version": "1.0"
+      },
+      "family": "mcp_trace_replay"
+    }
+  ],
+  "generated_by": "DegradationCurveGenerator",
+  "version": "1.0"
+}

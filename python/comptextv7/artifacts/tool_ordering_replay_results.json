@@ -1,0 +1,368 @@
+{
+  "artifact_id": "tool_ordering_replay_results_v1",
+  "generated_by": "ToolOrderingReplayArtifactGenerator",
+  "version": "1.0",
+  "evaluation_mode": "deterministic",
+  "llm_judges": "none",
+  "external_apis": "none",
+  "families": [
+    {
+      "family": "coding_workflow_pr_review",
+      "fixtures": [
+        {
+          "fixture_id": "coding_workflow_pr_review_degraded_v1",
+          "degradation_level": "severe",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "CAUSAL_DEPENDENCY_LOSS",
+            "INVARIANT_VIOLATION",
+            "POLICY_ORDER_BROKEN",
+            "RECOVERY_PATH_INVALID"
+          ],
+          "tool_ordering": {
+            "original_edge_count": 0,
+            "replay_edge_count": 0,
+            "missing_edges": [],
+            "added_edges": [],
+            "original_node_count": 0,
+            "replay_node_count": 0,
+            "missing_nodes": [],
+            "added_nodes": [],
+            "required_before_violations": [],
+            "drift_detected": false
+          }
+        },
+        {
+          "fixture_id": "coding_workflow_pr_review_mild_v1",
+          "degradation_level": "mild",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "RECOVERY_PATH_INVALID"
+          ],
+          "tool_ordering": {
+            "original_edge_count": 0,
+            "replay_edge_count": 0,
+            "missing_edges": [],
+            "added_edges": [],
+            "original_node_count": 0,
+            "replay_node_count": 0,
+            "missing_nodes": [],
+            "added_nodes": [],
+            "required_before_violations": [],
+            "drift_detected": false
+          }
+        },
+        {
+          "fixture_id": "coding_workflow_pr_review_moderate_v1",
+          "degradation_level": "moderate",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "CAUSAL_DEPENDENCY_LOSS",
+            "RECOVERY_PATH_INVALID"
+          ],
+          "tool_ordering": {
+            "original_edge_count": 0,
+            "replay_edge_count": 0,
+            "missing_edges": [],
+            "added_edges": [],
+            "original_node_count": 0,
+            "replay_node_count": 0,
+            "missing_nodes": [],
+            "added_nodes": [],
+            "required_before_violations": [],
+            "drift_detected": false
+          }
+        },
+        {
+          "fixture_id": "coding_workflow_pr_review_v1",
+          "degradation_level": "baseline",
+          "expected_admissible": true,
+          "expected_failure_labels": [],
+          "tool_ordering": {
+            "original_edge_count": 0,
+            "replay_edge_count": 0,
+            "missing_edges": [],
+            "added_edges": [],
+            "original_node_count": 0,
+            "replay_node_count": 0,
+            "missing_nodes": [],
+            "added_nodes": [],
+            "required_before_violations": [],
+            "drift_detected": false
+          }
+        }
+      ]
+    },
+    {
+      "family": "cross_domain_operational_dependency_workflow",
+      "fixtures": [
+        {
+          "fixture_id": "cross_domain_operational_dependency_workflow_degraded_v1",
+          "degradation_level": "severe",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "CAUSAL_DEPENDENCY_LOSS",
+            "INVARIANT_VIOLATION",
+            "POLICY_ORDER_BROKEN",
+            "RECOVERY_PATH_INVALID"
+          ],
+          "tool_ordering": {
+            "original_edge_count": 0,
+            "replay_edge_count": 0,
+            "missing_edges": [],
+            "added_edges": [],
+            "original_node_count": 0,
+            "replay_node_count": 0,
+            "missing_nodes": [],
+            "added_nodes": [],
+            "required_before_violations": [],
+            "drift_detected": false
+          }
+        },
+        {
+          "fixture_id": "cross_domain_operational_dependency_workflow_mild_v1",
+          "degradation_level": "mild",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "INVARIANT_VIOLATION",
+            "RECOVERY_PATH_INVALID"
+          ],
+          "tool_ordering": {
+            "original_edge_count": 0,
+            "replay_edge_count": 0,
+            "missing_edges": [],
+            "added_edges": [],
+            "original_node_count": 0,
+            "replay_node_count": 0,
+            "missing_nodes": [],
+            "added_nodes": [],
+            "required_before_violations": [],
+            "drift_detected": false
+          }
+        },
+        {
+          "fixture_id": "cross_domain_operational_dependency_workflow_moderate_v1",
+          "degradation_level": "moderate",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "CAUSAL_DEPENDENCY_LOSS",
+            "INVARIANT_VIOLATION",
+            "RECOVERY_PATH_INVALID"
+          ],
+          "tool_ordering": {
+            "original_edge_count": 0,
+            "replay_edge_count": 0,
+            "missing_edges": [],
+            "added_edges": [],
+            "original_node_count": 0,
+            "replay_node_count": 0,
+            "missing_nodes": [],
+            "added_nodes": [],
+            "required_before_violations": [],
+            "drift_detected": false
+          }
+        },
+        {
+          "fixture_id": "cross_domain_operational_dependency_workflow_v1",
+          "degradation_level": "baseline",
+          "expected_admissible": true,
+          "expected_failure_labels": [],
+          "tool_ordering": {
+            "original_edge_count": 0,
+            "replay_edge_count": 0,
+            "missing_edges": [],
+            "added_edges": [],
+            "original_node_count": 0,
+            "replay_node_count": 0,
+            "missing_nodes": [],
+            "added_nodes": [],
+            "required_before_violations": [],
+            "drift_detected": false
+          }
+        }
+      ]
+    },
+    {
+      "family": "incident_response_page_triage",
+      "fixtures": [
+        {
+          "fixture_id": "incident_response_page_triage_degraded_v1",
+          "degradation_level": "severe",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "CAUSAL_DEPENDENCY_LOSS",
+            "INVARIANT_VIOLATION",
+            "POLICY_ORDER_BROKEN",
+            "RECOVERY_PATH_INVALID"
+          ],
+          "tool_ordering": {
+            "original_edge_count": 0,
+            "replay_edge_count": 0,
+            "missing_edges": [],
+            "added_edges": [],
+            "original_node_count": 0,
+            "replay_node_count": 0,
+            "missing_nodes": [],
+            "added_nodes": [],
+            "required_before_violations": [],
+            "drift_detected": false
+          }
+        },
+        {
+          "fixture_id": "incident_response_page_triage_mild_v1",
+          "degradation_level": "mild",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "RECOVERY_PATH_INVALID"
+          ],
+          "tool_ordering": {
+            "original_edge_count": 0,
+            "replay_edge_count": 0,
+            "missing_edges": [],
+            "added_edges": [],
+            "original_node_count": 0,
+            "replay_node_count": 0,
+            "missing_nodes": [],
+            "added_nodes": [],
+            "required_before_violations": [],
+            "drift_detected": false
+          }
+        },
+        {
+          "fixture_id": "incident_response_page_triage_moderate_v1",
+          "degradation_level": "moderate",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "RECOVERY_PATH_INVALID"
+          ],
+          "tool_ordering": {
+            "original_edge_count": 0,
+            "replay_edge_count": 0,
+            "missing_edges": [],
+            "added_edges": [],
+            "original_node_count": 0,
+            "replay_node_count": 0,
+            "missing_nodes": [],
+            "added_nodes": [],
+            "required_before_violations": [],
+            "drift_detected": false
+          }
+        },
+        {
+          "fixture_id": "incident_response_page_triage_v1",
+          "degradation_level": "baseline",
+          "expected_admissible": true,
+          "expected_failure_labels": [],
+          "tool_ordering": {
+            "original_edge_count": 0,
+            "replay_edge_count": 0,
+            "missing_edges": [],
+            "added_edges": [],
+            "original_node_count": 0,
+            "replay_node_count": 0,
+            "missing_nodes": [],
+            "added_nodes": [],
+            "required_before_violations": [],
+            "drift_detected": false
+          }
+        }
+      ]
+    },
+    {
+      "family": "mcp_trace_replay",
+      "fixtures": [
+        {
+          "fixture_id": "mcp_trace_replay_degraded_v1",
+          "degradation_level": "severe",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "APPROVAL_GATE_LOSS",
+            "CAPABILITY_BOUNDARY_LOSS",
+            "POLICY_ENFORCEMENT_GAP"
+          ],
+          "tool_ordering": {
+            "original_edge_count": 0,
+            "replay_edge_count": 0,
+            "missing_edges": [],
+            "added_edges": [],
+            "original_node_count": 0,
+            "replay_node_count": 0,
+            "missing_nodes": [],
+            "added_nodes": [],
+            "required_before_violations": [],
+            "drift_detected": false
+          }
+        },
+        {
+          "fixture_id": "mcp_trace_replay_mild_v1",
+          "degradation_level": "mild",
+          "expected_admissible": true,
+          "expected_failure_labels": [],
+          "tool_ordering": {
+            "original_edge_count": 0,
+            "replay_edge_count": 0,
+            "missing_edges": [],
+            "added_edges": [],
+            "original_node_count": 0,
+            "replay_node_count": 0,
+            "missing_nodes": [],
+            "added_nodes": [],
+            "required_before_violations": [],
+            "drift_detected": false
+          }
+        },
+        {
+          "fixture_id": "mcp_trace_replay_moderate_v1",
+          "degradation_level": "moderate",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "APPROVAL_GATE_LOSS",
+            "DEPENDENCY_CHAIN_BREAK"
+          ],
+          "tool_ordering": {
+            "original_edge_count": 0,
+            "replay_edge_count": 0,
+            "missing_edges": [],
+            "added_edges": [],
+            "original_node_count": 0,
+            "replay_node_count": 0,
+            "missing_nodes": [],
+            "added_nodes": [],
+            "required_before_violations": [],
+            "drift_detected": false
+          }
+        },
+        {
+          "fixture_id": "mcp_trace_replay_v1",
+          "degradation_level": "baseline",
+          "expected_admissible": true,
+          "expected_failure_labels": [],
+          "tool_ordering": {
+            "original_edge_count": 0,
+            "replay_edge_count": 0,
+            "missing_edges": [],
+            "added_edges": [],
+            "original_node_count": 0,
+            "replay_node_count": 0,
+            "missing_nodes": [],
+            "added_nodes": [],
+            "required_before_violations": [],
+            "drift_detected": false
+          }
+        }
+      ]
+    }
+  ],
+  "global_summary": {
+    "family_count": 4,
+    "fixture_count": 16,
+    "fixtures_with_tool_ordering_data": 0,
+    "fixtures_with_tool_ordering_drift": 0,
+    "total_missing_tool_order_edges": 0,
+    "total_added_tool_order_edges": 0,
+    "total_required_before_violations": 0,
+    "deterministic_evaluation": true,
+    "llm_judges": "none",
+    "external_apis": "none"
+  }
+}

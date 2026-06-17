@@ -1,0 +1,3 @@
+# cross_domain_operational_dependency_workflow_degraded_v1
+
+Deterministic fixture for cross_domain_operational_dependency_workflow (severe).

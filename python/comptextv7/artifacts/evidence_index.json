@@ -1,0 +1,223 @@
+{
+  "artifact_id": "evidence_index_v1",
+  "generated_by": "EvidenceIndexGenerator",
+  "version": "1.0",
+  "evaluation_mode": "deterministic",
+  "llm_judges": "none",
+  "external_apis": "none",
+  "artifacts": [
+    {
+      "path": "artifacts/capability_boundary_replay_results.json",
+      "format": "json",
+      "generator": "scripts/generate_capability_boundary_replay_artifact.py",
+      "evidence_category": "capability_boundary_replay",
+      "evidence_role": "capability boundary drift replay evidence",
+      "fixture_families": [
+        "coding_workflow_pr_review",
+        "cross_domain_operational_dependency_workflow",
+        "incident_response_page_triage",
+        "mcp_trace_replay"
+      ],
+      "top_level_keys": [
+        "artifact_id",
+        "evaluation_mode",
+        "external_apis",
+        "families",
+        "generated_by",
+        "global_summary",
+        "llm_judges",
+        "version"
+      ],
+      "deterministic_evaluation": true,
+      "llm_judges": "none",
+      "external_apis": "none",
+      "manifest_aligned": true,
+      "evidence_bearing": true,
+      "visualization_only": false
+    },
+    {
+      "path": "artifacts/graph_diff_results.json",
+      "format": "json",
+      "generator": "scripts/generate_graph_diff_artifact.py",
+      "evidence_category": "graph_diff",
+      "evidence_role": "relational replay graph evidence",
+      "fixture_families": [
+        "coding_workflow_pr_review",
+        "cross_domain_operational_dependency_workflow",
+        "incident_response_page_triage",
+        "mcp_trace_replay"
+      ],
+      "top_level_keys": [
+        "artifact_id",
+        "evaluation_mode",
+        "external_apis",
+        "families",
+        "generated_by",
+        "global_summary",
+        "llm_judges",
+        "version"
+      ],
+      "deterministic_evaluation": true,
+      "llm_judges": "none",
+      "external_apis": "none",
+      "manifest_aligned": true,
+      "evidence_bearing": true,
+      "visualization_only": false
+    },
+    {
+      "path": "artifacts/mcp_trace_corruption_manifest.json",
+      "format": "json",
+      "generator": "scripts/generate_mcp_trace_corruptions.py",
+      "evidence_category": "corruption_manifest",
+      "evidence_role": "deterministic MCP trace corruption manifest evidence",
+      "fixture_families": [
+        "mcp_trace_replay"
+      ],
+      "top_level_keys": [
+        "allowed_operators",
+        "corruptions",
+        "manifest_id",
+        "summary",
+        "version"
+      ],
+      "deterministic_evaluation": true,
+      "llm_judges": "none",
+      "external_apis": "none",
+      "manifest_aligned": false,
+      "evidence_bearing": true,
+      "visualization_only": false
+    },
+    {
+      "path": "artifacts/mcp_trace_replay_results.json",
+      "format": "json",
+      "generator": "scripts/generate_mcp_trace_replay_artifact.py",
+      "evidence_category": "mcp_trace_replay",
+      "evidence_role": "single-family MCP trace replay evidence",
+      "fixture_families": [
+        "mcp_trace_replay"
+      ],
+      "top_level_keys": [
+        "artifact_id",
+        "family",
+        "fixtures",
+        "generated_by",
+        "summary",
+        "version"
+      ],
+      "deterministic_evaluation": true,
+      "llm_judges": "none",
+      "external_apis": "none",
+      "manifest_aligned": false,
+      "evidence_bearing": true,
+      "visualization_only": false
+    },
+    {
+      "path": "artifacts/multi_family_admissibility_curves.svg",
+      "format": "svg",
+      "generator": "scripts/render_multi_family_admissibility_svg.py",
+      "evidence_category": "multi_family_admissibility_visualization",
+      "evidence_role": "visualization of admissibility outcomes",
+      "fixture_families": [],
+      "top_level_keys": [],
+      "deterministic_evaluation": true,
+      "llm_judges": "none",
+      "external_apis": "none",
+      "manifest_aligned": false,
+      "evidence_bearing": false,
+      "visualization_only": true
+    },
+    {
+      "path": "artifacts/multi_family_admissibility_results.json",
+      "format": "json",
+      "generator": "scripts/generate_multi_family_admissibility_artifact.py",
+      "evidence_category": "multi_family_admissibility",
+      "evidence_role": "cross-family admissibility evidence",
+      "fixture_families": [
+        "coding_workflow_pr_review",
+        "cross_domain_operational_dependency_workflow",
+        "incident_response_page_triage",
+        "mcp_trace_replay"
+      ],
+      "top_level_keys": [
+        "artifact_id",
+        "families",
+        "generated_by",
+        "version"
+      ],
+      "deterministic_evaluation": true,
+      "llm_judges": "none",
+      "external_apis": "none",
+      "manifest_aligned": true,
+      "evidence_bearing": true,
+      "visualization_only": false
+    },
+    {
+      "path": "artifacts/replay_semantic_integrity_results.json",
+      "format": "json",
+      "generator": "scripts/generate_replay_semantic_integrity_artifact.py",
+      "evidence_category": "replay_semantic_integrity",
+      "evidence_role": "semantic replay integrity evidence",
+      "fixture_families": [
+        "coding_workflow_pr_review",
+        "cross_domain_operational_dependency_workflow",
+        "incident_response_page_triage",
+        "mcp_trace_replay"
+      ],
+      "top_level_keys": [
+        "artifact_id",
+        "evaluation_mode",
+        "external_apis",
+        "families",
+        "generated_by",
+        "global_summary",
+        "llm_judges",
+        "version"
+      ],
+      "deterministic_evaluation": true,
+      "llm_judges": "none",
+      "external_apis": "none",
+      "manifest_aligned": true,
+      "evidence_bearing": true,
+      "visualization_only": false
+    },
+    {
+      "path": "artifacts/tool_ordering_replay_results.json",
+      "format": "json",
+      "generator": "scripts/generate_tool_ordering_replay_artifact.py",
+      "evidence_category": "tool_ordering_replay",
+      "evidence_role": "tool-order replay drift evidence",
+      "fixture_families": [
+        "coding_workflow_pr_review",
+        "cross_domain_operational_dependency_workflow",
+        "incident_response_page_triage",
+        "mcp_trace_replay"
+      ],
+      "top_level_keys": [
+        "artifact_id",
+        "evaluation_mode",
+        "external_apis",
+        "families",
+        "generated_by",
+        "global_summary",
+        "llm_judges",
+        "version"
+      ],
+      "deterministic_evaluation": true,
+      "llm_judges": "none",
+      "external_apis": "none",
+      "manifest_aligned": true,
+      "evidence_bearing": true,
+      "visualization_only": false
+    }
+  ],
+  "global_summary": {
+    "artifact_count": 8,
+    "json_artifact_count": 7,
+    "svg_artifact_count": 1,
+    "evidence_bearing_count": 7,
+    "visualization_only_count": 1,
+    "deterministic_artifact_count": 8,
+    "llm_free_artifact_count": 8,
+    "external_api_free_artifact_count": 8
+  }
+}

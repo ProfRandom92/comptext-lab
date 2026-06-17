@@ -1,0 +1,17 @@
+PAPER_ID: self_consolidating
+TITLE: Self-Consolidating Language Models: Continual Knowledge Incorporation from Context
+
+SECTION: problem
+Self-Consolidating Language Models study how a model can incorporate new knowledge from context instead of relying only on an ever-growing prompt. The paper targets long-context inference limitations where retrieval, compression, or memory systems can expose facts but do not guarantee stable retention after the context disappears.
+
+SECTION: method
+The SCoL approach treats context-derived knowledge as something to consolidate into model behavior. It discusses supervised QA rewards for SQuAD-style knowledge incorporation and intrinsic likelihood-based rewards for LongBench v2 long-context consolidation, with emphasis on retention rather than verbatim context replay.
+
+SECTION: metrics
+The evaluation framing tracks knowledge incorporation, forgetting, retention, QA correctness, likelihood-based consolidation signals, and long-context behavior. Relevant entities include SCoL, SQuAD, LongBench v2, retrieval, compression, memory, continual learning, and consolidation.
+
+SECTION: limitations
+Limitations include catastrophic forgetting risk, possible interference with prior knowledge, dependence on reward quality, cost of consolidation, and difficulty proving that retained behavior reflects faithful source-grounded knowledge rather than spurious memorization.
+
+SECTION: deployment_relevance
+The paper is relevant to Comptextv7 because it stresses whether compressed context can preserve operationally useful state: what knowledge changed, what should be retained, what might be forgotten, and what audit trail proves retention after replay.

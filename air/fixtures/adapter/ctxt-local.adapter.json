@@ -1,0 +1,69 @@
+{
+  "adapter_id": "ctxt-local-v1",
+  "adapter_kind": "local-cli",
+  "supported_air_version": "air-v0.1",
+  "command_surface": {
+    "binary": "comptext",
+    "commands": [
+      {
+        "name": "audit",
+        "description": "Perform a local audit of a path or artifact.",
+        "args": ["--json", "--output-dir"]
+      },
+      {
+        "name": "summarize",
+        "description": "Generate a natural language summary.",
+        "args": ["--json", "--depth"]
+      },
+      {
+        "name": "validate",
+        "description": "Validate local fixtures against schemas.",
+        "args": ["--json", "--strict"]
+      }
+    ]
+  },
+  "input_mapping": [
+    {
+      "air_input_kind": "path",
+      "runtime_flag": "--path"
+    },
+    {
+      "air_input_kind": "artifact",
+      "runtime_flag": "--artifact-id"
+    },
+    {
+      "air_input_kind": "repo",
+      "runtime_flag": "--repo-url"
+    }
+  ],
+  "output_mapping": [
+    {
+      "runtime_key": "audit_report",
+      "air_output_kind": "report"
+    },
+    {
+      "runtime_key": "summary_text",
+      "air_output_kind": "summary"
+    },
+    {
+      "runtime_key": "json_data",
+      "air_output_kind": "json"
+    }
+  ],
+  "evidence_mapping": {
+    "stdout": "step",
+    "stderr": "error",
+    "exit_0": "end",
+    "exit_non_zero": "error"
+  },
+  "disabled_capabilities": [
+    "network-access",
+    "remote-db-write",
+    "cross-repo-mutation"
+  ],
+  "boundaries": [
+    "Only operates on files within the current workspace.",
+    "Does not persist credentials.",
+    "No auto-apply of suggested changes."
+  ]
+}

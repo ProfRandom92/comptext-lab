@@ -1,0 +1,9 @@
+{
+  "expected_failures": [
+    "CAUSAL_DEPENDENCY_LOSS",
+    "INVARIANT_VIOLATION",
+    "POLICY_ORDER_BROKEN",
+    "RECOVERY_PATH_INVALID"
+  ],
+  "disallowed_failures": []
+}

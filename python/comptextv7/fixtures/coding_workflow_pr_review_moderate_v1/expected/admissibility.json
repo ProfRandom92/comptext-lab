@@ -1,0 +1,20 @@
+{
+  "fixture_id": "coding_workflow_pr_review_moderate_v1",
+  "fixture_version": "1.0.0",
+  "expected_admissible": false,
+  "expected_layer_scores": {
+    "structural": 1.0,
+    "relational": 0.3333333333333333,
+    "operational": 1.0,
+    "governance": 1.0
+  },
+  "notes": "Moderate degraded fixture combining recovery-path and causality loss.",
+  "must_fail_contracts": [
+    "recovery_path_available",
+    "security_causal_block"
+  ],
+  "expected_failure_labels": [
+    "RECOVERY_PATH_INVALID",
+    "CAUSAL_DEPENDENCY_LOSS"
+  ]
+}

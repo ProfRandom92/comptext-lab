@@ -1,0 +1,17 @@
+{
+  "fixture_id": "cross_domain_operational_dependency_workflow_degraded_v1",
+  "fixture_version": "1.0.0",
+  "expected_admissible": false,
+  "must_fail_contracts": [
+    "policy_ordering_governance_before_deploy",
+    "dependency_chain_preserved",
+    "recovery_or_rollback_reachable",
+    "no_orphan_operational_steps"
+  ],
+  "expected_failure_labels": [
+    "CAUSAL_DEPENDENCY_LOSS",
+    "INVARIANT_VIOLATION",
+    "POLICY_ORDER_BROKEN",
+    "RECOVERY_PATH_INVALID"
+  ]
+}

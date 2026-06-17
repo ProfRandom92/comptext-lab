@@ -1,0 +1,22 @@
+[package]
+name = "agy7rust"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "4.4", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+hex = "0.4"
+
+[[bin]]
+name = "sparkctl"
+path = "src/bin/sparkctl.rs"
+
+[[bin]]
+name = "agy-ct"
+path = "src/bin/agy_ct.rs"
+

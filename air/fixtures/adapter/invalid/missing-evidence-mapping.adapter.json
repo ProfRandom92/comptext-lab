@@ -1,0 +1,33 @@
+{
+  "adapter_id": "missing-evidence-mapping",
+  "adapter_kind": "local-cli",
+  "supported_air_version": "air-v0.1",
+  "command_surface": {
+    "binary": "comptext",
+    "commands": [
+      {
+        "name": "audit",
+        "description": "Perform a local audit of a path or artifact.",
+        "args": ["--json", "--output-dir"]
+      }
+    ]
+  },
+  "input_mapping": [
+    {
+      "air_input_kind": "path",
+      "runtime_flag": "--path"
+    }
+  ],
+  "output_mapping": [
+    {
+      "runtime_key": "audit_report",
+      "air_output_kind": "report"
+    }
+  ],
+  "disabled_capabilities": [
+    "network-access"
+  ],
+  "boundaries": [
+    "Only operates on files within the current workspace."
+  ]
+}

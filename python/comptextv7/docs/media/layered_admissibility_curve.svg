@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect x="0" y="0" width="1000" height="520" fill="#ffffff"/>
+  <text x="500.0" y="36" text-anchor="middle" font-size="22" font-family="monospace" fill="#111111">Layered Admissibility Degradation Curve</text>
+  <line x1="90" y1="380" x2="960" y2="380" stroke="#222222" stroke-width="1"/>
+  <line x1="90" y1="70" x2="90" y2="380" stroke="#222222" stroke-width="1"/>
+  <line x1="90" y1="380.000" x2="960" y2="380.000" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="78" y="384.000" text-anchor="end" font-size="12" font-family="monospace" fill="#333333">0.000</text>
+  <line x1="90" y1="225.000" x2="960" y2="225.000" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="78" y="229.000" text-anchor="end" font-size="12" font-family="monospace" fill="#333333">0.500</text>
+  <line x1="90" y1="70.000" x2="960" y2="70.000" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="78" y="74.000" text-anchor="end" font-size="12" font-family="monospace" fill="#333333">1.000</text>
+  <text x="90.000" y="402" text-anchor="middle" font-size="12" font-family="monospace" fill="#222222">positive</text>
+  <text x="380.000" y="402" text-anchor="middle" font-size="12" font-family="monospace" fill="#222222">mild</text>
+  <text x="670.000" y="402" text-anchor="middle" font-size="12" font-family="monospace" fill="#222222">moderate</text>
+  <text x="960.000" y="402" text-anchor="middle" font-size="12" font-family="monospace" fill="#222222">severe</text>
+  <polyline points="90.000,70.000 380.000,95.833 670.000,121.667 960.000,225.000" fill="none" stroke="#0055aa" stroke-width="3"/>
+  <text x="500.0" y="500" text-anchor="middle" font-size="13" font-family="monospace" fill="#111111">Fixture progression</text>
+  <text x="20" y="260.0" transform="rotate(-90 20 260.0)" text-anchor="middle" font-size="13" font-family="monospace" fill="#111111">overall_admissibility_score</text>
+  <circle cx="90.000" cy="70.000" r="5" fill="#0055aa"/>
+  <text x="90.000" y="58.000" text-anchor="middle" font-size="11" font-family="monospace" fill="#111111">coding_workflow_pr_review_v1 | 1.000</text>
+  <circle cx="380.000" cy="95.833" r="5" fill="#0055aa"/>
+  <text x="380.000" y="83.833" text-anchor="middle" font-size="11" font-family="monospace" fill="#111111">coding_workflow_pr_review_mild_v1 | 0.917</text>
+  <circle cx="670.000" cy="121.667" r="5" fill="#0055aa"/>
+  <text x="670.000" y="109.667" text-anchor="middle" font-size="11" font-family="monospace" fill="#111111">coding_workflow_pr_review_moderate_v1 | 0.833</text>
+  <circle cx="960.000" cy="225.000" r="5" fill="#0055aa"/>
+  <text x="960.000" y="213.000" text-anchor="middle" font-size="11" font-family="monospace" fill="#111111">coding_workflow_pr_review_degraded_v1 | 0.500</text>
+  <text x="380.000" y="424" text-anchor="middle" font-size="10" font-family="monospace" fill="#aa2200">RECOVERY_PATH_INVALID</text>
+  <text x="670.000" y="424" text-anchor="middle" font-size="10" font-family="monospace" fill="#aa2200">RECOVERY_PATH_INVALID, CAUSAL_DEPENDENCY_LOSS</text>
+  <text x="960.000" y="424" text-anchor="middle" font-size="10" font-family="monospace" fill="#aa2200">RECOVERY_PATH_INVALID, CAUSAL_DEPENDENCY_LOSS, POLICY_ORDER_BROKEN, INVARIANT_VIOLATION</text>
+  <rect x="700" y="84" width="250" height="104" fill="#f8f8f8" stroke="#cccccc"/>
+  <text x="712" y="102" font-size="12" font-family="monospace" fill="#111111">Legend (component scores)</text>
+  <text x="716" y="120" font-size="11" font-family="monospace" fill="#333333">- structural</text>
+  <text x="716" y="136" font-size="11" font-family="monospace" fill="#333333">- relational</text>
+  <text x="716" y="152" font-size="11" font-family="monospace" fill="#333333">- operational</text>
+  <text x="716" y="168" font-size="11" font-family="monospace" fill="#333333">- governance</text>
+</svg>

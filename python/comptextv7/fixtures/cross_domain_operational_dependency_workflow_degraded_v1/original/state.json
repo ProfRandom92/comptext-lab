@@ -1,0 +1,28 @@
+{
+  "evidence": {
+    "workflow_id": "XDOM-001",
+    "governance_gate": "security_required",
+    "migration_plan": "required"
+  },
+  "constraints": {
+    "requires_security_approval_before_deploy": true,
+    "requires_rollback_path": true
+  },
+  "blockers": [
+    "security_approval",
+    "migration_validate"
+  ],
+  "recovery_paths": {
+    "migration_validate": [
+      "rollback_available",
+      "human_escalation"
+    ]
+  },
+  "dependencies": {
+    "deploy_execute": [
+      "security_approval",
+      "migration_validate",
+      "deploy_readiness"
+    ]
+  }
+}

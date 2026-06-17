@@ -1,0 +1,2114 @@
+{
+  "artifact_id": "graph_diff_results_v1",
+  "generated_by": "GraphDiffArtifactGenerator",
+  "version": "1.0",
+  "evaluation_mode": "deterministic",
+  "llm_judges": "none",
+  "external_apis": "none",
+  "families": [
+    {
+      "family": "coding_workflow_pr_review",
+      "fixtures": [
+        {
+          "fixture_id": "coding_workflow_pr_review_degraded_v1",
+          "degradation_level": "severe",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "CAUSAL_DEPENDENCY_LOSS",
+            "INVARIANT_VIOLATION",
+            "POLICY_ORDER_BROKEN",
+            "RECOVERY_PATH_INVALID"
+          ],
+          "edge_categories": {
+            "capability_boundaries": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "causal_dependencies": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "dependencies": {
+              "original_edge_count": 12,
+              "replay_edge_count": 6,
+              "missing_edges": [
+                [
+                  "escalate_to_human",
+                  "human_review"
+                ],
+                [
+                  "human_review",
+                  "merge"
+                ],
+                [
+                  "rollback",
+                  "human_review"
+                ],
+                [
+                  "security_scan_failed",
+                  "deploy_blocked"
+                ],
+                [
+                  "test_failure",
+                  "escalate_to_human"
+                ],
+                [
+                  "test_failure",
+                  "rollback"
+                ]
+              ],
+              "added_edges": [],
+              "missing_nodes": [
+                "escalate_to_human",
+                "rollback"
+              ],
+              "added_nodes": [],
+              "original_nodes": [
+                "deploy_blocked",
+                "escalate_to_human",
+                "generate_patch",
+                "human_review",
+                "merge",
+                "rollback",
+                "run_tests",
+                "security_scan_failed",
+                "test_failure"
+              ],
+              "replay_nodes": [
+                "deploy_blocked",
+                "generate_patch",
+                "human_review",
+                "merge",
+                "run_tests",
+                "security_scan_failed",
+                "test_failure"
+              ]
+            },
+            "dependency_chain": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "policy_steps": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "recovery_paths": {
+              "original_edge_count": 1,
+              "replay_edge_count": 1,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "escalate_to_human",
+                "rollback"
+              ],
+              "replay_nodes": [
+                "escalate_to_human",
+                "rollback"
+              ]
+            },
+            "tool_call_order": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_calls": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            }
+          }
+        },
+        {
+          "fixture_id": "coding_workflow_pr_review_mild_v1",
+          "degradation_level": "mild",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "RECOVERY_PATH_INVALID"
+          ],
+          "edge_categories": {
+            "capability_boundaries": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "causal_dependencies": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "dependencies": {
+              "original_edge_count": 12,
+              "replay_edge_count": 12,
+              "missing_edges": [
+                [
+                  "test_failure",
+                  "escalate_to_human"
+                ],
+                [
+                  "test_failure",
+                  "rollback"
+                ]
+              ],
+              "added_edges": [
+                [
+                  "run_tests",
+                  "escalate_to_human"
+                ],
+                [
+                  "run_tests",
+                  "rollback"
+                ]
+              ],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "deploy_blocked",
+                "escalate_to_human",
+                "generate_patch",
+                "human_review",
+                "merge",
+                "rollback",
+                "run_tests",
+                "security_scan_failed",
+                "test_failure"
+              ],
+              "replay_nodes": [
+                "deploy_blocked",
+                "escalate_to_human",
+                "generate_patch",
+                "human_review",
+                "merge",
+                "rollback",
+                "run_tests",
+                "security_scan_failed",
+                "test_failure"
+              ]
+            },
+            "dependency_chain": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "policy_steps": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "recovery_paths": {
+              "original_edge_count": 1,
+              "replay_edge_count": 1,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "escalate_to_human",
+                "rollback"
+              ],
+              "replay_nodes": [
+                "escalate_to_human",
+                "rollback"
+              ]
+            },
+            "tool_call_order": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_calls": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            }
+          }
+        },
+        {
+          "fixture_id": "coding_workflow_pr_review_moderate_v1",
+          "degradation_level": "moderate",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "CAUSAL_DEPENDENCY_LOSS",
+            "RECOVERY_PATH_INVALID"
+          ],
+          "edge_categories": {
+            "capability_boundaries": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "causal_dependencies": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "dependencies": {
+              "original_edge_count": 12,
+              "replay_edge_count": 12,
+              "missing_edges": [
+                [
+                  "security_scan_failed",
+                  "deploy_blocked"
+                ],
+                [
+                  "test_failure",
+                  "escalate_to_human"
+                ],
+                [
+                  "test_failure",
+                  "rollback"
+                ]
+              ],
+              "added_edges": [
+                [
+                  "run_tests",
+                  "deploy_blocked"
+                ],
+                [
+                  "run_tests",
+                  "escalate_to_human"
+                ],
+                [
+                  "run_tests",
+                  "rollback"
+                ]
+              ],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "deploy_blocked",
+                "escalate_to_human",
+                "generate_patch",
+                "human_review",
+                "merge",
+                "rollback",
+                "run_tests",
+                "security_scan_failed",
+                "test_failure"
+              ],
+              "replay_nodes": [
+                "deploy_blocked",
+                "escalate_to_human",
+                "generate_patch",
+                "human_review",
+                "merge",
+                "rollback",
+                "run_tests",
+                "security_scan_failed",
+                "test_failure"
+              ]
+            },
+            "dependency_chain": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "policy_steps": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "recovery_paths": {
+              "original_edge_count": 1,
+              "replay_edge_count": 1,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "escalate_to_human",
+                "rollback"
+              ],
+              "replay_nodes": [
+                "escalate_to_human",
+                "rollback"
+              ]
+            },
+            "tool_call_order": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_calls": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            }
+          }
+        },
+        {
+          "fixture_id": "coding_workflow_pr_review_v1",
+          "degradation_level": "baseline",
+          "expected_admissible": true,
+          "expected_failure_labels": [],
+          "edge_categories": {
+            "capability_boundaries": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "causal_dependencies": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "dependencies": {
+              "original_edge_count": 12,
+              "replay_edge_count": 12,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "deploy_blocked",
+                "escalate_to_human",
+                "generate_patch",
+                "human_review",
+                "merge",
+                "rollback",
+                "run_tests",
+                "security_scan_failed",
+                "test_failure"
+              ],
+              "replay_nodes": [
+                "deploy_blocked",
+                "escalate_to_human",
+                "generate_patch",
+                "human_review",
+                "merge",
+                "rollback",
+                "run_tests",
+                "security_scan_failed",
+                "test_failure"
+              ]
+            },
+            "dependency_chain": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "policy_steps": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "recovery_paths": {
+              "original_edge_count": 1,
+              "replay_edge_count": 1,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "escalate_to_human",
+                "rollback"
+              ],
+              "replay_nodes": [
+                "escalate_to_human",
+                "rollback"
+              ]
+            },
+            "tool_call_order": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_calls": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "family": "cross_domain_operational_dependency_workflow",
+      "fixtures": [
+        {
+          "fixture_id": "cross_domain_operational_dependency_workflow_degraded_v1",
+          "degradation_level": "severe",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "CAUSAL_DEPENDENCY_LOSS",
+            "INVARIANT_VIOLATION",
+            "POLICY_ORDER_BROKEN",
+            "RECOVERY_PATH_INVALID"
+          ],
+          "edge_categories": {
+            "capability_boundaries": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "causal_dependencies": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "dependencies": {
+              "original_edge_count": 7,
+              "replay_edge_count": 5,
+              "missing_edges": [
+                [
+                  "deploy_readiness",
+                  "deploy_execute"
+                ],
+                [
+                  "migration_validate",
+                  "human_escalation"
+                ],
+                [
+                  "migration_validate",
+                  "rollback_available"
+                ]
+              ],
+              "added_edges": [
+                [
+                  "deploy_execute",
+                  "security_approval"
+                ]
+              ],
+              "missing_nodes": [
+                "human_escalation",
+                "rollback_available"
+              ],
+              "added_nodes": [],
+              "original_nodes": [
+                "code_review_handoff",
+                "deploy_execute",
+                "deploy_readiness",
+                "human_escalation",
+                "migration_validate",
+                "rollback_available",
+                "security_approval"
+              ],
+              "replay_nodes": [
+                "code_review_handoff",
+                "deploy_execute",
+                "deploy_readiness",
+                "migration_validate",
+                "security_approval"
+              ]
+            },
+            "dependency_chain": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "policy_steps": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "recovery_paths": {
+              "original_edge_count": 1,
+              "replay_edge_count": 1,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "human_escalation",
+                "rollback_available"
+              ],
+              "replay_nodes": [
+                "human_escalation",
+                "rollback_available"
+              ]
+            },
+            "tool_call_order": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_calls": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            }
+          }
+        },
+        {
+          "fixture_id": "cross_domain_operational_dependency_workflow_mild_v1",
+          "degradation_level": "mild",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "INVARIANT_VIOLATION",
+            "RECOVERY_PATH_INVALID"
+          ],
+          "edge_categories": {
+            "capability_boundaries": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "causal_dependencies": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "dependencies": {
+              "original_edge_count": 7,
+              "replay_edge_count": 5,
+              "missing_edges": [
+                [
+                  "migration_validate",
+                  "human_escalation"
+                ],
+                [
+                  "migration_validate",
+                  "rollback_available"
+                ]
+              ],
+              "added_edges": [],
+              "missing_nodes": [
+                "human_escalation",
+                "rollback_available"
+              ],
+              "added_nodes": [],
+              "original_nodes": [
+                "code_review_handoff",
+                "deploy_execute",
+                "deploy_readiness",
+                "human_escalation",
+                "migration_validate",
+                "rollback_available",
+                "security_approval"
+              ],
+              "replay_nodes": [
+                "code_review_handoff",
+                "deploy_execute",
+                "deploy_readiness",
+                "migration_validate",
+                "security_approval"
+              ]
+            },
+            "dependency_chain": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "policy_steps": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "recovery_paths": {
+              "original_edge_count": 1,
+              "replay_edge_count": 1,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "human_escalation",
+                "rollback_available"
+              ],
+              "replay_nodes": [
+                "human_escalation",
+                "rollback_available"
+              ]
+            },
+            "tool_call_order": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_calls": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            }
+          }
+        },
+        {
+          "fixture_id": "cross_domain_operational_dependency_workflow_moderate_v1",
+          "degradation_level": "moderate",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "CAUSAL_DEPENDENCY_LOSS",
+            "INVARIANT_VIOLATION",
+            "RECOVERY_PATH_INVALID"
+          ],
+          "edge_categories": {
+            "capability_boundaries": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "causal_dependencies": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "dependencies": {
+              "original_edge_count": 7,
+              "replay_edge_count": 5,
+              "missing_edges": [
+                [
+                  "migration_validate",
+                  "human_escalation"
+                ],
+                [
+                  "migration_validate",
+                  "rollback_available"
+                ]
+              ],
+              "added_edges": [],
+              "missing_nodes": [
+                "human_escalation",
+                "rollback_available"
+              ],
+              "added_nodes": [],
+              "original_nodes": [
+                "code_review_handoff",
+                "deploy_execute",
+                "deploy_readiness",
+                "human_escalation",
+                "migration_validate",
+                "rollback_available",
+                "security_approval"
+              ],
+              "replay_nodes": [
+                "code_review_handoff",
+                "deploy_execute",
+                "deploy_readiness",
+                "migration_validate",
+                "security_approval"
+              ]
+            },
+            "dependency_chain": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "policy_steps": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "recovery_paths": {
+              "original_edge_count": 1,
+              "replay_edge_count": 1,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "human_escalation",
+                "rollback_available"
+              ],
+              "replay_nodes": [
+                "human_escalation",
+                "rollback_available"
+              ]
+            },
+            "tool_call_order": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_calls": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            }
+          }
+        },
+        {
+          "fixture_id": "cross_domain_operational_dependency_workflow_v1",
+          "degradation_level": "baseline",
+          "expected_admissible": true,
+          "expected_failure_labels": [],
+          "edge_categories": {
+            "capability_boundaries": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "causal_dependencies": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "dependencies": {
+              "original_edge_count": 7,
+              "replay_edge_count": 7,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "code_review_handoff",
+                "deploy_execute",
+                "deploy_readiness",
+                "human_escalation",
+                "migration_validate",
+                "rollback_available",
+                "security_approval"
+              ],
+              "replay_nodes": [
+                "code_review_handoff",
+                "deploy_execute",
+                "deploy_readiness",
+                "human_escalation",
+                "migration_validate",
+                "rollback_available",
+                "security_approval"
+              ]
+            },
+            "dependency_chain": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "policy_steps": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "recovery_paths": {
+              "original_edge_count": 1,
+              "replay_edge_count": 1,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "human_escalation",
+                "rollback_available"
+              ],
+              "replay_nodes": [
+                "human_escalation",
+                "rollback_available"
+              ]
+            },
+            "tool_call_order": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_calls": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "family": "incident_response_page_triage",
+      "fixtures": [
+        {
+          "fixture_id": "incident_response_page_triage_degraded_v1",
+          "degradation_level": "severe",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "CAUSAL_DEPENDENCY_LOSS",
+            "INVARIANT_VIOLATION",
+            "POLICY_ORDER_BROKEN",
+            "RECOVERY_PATH_INVALID"
+          ],
+          "edge_categories": {
+            "capability_boundaries": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "causal_dependencies": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "dependencies": {
+              "original_edge_count": 7,
+              "replay_edge_count": 4,
+              "missing_edges": [
+                [
+                  "incident_classified",
+                  "root_cause_identified"
+                ],
+                [
+                  "mitigation_started",
+                  "rollback_available"
+                ],
+                [
+                  "root_cause_identified",
+                  "mitigation_started"
+                ]
+              ],
+              "added_edges": [],
+              "missing_nodes": [
+                "rollback_available"
+              ],
+              "added_nodes": [],
+              "original_nodes": [
+                "alert_acknowledged",
+                "alert_received",
+                "escalate_to_human",
+                "incident_classified",
+                "mitigation_started",
+                "rollback_available",
+                "root_cause_identified"
+              ],
+              "replay_nodes": [
+                "alert_acknowledged",
+                "alert_received",
+                "escalate_to_human",
+                "incident_classified",
+                "mitigation_started",
+                "root_cause_identified"
+              ]
+            },
+            "dependency_chain": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "policy_steps": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "recovery_paths": {
+              "original_edge_count": 1,
+              "replay_edge_count": 1,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "escalate_to_human",
+                "rollback_available"
+              ],
+              "replay_nodes": [
+                "escalate_to_human",
+                "rollback_available"
+              ]
+            },
+            "tool_call_order": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_calls": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            }
+          }
+        },
+        {
+          "fixture_id": "incident_response_page_triage_mild_v1",
+          "degradation_level": "mild",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "RECOVERY_PATH_INVALID"
+          ],
+          "edge_categories": {
+            "capability_boundaries": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "causal_dependencies": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "dependencies": {
+              "original_edge_count": 7,
+              "replay_edge_count": 7,
+              "missing_edges": [
+                [
+                  "mitigation_started",
+                  "rollback_available"
+                ]
+              ],
+              "added_edges": [
+                [
+                  "incident_classified",
+                  "rollback_available"
+                ]
+              ],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "alert_acknowledged",
+                "alert_received",
+                "escalate_to_human",
+                "incident_classified",
+                "mitigation_started",
+                "rollback_available",
+                "root_cause_identified"
+              ],
+              "replay_nodes": [
+                "alert_acknowledged",
+                "alert_received",
+                "escalate_to_human",
+                "incident_classified",
+                "mitigation_started",
+                "rollback_available",
+                "root_cause_identified"
+              ]
+            },
+            "dependency_chain": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "policy_steps": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "recovery_paths": {
+              "original_edge_count": 1,
+              "replay_edge_count": 1,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "escalate_to_human",
+                "rollback_available"
+              ],
+              "replay_nodes": [
+                "escalate_to_human",
+                "rollback_available"
+              ]
+            },
+            "tool_call_order": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_calls": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            }
+          }
+        },
+        {
+          "fixture_id": "incident_response_page_triage_moderate_v1",
+          "degradation_level": "moderate",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "RECOVERY_PATH_INVALID"
+          ],
+          "edge_categories": {
+            "capability_boundaries": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "causal_dependencies": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "dependencies": {
+              "original_edge_count": 7,
+              "replay_edge_count": 6,
+              "missing_edges": [
+                [
+                  "mitigation_started",
+                  "rollback_available"
+                ]
+              ],
+              "added_edges": [],
+              "missing_nodes": [
+                "rollback_available"
+              ],
+              "added_nodes": [],
+              "original_nodes": [
+                "alert_acknowledged",
+                "alert_received",
+                "escalate_to_human",
+                "incident_classified",
+                "mitigation_started",
+                "rollback_available",
+                "root_cause_identified"
+              ],
+              "replay_nodes": [
+                "alert_acknowledged",
+                "alert_received",
+                "escalate_to_human",
+                "incident_classified",
+                "mitigation_started",
+                "root_cause_identified"
+              ]
+            },
+            "dependency_chain": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "policy_steps": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "recovery_paths": {
+              "original_edge_count": 1,
+              "replay_edge_count": 1,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "escalate_to_human",
+                "rollback_available"
+              ],
+              "replay_nodes": [
+                "escalate_to_human",
+                "rollback_available"
+              ]
+            },
+            "tool_call_order": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_calls": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            }
+          }
+        },
+        {
+          "fixture_id": "incident_response_page_triage_v1",
+          "degradation_level": "baseline",
+          "expected_admissible": true,
+          "expected_failure_labels": [],
+          "edge_categories": {
+            "capability_boundaries": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "causal_dependencies": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "dependencies": {
+              "original_edge_count": 7,
+              "replay_edge_count": 7,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "alert_acknowledged",
+                "alert_received",
+                "escalate_to_human",
+                "incident_classified",
+                "mitigation_started",
+                "rollback_available",
+                "root_cause_identified"
+              ],
+              "replay_nodes": [
+                "alert_acknowledged",
+                "alert_received",
+                "escalate_to_human",
+                "incident_classified",
+                "mitigation_started",
+                "rollback_available",
+                "root_cause_identified"
+              ]
+            },
+            "dependency_chain": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "policy_steps": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "recovery_paths": {
+              "original_edge_count": 1,
+              "replay_edge_count": 1,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "escalate_to_human",
+                "rollback_available"
+              ],
+              "replay_nodes": [
+                "escalate_to_human",
+                "rollback_available"
+              ]
+            },
+            "tool_call_order": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_calls": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "family": "mcp_trace_replay",
+      "fixtures": [
+        {
+          "fixture_id": "mcp_trace_replay_degraded_v1",
+          "degradation_level": "severe",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "APPROVAL_GATE_LOSS",
+            "CAPABILITY_BOUNDARY_LOSS",
+            "POLICY_ENFORCEMENT_GAP"
+          ],
+          "edge_categories": {
+            "capability_boundaries": {
+              "original_edge_count": 3,
+              "replay_edge_count": 2,
+              "missing_edges": [
+                [
+                  "agent",
+                  "capability_scope_checked"
+                ],
+                [
+                  "capability_scope_checked",
+                  "validate_external_action"
+                ],
+                [
+                  "human_approval",
+                  "execute_external_action"
+                ]
+              ],
+              "added_edges": [
+                [
+                  "agent",
+                  "execute_external_action"
+                ],
+                [
+                  "execute_external_action",
+                  "unapproved_admin_console"
+                ]
+              ],
+              "missing_nodes": [
+                "capability_scope_checked",
+                "human_approval",
+                "validate_external_action"
+              ],
+              "added_nodes": [
+                "unapproved_admin_console"
+              ],
+              "original_nodes": [
+                "agent",
+                "capability_scope_checked",
+                "execute_external_action",
+                "human_approval",
+                "validate_external_action"
+              ],
+              "replay_nodes": [
+                "agent",
+                "execute_external_action",
+                "unapproved_admin_console"
+              ]
+            },
+            "causal_dependencies": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "dependencies": {
+              "original_edge_count": 10,
+              "replay_edge_count": 5,
+              "missing_edges": [
+                [
+                  "capability_scope_checked",
+                  "execute_external_action"
+                ],
+                [
+                  "capability_scope_checked",
+                  "tool_schema_validated"
+                ],
+                [
+                  "capability_scope_checked",
+                  "validate_external_action"
+                ],
+                [
+                  "execute_external_action",
+                  "recovery_path_registered"
+                ],
+                [
+                  "validate_external_action",
+                  "execute_external_action"
+                ]
+              ],
+              "added_edges": [],
+              "missing_nodes": [
+                "recovery_path_registered"
+              ],
+              "added_nodes": [],
+              "original_nodes": [
+                "capability_scope_checked",
+                "execute_external_action",
+                "read_context",
+                "recovery_path_registered",
+                "system_start",
+                "tool_schema_validated",
+                "user_request_received",
+                "validate_external_action",
+                "verify_result"
+              ],
+              "replay_nodes": [
+                "capability_scope_checked",
+                "execute_external_action",
+                "read_context",
+                "system_start",
+                "tool_schema_validated",
+                "user_request_received",
+                "validate_external_action",
+                "verify_result"
+              ]
+            },
+            "dependency_chain": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "policy_steps": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "recovery_paths": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_call_order": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_calls": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            }
+          }
+        },
+        {
+          "fixture_id": "mcp_trace_replay_mild_v1",
+          "degradation_level": "mild",
+          "expected_admissible": true,
+          "expected_failure_labels": [],
+          "edge_categories": {
+            "capability_boundaries": {
+              "original_edge_count": 3,
+              "replay_edge_count": 3,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "agent",
+                "capability_scope_checked",
+                "execute_external_action",
+                "human_approval",
+                "validate_external_action"
+              ],
+              "replay_nodes": [
+                "agent",
+                "capability_scope_checked",
+                "execute_external_action",
+                "human_approval",
+                "validate_external_action"
+              ]
+            },
+            "causal_dependencies": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "dependencies": {
+              "original_edge_count": 10,
+              "replay_edge_count": 9,
+              "missing_edges": [
+                [
+                  "execute_external_action",
+                  "recovery_path_registered"
+                ]
+              ],
+              "added_edges": [],
+              "missing_nodes": [
+                "recovery_path_registered"
+              ],
+              "added_nodes": [],
+              "original_nodes": [
+                "capability_scope_checked",
+                "execute_external_action",
+                "read_context",
+                "recovery_path_registered",
+                "system_start",
+                "tool_schema_validated",
+                "user_request_received",
+                "validate_external_action",
+                "verify_result"
+              ],
+              "replay_nodes": [
+                "capability_scope_checked",
+                "execute_external_action",
+                "read_context",
+                "system_start",
+                "tool_schema_validated",
+                "user_request_received",
+                "validate_external_action",
+                "verify_result"
+              ]
+            },
+            "dependency_chain": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "policy_steps": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "recovery_paths": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_call_order": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_calls": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            }
+          }
+        },
+        {
+          "fixture_id": "mcp_trace_replay_moderate_v1",
+          "degradation_level": "moderate",
+          "expected_admissible": false,
+          "expected_failure_labels": [
+            "APPROVAL_GATE_LOSS",
+            "DEPENDENCY_CHAIN_BREAK"
+          ],
+          "edge_categories": {
+            "capability_boundaries": {
+              "original_edge_count": 3,
+              "replay_edge_count": 3,
+              "missing_edges": [
+                [
+                  "human_approval",
+                  "execute_external_action"
+                ]
+              ],
+              "added_edges": [
+                [
+                  "execute_external_action",
+                  "unapproved_admin_console"
+                ]
+              ],
+              "missing_nodes": [
+                "human_approval"
+              ],
+              "added_nodes": [
+                "unapproved_admin_console"
+              ],
+              "original_nodes": [
+                "agent",
+                "capability_scope_checked",
+                "execute_external_action",
+                "human_approval",
+                "validate_external_action"
+              ],
+              "replay_nodes": [
+                "agent",
+                "capability_scope_checked",
+                "execute_external_action",
+                "unapproved_admin_console",
+                "validate_external_action"
+              ]
+            },
+            "causal_dependencies": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "dependencies": {
+              "original_edge_count": 10,
+              "replay_edge_count": 7,
+              "missing_edges": [
+                [
+                  "capability_scope_checked",
+                  "validate_external_action"
+                ],
+                [
+                  "read_context",
+                  "validate_external_action"
+                ],
+                [
+                  "validate_external_action",
+                  "execute_external_action"
+                ]
+              ],
+              "added_edges": [],
+              "missing_nodes": [
+                "validate_external_action"
+              ],
+              "added_nodes": [],
+              "original_nodes": [
+                "capability_scope_checked",
+                "execute_external_action",
+                "read_context",
+                "recovery_path_registered",
+                "system_start",
+                "tool_schema_validated",
+                "user_request_received",
+                "validate_external_action",
+                "verify_result"
+              ],
+              "replay_nodes": [
+                "capability_scope_checked",
+                "execute_external_action",
+                "read_context",
+                "recovery_path_registered",
+                "system_start",
+                "tool_schema_validated",
+                "user_request_received",
+                "verify_result"
+              ]
+            },
+            "dependency_chain": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "policy_steps": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "recovery_paths": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_call_order": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_calls": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            }
+          }
+        },
+        {
+          "fixture_id": "mcp_trace_replay_v1",
+          "degradation_level": "baseline",
+          "expected_admissible": true,
+          "expected_failure_labels": [],
+          "edge_categories": {
+            "capability_boundaries": {
+              "original_edge_count": 3,
+              "replay_edge_count": 3,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "agent",
+                "capability_scope_checked",
+                "execute_external_action",
+                "human_approval",
+                "validate_external_action"
+              ],
+              "replay_nodes": [
+                "agent",
+                "capability_scope_checked",
+                "execute_external_action",
+                "human_approval",
+                "validate_external_action"
+              ]
+            },
+            "causal_dependencies": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "dependencies": {
+              "original_edge_count": 10,
+              "replay_edge_count": 10,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [
+                "capability_scope_checked",
+                "execute_external_action",
+                "read_context",
+                "recovery_path_registered",
+                "system_start",
+                "tool_schema_validated",
+                "user_request_received",
+                "validate_external_action",
+                "verify_result"
+              ],
+              "replay_nodes": [
+                "capability_scope_checked",
+                "execute_external_action",
+                "read_context",
+                "recovery_path_registered",
+                "system_start",
+                "tool_schema_validated",
+                "user_request_received",
+                "validate_external_action",
+                "verify_result"
+              ]
+            },
+            "dependency_chain": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "policy_steps": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "recovery_paths": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_call_order": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            },
+            "tool_calls": {
+              "original_edge_count": 0,
+              "replay_edge_count": 0,
+              "missing_edges": [],
+              "added_edges": [],
+              "missing_nodes": [],
+              "added_nodes": [],
+              "original_nodes": [],
+              "replay_nodes": []
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "global_summary": {
+    "family_count": 4,
+    "fixture_count": 16,
+    "total_missing_edges": 36,
+    "total_added_edges": 10,
+    "deterministic_evaluation": true,
+    "llm_judges": "none",
+    "external_apis": "none"
+  }
+}

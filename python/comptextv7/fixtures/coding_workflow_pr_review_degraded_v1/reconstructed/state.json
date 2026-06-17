@@ -1,0 +1,28 @@
+{
+  "evidence": {
+    "pr_id": "PR-122-fixture",
+    "test_suite": "unit",
+    "security_gate": "required"
+  },
+  "constraints": {
+    "requires_human_review": true,
+    "requires_clean_tests_before_merge": true
+  },
+  "blockers": [
+    "test_failure",
+    "security_scan_failed",
+    "deploy_blocked"
+  ],
+  "recovery_paths": {
+    "test_failure": [
+      "rollback",
+      "escalate_to_human"
+    ]
+  },
+  "dependencies": {
+    "merge": [
+      "human_review",
+      "run_tests"
+    ]
+  }
+}

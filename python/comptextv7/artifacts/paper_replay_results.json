@@ -1,0 +1,75 @@
+{
+  "aggregate": {
+    "avg_compression_ratio": 1.347063,
+    "avg_entity_retention_rate": 0.86526,
+    "avg_evidence_survival_rate": 0.833333,
+    "avg_high_critical_evidence_survival_rate": 0.0,
+    "avg_limitation_survival_rate": 0.772727,
+    "avg_metric_survival_rate": 0.850446,
+    "avg_replay_consistency": 0.791667,
+    "avg_section_survival_rate": 0.888889,
+    "failure_labels": [
+      "EVIDENCE_LOSS"
+    ],
+    "paper_count": 3
+  },
+  "benchmark": "paper_replay_bench",
+  "papers": [
+    {
+      "compact_token_count": 153,
+      "compression_ratio": 1.424837,
+      "entity_retention_rate": 0.863636,
+      "evidence_survival_rate": 0.5,
+      "evidence_survived": 1,
+      "evidence_total": 2,
+      "failure_labels": [
+        "EVIDENCE_LOSS"
+      ],
+      "has_evidence": true,
+      "high_critical_evidence_survival_rate": 0.0,
+      "limitation_survival_rate": 0.75,
+      "metric_survival_rate": 0.774194,
+      "original_token_count": 218,
+      "paper": "PrefixGuard",
+      "replay_consistency": 0.75,
+      "replay_token_count": 164,
+      "section_survival_rate": 0.833333
+    },
+    {
+      "compact_token_count": 159,
+      "compression_ratio": 1.283019,
+      "entity_retention_rate": 0.875,
+      "evidence_survival_rate": 1.0,
+      "evidence_survived": 2,
+      "evidence_total": 2,
+      "failure_labels": [],
+      "has_evidence": true,
+      "high_critical_evidence_survival_rate": 0.0,
+      "limitation_survival_rate": 0.75,
+      "metric_survival_rate": 0.857143,
+      "original_token_count": 204,
+      "paper": "FATE",
+      "replay_consistency": 0.875,
+      "replay_token_count": 169,
+      "section_survival_rate": 1.0
+    },
+    {
+      "compact_token_count": 153,
+      "compression_ratio": 1.333333,
+      "entity_retention_rate": 0.857143,
+      "evidence_survival_rate": 1.0,
+      "evidence_survived": 2,
+      "evidence_total": 2,
+      "failure_labels": [],
+      "has_evidence": true,
+      "high_critical_evidence_survival_rate": 0.0,
+      "limitation_survival_rate": 0.818182,
+      "metric_survival_rate": 0.92,
+      "original_token_count": 204,
+      "paper": "Self-Consolidating Language Models",
+      "replay_consistency": 0.75,
+      "replay_token_count": 166,
+      "section_survival_rate": 0.833333
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "source_repo": "ProfRandom92/Comptext-Daimler-Experiment-",
+  "target_repo": "ProfRandom92/Comptextv7",
+  "report_type": "benchmark_summary",
+  "synthetic": true,
+  "generated_at": "2026-01-01T00:00:00Z",
+  "endpoint": "/api/dashboard",
+  "metrics": {
+    "p50_ms": 12.0,
+    "p95_ms": 95.0,
+    "p99_ms": 180.0,
+    "rps": 105.4,
+    "error_rate": 0.0,
+    "payload_size_bytes": 2048
+  },
+  "status": "pass",
+  "notes": "Synthetic benchmark example only; no real payloads or customer data."
+}

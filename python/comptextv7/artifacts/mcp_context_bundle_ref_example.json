@@ -1,0 +1,48 @@
+{
+  "artifact_id": "mcp_context_bundle_ref_example_v1",
+  "bundle": {
+    "branch": "feat/mcp-context-bundle-ref-example",
+    "changed_files": [
+      "artifacts/mcp_context_bundle_ref_example.json",
+      "scripts/generate_mcp_context_bundle_ref_example.py",
+      "tests/test_agent_artifact_bundle.py"
+    ],
+    "mcp_context_output_ref": "artifacts/mcp_context_layer_example.json",
+    "ok": true,
+    "result": "PASS",
+    "safe_pr_gate": {
+      "allow_dirty": false,
+      "allowed_prefixes": [],
+      "branch": "feat/mcp-context-bundle-ref-example",
+      "changed_paths": [
+        "artifacts/mcp_context_bundle_ref_example.json",
+        "scripts/generate_mcp_context_bundle_ref_example.py",
+        "tests/test_agent_artifact_bundle.py"
+      ],
+      "ok": true,
+      "problems": [],
+      "result": "PASS",
+      "status_short": []
+    },
+    "validation_evidence": [
+      {
+        "command": "python -m compileall -q scripts/agent_artifact_bundle.py scripts/generate_mcp_context_bundle_ref_example.py",
+        "result": "pass"
+      },
+      {
+        "command": "pytest tests/test_agent_artifact_bundle.py -q",
+        "result": "pass"
+      },
+      {
+        "command": "python scripts/validate_agent_artifact_bundle.py --bundle artifacts/mcp_context_bundle_ref_example.json",
+        "result": "pass"
+      }
+    ]
+  },
+  "evaluation_mode": "deterministic",
+  "external_apis": "none",
+  "generated_by": "McpContextBundleRefExampleGenerator",
+  "llm_judges": "none",
+  "schema_version": "mcp_context_bundle_ref_example.v1",
+  "version": "1.0"
+}

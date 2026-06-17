@@ -1,0 +1,20 @@
+{
+  "case_id": "SPARK-2026-0042",
+  "document_type": "BImSchG-Genehmigungsantrag",
+  "authority": "Staatliches Amt fuer Umwelt und Arbeitsschutz",
+  "procedure_type": "Vereinfachtes Verfahren",
+  "applicant": "Nordwind Energie GmbH",
+  "extraction": {
+    "fields": {
+      "parcel_id": "DE-NI-004-9872",
+      "location": "Gemarkung Neustadt, Flur 12, Flueck 5",
+      "project_type": "Errichtung Windkraftanlage WKA-03",
+      "decision_recommendation": "Zustimmung mit Nebenbestimmungen zur Schallemission"
+    },
+    "confidence": 0.945,
+    "notes": "Static test case for planning approval acceleration pipeline."
+  },
+  "metadata": {
+    "source_pdf_sha256": "8f395d98a72b0c3cf0d262e3b8a3e03d428e253f1bdf4cfa489d2b5801d3b46fc"
+  }
+}

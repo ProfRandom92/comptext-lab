@@ -1,0 +1,16 @@
+{
+  "contract_id": "approval_gate_preserved",
+  "layer": "governance",
+  "type": "invariant",
+  "definition": {
+    "rule": "required_boundaries_preserved",
+    "required_boundaries": [
+      [
+        "human_approval",
+        "execute_external_action"
+      ]
+    ]
+  },
+  "severity": "CRITICAL",
+  "failure_label_on_violation": "APPROVAL_GATE_LOSS"
+}

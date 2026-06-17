@@ -1,0 +1,257 @@
+{
+  "artifact_id": "replay_semantic_integrity_results_v1",
+  "generated_by": "ReplaySemanticIntegrityArtifactGenerator",
+  "version": "1.0",
+  "evaluation_mode": "deterministic",
+  "llm_judges": "none",
+  "external_apis": "none",
+  "families": [
+    {
+      "family": "coding_workflow_pr_review",
+      "fixture_count": 4,
+      "levels": [
+        "baseline",
+        "mild",
+        "moderate",
+        "severe"
+      ],
+      "commitment_classes": {
+        "evidence": {
+          "passed": 0,
+          "failed": 0,
+          "failure_labels": []
+        },
+        "constraints": {
+          "passed": 0,
+          "failed": 0,
+          "failure_labels": []
+        },
+        "dependencies": {
+          "passed": 2,
+          "failed": 2,
+          "failure_labels": [
+            "CAUSAL_DEPENDENCY_LOSS"
+          ]
+        },
+        "recovery_paths": {
+          "passed": 1,
+          "failed": 3,
+          "failure_labels": [
+            "RECOVERY_PATH_INVALID"
+          ]
+        },
+        "tool_order": {
+          "passed": 3,
+          "failed": 1,
+          "failure_labels": [
+            "POLICY_ORDER_BROKEN"
+          ]
+        },
+        "capability_boundaries": {
+          "passed": 0,
+          "failed": 0,
+          "failure_labels": []
+        },
+        "governance_or_policy": {
+          "passed": 0,
+          "failed": 0,
+          "failure_labels": []
+        },
+        "invariants": {
+          "passed": 3,
+          "failed": 1,
+          "failure_labels": [
+            "INVARIANT_VIOLATION"
+          ]
+        }
+      }
+    },
+    {
+      "family": "incident_response_page_triage",
+      "fixture_count": 4,
+      "levels": [
+        "baseline",
+        "mild",
+        "moderate",
+        "severe"
+      ],
+      "commitment_classes": {
+        "evidence": {
+          "passed": 0,
+          "failed": 0,
+          "failure_labels": []
+        },
+        "constraints": {
+          "passed": 0,
+          "failed": 0,
+          "failure_labels": []
+        },
+        "dependencies": {
+          "passed": 3,
+          "failed": 1,
+          "failure_labels": [
+            "CAUSAL_DEPENDENCY_LOSS"
+          ]
+        },
+        "recovery_paths": {
+          "passed": 1,
+          "failed": 3,
+          "failure_labels": [
+            "RECOVERY_PATH_INVALID"
+          ]
+        },
+        "tool_order": {
+          "passed": 3,
+          "failed": 1,
+          "failure_labels": [
+            "POLICY_ORDER_BROKEN"
+          ]
+        },
+        "capability_boundaries": {
+          "passed": 0,
+          "failed": 0,
+          "failure_labels": []
+        },
+        "governance_or_policy": {
+          "passed": 0,
+          "failed": 0,
+          "failure_labels": []
+        },
+        "invariants": {
+          "passed": 2,
+          "failed": 2,
+          "failure_labels": [
+            "INVARIANT_VIOLATION"
+          ]
+        }
+      }
+    },
+    {
+      "family": "cross_domain_operational_dependency_workflow",
+      "fixture_count": 4,
+      "levels": [
+        "baseline",
+        "mild",
+        "moderate",
+        "severe"
+      ],
+      "commitment_classes": {
+        "evidence": {
+          "passed": 0,
+          "failed": 0,
+          "failure_labels": []
+        },
+        "constraints": {
+          "passed": 0,
+          "failed": 0,
+          "failure_labels": []
+        },
+        "dependencies": {
+          "passed": 2,
+          "failed": 2,
+          "failure_labels": [
+            "CAUSAL_DEPENDENCY_LOSS"
+          ]
+        },
+        "recovery_paths": {
+          "passed": 1,
+          "failed": 3,
+          "failure_labels": [
+            "RECOVERY_PATH_INVALID"
+          ]
+        },
+        "tool_order": {
+          "passed": 0,
+          "failed": 0,
+          "failure_labels": []
+        },
+        "capability_boundaries": {
+          "passed": 0,
+          "failed": 0,
+          "failure_labels": []
+        },
+        "governance_or_policy": {
+          "passed": 3,
+          "failed": 1,
+          "failure_labels": [
+            "POLICY_ORDER_BROKEN"
+          ]
+        },
+        "invariants": {
+          "passed": 1,
+          "failed": 3,
+          "failure_labels": [
+            "INVARIANT_VIOLATION"
+          ]
+        }
+      }
+    },
+    {
+      "family": "mcp_trace_replay",
+      "fixture_count": 4,
+      "levels": [
+        "baseline",
+        "mild",
+        "moderate",
+        "severe"
+      ],
+      "commitment_classes": {
+        "evidence": {
+          "passed": 0,
+          "failed": 0,
+          "failure_labels": []
+        },
+        "constraints": {
+          "passed": 3,
+          "failed": 1,
+          "failure_labels": [
+            "POLICY_ENFORCEMENT_GAP"
+          ]
+        },
+        "dependencies": {
+          "passed": 3,
+          "failed": 1,
+          "failure_labels": [
+            "DEPENDENCY_CHAIN_BREAK"
+          ]
+        },
+        "recovery_paths": {
+          "passed": 4,
+          "failed": 0,
+          "failure_labels": []
+        },
+        "tool_order": {
+          "passed": 4,
+          "failed": 0,
+          "failure_labels": []
+        },
+        "capability_boundaries": {
+          "passed": 3,
+          "failed": 1,
+          "failure_labels": [
+            "CAPABILITY_BOUNDARY_LOSS"
+          ]
+        },
+        "governance_or_policy": {
+          "passed": 1,
+          "failed": 2,
+          "failure_labels": [
+            "APPROVAL_GATE_LOSS"
+          ]
+        },
+        "invariants": {
+          "passed": 0,
+          "failed": 0,
+          "failure_labels": []
+        }
+      }
+    }
+  ],
+  "global_summary": {
+    "family_count": 4,
+    "fixture_count": 16,
+    "deterministic_evaluation": true,
+    "llm_judges": "none",
+    "external_apis": "none"
+  }
+}

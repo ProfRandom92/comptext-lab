@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
+  <rect x="0" y="0" width="1000" height="560" fill="#ffffff"/>
+  <text x="500.0" y="36" text-anchor="middle" font-size="22" font-family="monospace" fill="#111111">Multi-Family Admissibility Degradation Curves</text>
+  <line x1="90" y1="440" x2="960" y2="440" stroke="#222222" stroke-width="1"/>
+  <line x1="90" y1="70" x2="90" y2="440" stroke="#222222" stroke-width="1"/>
+  <line x1="90" y1="440.000" x2="960" y2="440.000" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="78" y="444.000" text-anchor="end" font-size="12" font-family="monospace" fill="#333333">0.000</text>
+  <line x1="90" y1="255.000" x2="960" y2="255.000" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="78" y="259.000" text-anchor="end" font-size="12" font-family="monospace" fill="#333333">0.500</text>
+  <line x1="90" y1="70.000" x2="960" y2="70.000" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="78" y="74.000" text-anchor="end" font-size="12" font-family="monospace" fill="#333333">1.000</text>
+  <text x="90.000" y="464" text-anchor="middle" font-size="12" font-family="monospace" fill="#222222">baseline</text>
+  <text x="380.000" y="464" text-anchor="middle" font-size="12" font-family="monospace" fill="#222222">mild</text>
+  <text x="670.000" y="464" text-anchor="middle" font-size="12" font-family="monospace" fill="#222222">moderate</text>
+  <text x="960.000" y="464" text-anchor="middle" font-size="12" font-family="monospace" fill="#222222">severe</text>
+  <text x="500.0" y="540" text-anchor="middle" font-size="13" font-family="monospace" fill="#111111">degradation level</text>
+  <text x="20" y="280.0" transform="rotate(-90 20 280.0)" text-anchor="middle" font-size="13" font-family="monospace" fill="#111111">overall_admissibility_score</text>
+  <rect x="690" y="84" width="270" height="102" fill="#f8f8f8" stroke="#cccccc"/>
+  <text x="702" y="104" font-size="12" font-family="monospace" fill="#111111">Families</text>
+  <polyline points="90.000,70.000 380.000,100.833 670.000,131.667 960.000,255.000" fill="none" stroke="#0055aa" stroke-width="3"/>
+  <circle cx="90.000" cy="70.000" r="4" fill="#0055aa"/>
+  <circle cx="380.000" cy="100.833" r="4" fill="#0055aa"/>
+  <circle cx="670.000" cy="131.667" r="4" fill="#0055aa"/>
+  <circle cx="960.000" cy="255.000" r="4" fill="#0055aa"/>
+  <line x1="702" y1="118" x2="726" y2="118" stroke="#0055aa" stroke-width="3"/>
+  <text x="734" y="122" font-size="11" font-family="monospace" fill="#222222">coding_workflow_pr_review</text>
+  <polyline points="90.000,70.000 380.000,131.667 670.000,162.500 960.000,255.000" fill="none" stroke="#aa5500" stroke-width="3"/>
+  <circle cx="90.000" cy="70.000" r="4" fill="#aa5500"/>
+  <circle cx="380.000" cy="131.667" r="4" fill="#aa5500"/>
+  <circle cx="670.000" cy="162.500" r="4" fill="#aa5500"/>
+  <circle cx="960.000" cy="255.000" r="4" fill="#aa5500"/>
+  <line x1="702" y1="136" x2="726" y2="136" stroke="#aa5500" stroke-width="3"/>
+  <text x="734" y="140" font-size="11" font-family="monospace" fill="#222222">cross_domain_operational_dependency_workflow</text>
+  <polyline points="90.000,70.000 380.000,100.833 670.000,131.667 960.000,255.000" fill="none" stroke="#117733" stroke-width="3"/>
+  <circle cx="90.000" cy="70.000" r="4" fill="#117733"/>
+  <circle cx="380.000" cy="100.833" r="4" fill="#117733"/>
+  <circle cx="670.000" cy="131.667" r="4" fill="#117733"/>
+  <circle cx="960.000" cy="255.000" r="4" fill="#117733"/>
+  <line x1="702" y1="154" x2="726" y2="154" stroke="#117733" stroke-width="3"/>
+  <text x="734" y="158" font-size="11" font-family="monospace" fill="#222222">incident_response_page_triage</text>
+  <polyline points="90.000,70.000 380.000,70.000 670.000,193.333 960.000,239.583" fill="none" stroke="#882255" stroke-width="3"/>
+  <circle cx="90.000" cy="70.000" r="4" fill="#882255"/>
+  <circle cx="380.000" cy="70.000" r="4" fill="#882255"/>
+  <circle cx="670.000" cy="193.333" r="4" fill="#882255"/>
+  <circle cx="960.000" cy="239.583" r="4" fill="#882255"/>
+  <line x1="702" y1="172" x2="726" y2="172" stroke="#882255" stroke-width="3"/>
+  <text x="734" y="176" font-size="11" font-family="monospace" fill="#222222">mcp_trace_replay</text>
+</svg>

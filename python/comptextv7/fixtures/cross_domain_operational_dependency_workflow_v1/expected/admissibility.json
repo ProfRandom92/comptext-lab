@@ -1,0 +1,12 @@
+{
+  "fixture_id": "cross_domain_operational_dependency_workflow_v1",
+  "fixture_version": "1.0.0",
+  "expected_admissible": true,
+  "must_hold_contracts": [
+    "policy_ordering_governance_before_deploy",
+    "dependency_chain_preserved",
+    "recovery_or_rollback_reachable",
+    "no_orphan_operational_steps"
+  ],
+  "expected_failure_labels": []
+}

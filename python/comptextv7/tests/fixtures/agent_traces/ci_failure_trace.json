@@ -1,0 +1,55 @@
+{
+  "trace": "ci_failure_trace",
+  "scenario": "Recover a cloud CI failure caused by an unstable generated artifact and missing deterministic ordering checks.",
+  "tasks": [
+    {"id": "ci-001", "title": "Reproduce CI failure locally", "status": "completed", "details": "Run pytest and py_compile to capture exact failure output without invoking external services."},
+    {"id": "ci-002", "title": "Identify nondeterministic artifact ordering", "status": "completed", "details": "Compare generated JSON order against committed artifact and locate unordered dictionary/list construction."},
+    {"id": "ci-003", "title": "Patch stable serialization path", "status": "active", "details": "Sort trace rows and aggregate keys before writing artifact."},
+    {"id": "ci-004", "title": "Regenerate benchmark artifact", "status": "pending", "details": "Run benchmark generation after tests pass so CI diffs are reviewable."}
+  ],
+  "decisions": [
+    "Treat CI artifact drift as an operational continuity failure, not as a flaky test exception.",
+    "Use deterministic serialization and stable trace ordering instead of timestamps.",
+    "Keep the benchmark offline so pull requests remain reproducible."
+  ],
+  "constraints": [
+    "No network access is required for CI replay validation.",
+    "No wall clock timestamps may appear in artifact rows.",
+    "All metrics must be mathematically recomputable from original and replayed fields.",
+    "Failure recovery must be represented explicitly in replay state."
+  ],
+  "tool_calls": [
+    {"index": 1, "tool": "pytest", "command": "pytest", "result": "failure", "failure": "artifact ordering assertion failed"},
+    {"index": 2, "tool": "shell", "command": "python -m py_compile tests/utils/agent_trace_replay_runner.py", "result": "success"},
+    {"index": 3, "tool": "shell", "command": "python tests/utils/agent_trace_replay_runner.py", "result": "success"},
+    {"index": 4, "tool": "pytest", "command": "pytest tests/test_agent_trace_replay.py", "result": "success"}
+  ],
+  "failures": [
+    "CI reported a deterministic artifact mismatch.",
+    "Trace rows were emitted in filesystem discovery order instead of benchmark-defined order."
+  ],
+  "recoveries": [
+    "Define TRACE_SPECS as an explicit tuple for ordering.",
+    "Serialize artifacts with sort_keys=True and an ending newline.",
+    "Add a stable ordering test for trace names."
+  ],
+  "architecture_references": [
+    {"node": "TRACE_SPECS", "role": "source of stable benchmark row ordering"},
+    {"node": "stable_json_dump", "role": "artifact diff friendliness"},
+    {"node": "build_agent_trace_replay_artifact", "role": "aggregate and per-trace schema construction"}
+  ],
+  "deployment_requirements": [
+    "CI must run without service credentials.",
+    "Generated artifact must not include host-specific paths.",
+    "Tests must validate fixed precision and metric bounds."
+  ],
+  "unresolved_blockers": [
+    "Full-suite runtime may expose unrelated tests outside this focused benchmark.",
+    "Artifact consumers must switch to the new benchmark name before depending on it."
+  ],
+  "dependencies": [
+    {"id": "ci-dep-001", "from": "ci-003", "to": "ci-002", "type": "requires", "detail": "Patch depends on locating unstable ordering source."},
+    {"id": "ci-dep-002", "from": "ci-004", "to": "ci-003", "type": "requires", "detail": "Artifact regeneration depends on stable serialization patch."}
+  ],
+  "transcript_noise": "Discussion about local shell themes, terminal dimensions, and previous branch names is intentionally excluded from operational replay fields."
+}

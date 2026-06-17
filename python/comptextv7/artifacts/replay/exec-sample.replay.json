@@ -1,0 +1,127 @@
+{
+  "artifactId": "artifact-sample-1",
+  "compressionSignalMappings": [
+    {
+      "associatedStepIds": [
+        "step-1"
+      ],
+      "windowId": "signal-stable-known-family"
+    },
+    {
+      "associatedStepIds": [],
+      "windowId": "signal-minor-fluctuation"
+    },
+    {
+      "associatedStepIds": [],
+      "windowId": "signal-sparse-signature-spike-a"
+    },
+    {
+      "associatedStepIds": [],
+      "windowId": "signal-sparse-signature-spike-b"
+    },
+    {
+      "associatedStepIds": [],
+      "windowId": "signal-severe-unknown-pattern"
+    }
+  ],
+  "compressionSummary": {
+    "averageCompressionRatio": 0.49000000000000005,
+    "mappedStepCount": 1,
+    "totalSignals": 5,
+    "totalTokenIn": null,
+    "totalTokenOut": null,
+    "triggeredSignals": 2,
+    "unmappedReasons": [],
+    "unmappedStepCount": 0
+  },
+  "createdAt": "2026-05-15T00:00:10.000Z",
+  "eventFingerprints": [
+    {
+      "compactPayloadHash": "fnv1a:6f534689",
+      "eventType": "context.selected",
+      "executionId": "exec-sample",
+      "inputRefIds": [],
+      "normalizationVersion": 1,
+      "outputRefIds": [
+        "ctx-nv1aa2344109"
+      ],
+      "status": "succeeded",
+      "stepId": "step-1",
+      "timestamp": "2026-05-15T00:00:02.000Z",
+      "tokenIn": 18,
+      "tokenOut": 0
+    }
+  ],
+  "executionId": "exec-sample",
+  "integrity": {
+    "artifactHash": "fnv1a:f63b8a04",
+    "artifactHashAlgorithm": "fnv1a-32",
+    "deterministicSerializationVersion": 1,
+    "normalizationVersion": 1
+  },
+  "referenceIndex": {
+    "entries": [
+      {
+        "createdAt": "2026-05-15T00:00:00.000Z",
+        "hash": "fnv1a:a2344109",
+        "id": "ctx-nv1aa2344109",
+        "relevanceScore": 0.95,
+        "resolver": "static-sample",
+        "summary": "CompTextv7 keeps execution observable through compact semantic references.",
+        "tokenEstimate": 18,
+        "type": "ctx",
+        "uri": "ctx://example/core-promise"
+      }
+    ]
+  },
+  "replaySnapshots": [
+    {
+      "artifactRefs": [],
+      "executionId": "exec-sample",
+      "inputRefIds": [],
+      "memoryRefIds": [],
+      "outputRefIds": [
+        "ctx-nv1aa2344109"
+      ],
+      "snapshotId": "snapshot-9761bbe2",
+      "stateHash": "fnv1a:9761bbe2",
+      "stepId": "step-1",
+      "timestamp": "2026-05-15T00:00:02.000Z",
+      "tokenIn": 18,
+      "tokenOut": 0,
+      "toolCallRefs": []
+    }
+  ],
+  "replayTimelineSummary": {
+    "eventCount": 1,
+    "eventTypeCounts": {
+      "agent.thinking": 0,
+      "command.executed": 0,
+      "context.selected": 1,
+      "diff.generated": 0,
+      "execution.completed": 0,
+      "execution.failed": 0,
+      "execution.started": 0,
+      "file.read": 0,
+      "memory.injected": 0,
+      "quality.evaluated": 0,
+      "replay.snapshot.created": 0,
+      "test.finished": 0,
+      "tool.called": 0
+    },
+    "executionId": "exec-sample",
+    "inputRefIds": [],
+    "outputRefIds": [
+      "ctx-nv1aa2344109"
+    ],
+    "startedAt": "2026-05-15T00:00:02.000Z",
+    "status": "succeeded",
+    "stepIds": [
+      "step-1"
+    ],
+    "totalLatencyMs": 3,
+    "totalTokenIn": 18,
+    "totalTokenOut": 0
+  },
+  "schemaVersion": "v1-alpha.1"
+}

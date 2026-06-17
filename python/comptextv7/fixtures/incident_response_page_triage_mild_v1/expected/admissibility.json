@@ -1,0 +1,12 @@
+{
+  "fixture_id": "incident_response_page_triage_mild_v1",
+  "fixture_version": "1.0.0",
+  "expected_admissible": false,
+  "must_hold_contracts": [],
+  "must_fail_contracts": [
+    "rollback_reachable"
+  ],
+  "expected_failure_labels": [
+    "RECOVERY_PATH_INVALID"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "fixture_id": "coding_workflow_pr_review_mild_v1",
+  "fixture_version": "1.0.0",
+  "expected_admissible": false,
+  "expected_layer_scores": {
+    "structural": 1.0,
+    "relational": 0.6666666666666666,
+    "operational": 1.0,
+    "governance": 1.0
+  },
+  "notes": "Mild degraded fixture isolating recovery-path reachability loss.",
+  "must_fail_contracts": [
+    "recovery_path_available"
+  ],
+  "expected_failure_labels": [
+    "RECOVERY_PATH_INVALID"
+  ]
+}

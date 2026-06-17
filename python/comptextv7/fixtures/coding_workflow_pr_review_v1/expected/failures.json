@@ -1,0 +1,15 @@
+{
+  "expected_failures": [],
+  "allowed_failures": [],
+  "disallowed_failures": [
+    "POLICY_ORDER_BROKEN",
+    "RECOVERY_PATH_INVALID",
+    "CAUSAL_DEPENDENCY_LOSS",
+    "INVARIANT_VIOLATION",
+    "ORPHAN_DEPENDENCY",
+    "DETACHED_DEPENDENCY",
+    "GRAPH_FRAGMENTATION",
+    "TEMPORAL_ORDER_VIOLATION",
+    "CYCLE_INTRODUCED"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "events": [
+    {
+      "action": "user_request_received",
+      "step": 1
+    },
+    {
+      "action": "capability_scope_checked",
+      "step": 2
+    },
+    {
+      "action": "tool_schema_validated",
+      "step": 3
+    },
+    {
+      "action": "read_context",
+      "step": 4
+    },
+    {
+      "action": "validate_external_action",
+      "step": 5
+    },
+    {
+      "action": "execute_external_action",
+      "step": 6
+    },
+    {
+      "action": "verify_result",
+      "step": 7
+    },
+    {
+      "action": "recovery_path_registered",
+      "step": 8
+    }
+  ]
+}

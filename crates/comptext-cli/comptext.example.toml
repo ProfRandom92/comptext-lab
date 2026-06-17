@@ -1,0 +1,39 @@
+[defaults]
+provider = "dummy"
+dry_run_default = true
+proposal_required = true
+
+[providers.dummy]
+kind = "dummy"
+network = false
+
+[providers.ollama-local]
+kind = "ollama"
+base_url = "http://localhost:11434"
+auth = "none"
+
+[providers.ollama-cloud-via-local]
+kind = "ollama"
+base_url = "http://localhost:11434"
+auth = "ollama_signin"
+model_suffix = "-cloud"
+
+[providers.ollama-cloud-direct]
+kind = "ollama"
+base_url = "https://ollama.com"
+auth_env = "OLLAMA_API_KEY"
+
+
+[providers.openai-compatible]
+kind = "openai-compatible"
+base_url = "http://localhost:11434/v1"
+model = "gpt-4o"
+auth_env = "OPTIONAL_API_KEY"
+network = false
+
+
+[policy]
+network_default = "deny"
+allow_provider_network = false
+secrets_redaction = true
+apply_requires_confirmation = true

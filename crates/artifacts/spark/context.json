@@ -1,0 +1,79 @@
+{
+  "context_id": "fd4727072ace7e6e9e8d949fadcabec71dec9d1de064197a128d4fe03aba2fc2",
+  "source_package_hash": "a131b6fb891ca72b62076e6c2225426443e5c4db47c3695f2db43be9535aeb4a",
+  "schema_name": "genehmigung_v1",
+  "schema_version": 1,
+  "required_field_paths": [
+    "$.applicant",
+    "$.authority",
+    "$.case_id",
+    "$.document_type",
+    "$.extraction.fields.decision_recommendation",
+    "$.extraction.fields.location",
+    "$.extraction.fields.parcel_id",
+    "$.extraction.fields.project_type",
+    "$.metadata.source_pdf_sha256",
+    "$.procedure_type"
+  ],
+  "satisfied_field_paths": [
+    "$.applicant",
+    "$.authority",
+    "$.case_id",
+    "$.document_type",
+    "$.extraction.fields.decision_recommendation",
+    "$.extraction.fields.location",
+    "$.extraction.fields.parcel_id",
+    "$.extraction.fields.project_type",
+    "$.metadata.source_pdf_sha256",
+    "$.procedure_type"
+  ],
+  "missing_field_paths": [],
+  "constraints": [
+    "deterministic_replay_only",
+    "no_raw_payload_dump",
+    "schema_required_fields_must_exist",
+    "synthetic_fixture_only"
+  ],
+  "required_order": [
+    "context_built",
+    "package_verified",
+    "schema_checked",
+    "schema_loaded"
+  ],
+  "dependency_edges": [
+    {
+      "source": "package_verified",
+      "target": "schema_checked"
+    },
+    {
+      "source": "schema_checked",
+      "target": "context_built"
+    },
+    {
+      "source": "schema_loaded",
+      "target": "schema_checked"
+    }
+  ],
+  "blockers": [
+    {
+      "source": "missing_required_field",
+      "target": "context_built"
+    }
+  ],
+  "recovery_paths": [
+    {
+      "source": "missing_required_field",
+      "target": "schema_check_failure_reported"
+    }
+  ],
+  "validation": {
+    "valid": true,
+    "failure_labels": [],
+    "issues": []
+  },
+  "non_claims": [
+    "not_eu_ai_act_compliance",
+    "not_legal_completeness_check",
+    "not_official_spark_schema"
+  ]
+}

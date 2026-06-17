@@ -1,0 +1,185 @@
+{
+  "manifest_id": "mcp_trace_corruption_manifest_v1",
+  "version": "1.0",
+  "allowed_operators": [
+    "DROP_APPROVAL_GATE",
+    "SWAP_TOOL_ORDER",
+    "TRUNCATE_RECOVERY_PATH",
+    "REMOVE_DEPENDENCY_EDGE",
+    "INSERT_UNVALIDATED_ACTION",
+    "COLLAPSE_CAPABILITY_BOUNDARY"
+  ],
+  "corruptions": [
+    {
+      "corruption_id": "mcp_trace_replay_degraded_v1::collapse_capability_boundary",
+      "source_fixture": "fixtures/mcp_trace_replay_degraded_v1",
+      "operator": "COLLAPSE_CAPABILITY_BOUNDARY",
+      "expected_failure_label": "CAPABILITY_BOUNDARY_LOSS",
+      "expected_contract_violation": "capability_boundary_respected",
+      "deterministic": true,
+      "notes": "Collapse state capability boundary by removing enforcement link."
+    },
+    {
+      "corruption_id": "mcp_trace_replay_degraded_v1::drop_approval_gate",
+      "source_fixture": "fixtures/mcp_trace_replay_degraded_v1",
+      "operator": "DROP_APPROVAL_GATE",
+      "expected_failure_label": "APPROVAL_GATE_LOSS",
+      "expected_contract_violation": "validation_before_unsafe_action",
+      "deterministic": true,
+      "notes": "Remove explicit human approval gate from state capability boundaries."
+    },
+    {
+      "corruption_id": "mcp_trace_replay_degraded_v1::insert_unvalidated_action",
+      "source_fixture": "fixtures/mcp_trace_replay_degraded_v1",
+      "operator": "INSERT_UNVALIDATED_ACTION",
+      "expected_failure_label": "POLICY_ENFORCEMENT_GAP",
+      "expected_contract_violation": "validation_before_unsafe_action",
+      "deterministic": true,
+      "notes": "Insert execute action before validation step in trace ordering."
+    },
+    {
+      "corruption_id": "mcp_trace_replay_degraded_v1::remove_dependency_edge",
+      "source_fixture": "fixtures/mcp_trace_replay_degraded_v1",
+      "operator": "REMOVE_DEPENDENCY_EDGE",
+      "expected_failure_label": "DEPENDENCY_CHAIN_BREAK",
+      "expected_contract_violation": "dependency_chain_preserved",
+      "deterministic": true,
+      "notes": "Remove a required prerequisite edge in dependency graph."
+    },
+    {
+      "corruption_id": "mcp_trace_replay_degraded_v1::swap_tool_order",
+      "source_fixture": "fixtures/mcp_trace_replay_degraded_v1",
+      "operator": "SWAP_TOOL_ORDER",
+      "expected_failure_label": "TOOL_ORDER_VIOLATION",
+      "expected_contract_violation": "tool_call_order_preserved",
+      "deterministic": true,
+      "notes": "Swap consecutive tool/validation steps in trace to violate deterministic order."
+    },
+    {
+      "corruption_id": "mcp_trace_replay_degraded_v1::truncate_recovery_path",
+      "source_fixture": "fixtures/mcp_trace_replay_degraded_v1",
+      "operator": "TRUNCATE_RECOVERY_PATH",
+      "expected_failure_label": "RECOVERY_PATH_INVALID",
+      "expected_contract_violation": "recovery_path_available",
+      "deterministic": true,
+      "notes": "Drop the terminal recovery event from trace path."
+    },
+    {
+      "corruption_id": "mcp_trace_replay_mild_v1::collapse_capability_boundary",
+      "source_fixture": "fixtures/mcp_trace_replay_mild_v1",
+      "operator": "COLLAPSE_CAPABILITY_BOUNDARY",
+      "expected_failure_label": "CAPABILITY_BOUNDARY_LOSS",
+      "expected_contract_violation": "capability_boundary_respected",
+      "deterministic": true,
+      "notes": "Collapse state capability boundary by removing enforcement link."
+    },
+    {
+      "corruption_id": "mcp_trace_replay_mild_v1::drop_approval_gate",
+      "source_fixture": "fixtures/mcp_trace_replay_mild_v1",
+      "operator": "DROP_APPROVAL_GATE",
+      "expected_failure_label": "APPROVAL_GATE_LOSS",
+      "expected_contract_violation": "validation_before_unsafe_action",
+      "deterministic": true,
+      "notes": "Remove explicit human approval gate from state capability boundaries."
+    },
+    {
+      "corruption_id": "mcp_trace_replay_mild_v1::insert_unvalidated_action",
+      "source_fixture": "fixtures/mcp_trace_replay_mild_v1",
+      "operator": "INSERT_UNVALIDATED_ACTION",
+      "expected_failure_label": "POLICY_ENFORCEMENT_GAP",
+      "expected_contract_violation": "validation_before_unsafe_action",
+      "deterministic": true,
+      "notes": "Insert execute action before validation step in trace ordering."
+    },
+    {
+      "corruption_id": "mcp_trace_replay_mild_v1::remove_dependency_edge",
+      "source_fixture": "fixtures/mcp_trace_replay_mild_v1",
+      "operator": "REMOVE_DEPENDENCY_EDGE",
+      "expected_failure_label": "DEPENDENCY_CHAIN_BREAK",
+      "expected_contract_violation": "dependency_chain_preserved",
+      "deterministic": true,
+      "notes": "Remove a required prerequisite edge in dependency graph."
+    },
+    {
+      "corruption_id": "mcp_trace_replay_mild_v1::swap_tool_order",
+      "source_fixture": "fixtures/mcp_trace_replay_mild_v1",
+      "operator": "SWAP_TOOL_ORDER",
+      "expected_failure_label": "TOOL_ORDER_VIOLATION",
+      "expected_contract_violation": "tool_call_order_preserved",
+      "deterministic": true,
+      "notes": "Swap consecutive tool/validation steps in trace to violate deterministic order."
+    },
+    {
+      "corruption_id": "mcp_trace_replay_mild_v1::truncate_recovery_path",
+      "source_fixture": "fixtures/mcp_trace_replay_mild_v1",
+      "operator": "TRUNCATE_RECOVERY_PATH",
+      "expected_failure_label": "RECOVERY_PATH_INVALID",
+      "expected_contract_violation": "recovery_path_available",
+      "deterministic": true,
+      "notes": "Drop the terminal recovery event from trace path."
+    },
+    {
+      "corruption_id": "mcp_trace_replay_moderate_v1::collapse_capability_boundary",
+      "source_fixture": "fixtures/mcp_trace_replay_moderate_v1",
+      "operator": "COLLAPSE_CAPABILITY_BOUNDARY",
+      "expected_failure_label": "CAPABILITY_BOUNDARY_LOSS",
+      "expected_contract_violation": "capability_boundary_respected",
+      "deterministic": true,
+      "notes": "Collapse state capability boundary by removing enforcement link."
+    },
+    {
+      "corruption_id": "mcp_trace_replay_moderate_v1::drop_approval_gate",
+      "source_fixture": "fixtures/mcp_trace_replay_moderate_v1",
+      "operator": "DROP_APPROVAL_GATE",
+      "expected_failure_label": "APPROVAL_GATE_LOSS",
+      "expected_contract_violation": "validation_before_unsafe_action",
+      "deterministic": true,
+      "notes": "Remove explicit human approval gate from state capability boundaries."
+    },
+    {
+      "corruption_id": "mcp_trace_replay_moderate_v1::insert_unvalidated_action",
+      "source_fixture": "fixtures/mcp_trace_replay_moderate_v1",
+      "operator": "INSERT_UNVALIDATED_ACTION",
+      "expected_failure_label": "POLICY_ENFORCEMENT_GAP",
+      "expected_contract_violation": "validation_before_unsafe_action",
+      "deterministic": true,
+      "notes": "Insert execute action before validation step in trace ordering."
+    },
+    {
+      "corruption_id": "mcp_trace_replay_moderate_v1::remove_dependency_edge",
+      "source_fixture": "fixtures/mcp_trace_replay_moderate_v1",
+      "operator": "REMOVE_DEPENDENCY_EDGE",
+      "expected_failure_label": "DEPENDENCY_CHAIN_BREAK",
+      "expected_contract_violation": "dependency_chain_preserved",
+      "deterministic": true,
+      "notes": "Remove a required prerequisite edge in dependency graph."
+    },
+    {
+      "corruption_id": "mcp_trace_replay_moderate_v1::swap_tool_order",
+      "source_fixture": "fixtures/mcp_trace_replay_moderate_v1",
+      "operator": "SWAP_TOOL_ORDER",
+      "expected_failure_label": "TOOL_ORDER_VIOLATION",
+      "expected_contract_violation": "tool_call_order_preserved",
+      "deterministic": true,
+      "notes": "Swap consecutive tool/validation steps in trace to violate deterministic order."
+    },
+    {
+      "corruption_id": "mcp_trace_replay_moderate_v1::truncate_recovery_path",
+      "source_fixture": "fixtures/mcp_trace_replay_moderate_v1",
+      "operator": "TRUNCATE_RECOVERY_PATH",
+      "expected_failure_label": "RECOVERY_PATH_INVALID",
+      "expected_contract_violation": "recovery_path_available",
+      "deterministic": true,
+      "notes": "Drop the terminal recovery event from trace path."
+    }
+  ],
+  "summary": {
+    "fixture_count": 3,
+    "corruption_count": 18,
+    "skipped_operator_count": 0,
+    "skipped_operators": [],
+    "deterministic_evaluation": true,
+    "llm_judges": "none",
+    "external_apis": "none"
+  }
+}

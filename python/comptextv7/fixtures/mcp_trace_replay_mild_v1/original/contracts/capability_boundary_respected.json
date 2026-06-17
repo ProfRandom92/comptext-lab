@@ -1,0 +1,16 @@
+{
+  "contract_id": "capability_boundary_respected",
+  "layer": "relational",
+  "type": "invariant",
+  "definition": {
+    "rule": "required_boundaries_preserved",
+    "required_boundaries": [
+      [
+        "capability_scope_checked",
+        "validate_external_action"
+      ]
+    ]
+  },
+  "severity": "HIGH",
+  "failure_label_on_violation": "CAPABILITY_BOUNDARY_LOSS"
+}

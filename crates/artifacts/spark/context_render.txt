@@ -1,0 +1,55 @@
+================================================================================
+SPARK OPERATIONAL CONTEXT
+================================================================================
+Context ID: fd4727072ace7e6e9e8d949fadcabec71dec9d1de064197a128d4fe03aba2fc2
+Source Package Hash: a131b6fb891ca72b62076e6c2225426443e5c4db47c3695f2db43be9535aeb4a
+Schema Name: genehmigung_v1 (v1)
+Validation Status: valid
+--------------------------------------------------------------------------------
+Required field paths (10):
+- $.applicant
+- $.authority
+- $.case_id
+- $.document_type
+- $.extraction.fields.decision_recommendation
+- $.extraction.fields.location
+- $.extraction.fields.parcel_id
+- $.extraction.fields.project_type
+- $.metadata.source_pdf_sha256
+- $.procedure_type
+Satisfied field paths (10):
+- $.applicant
+- $.authority
+- $.case_id
+- $.document_type
+- $.extraction.fields.decision_recommendation
+- $.extraction.fields.location
+- $.extraction.fields.parcel_id
+- $.extraction.fields.project_type
+- $.metadata.source_pdf_sha256
+- $.procedure_type
+Missing field paths (0):
+Constraints (4):
+- deterministic_replay_only
+- no_raw_payload_dump
+- schema_required_fields_must_exist
+- synthetic_fixture_only
+Required order (4):
+- context_built
+- package_verified
+- schema_checked
+- schema_loaded
+Dependency graph (3):
+- package_verified -> schema_checked
+- schema_checked -> context_built
+- schema_loaded -> schema_checked
+Blockers (1):
+- missing_required_field -> context_built
+Recovery paths (1):
+- missing_required_field -> schema_check_failure_reported
+Validation issues (0):
+Non-claims (3):
+- not_eu_ai_act_compliance
+- not_legal_completeness_check
+- not_official_spark_schema
+================================================================================
