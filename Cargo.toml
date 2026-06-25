@@ -3,7 +3,8 @@ resolver = "2"
 members = [
   "crates/comptext-core",
   "crates/comptext-cli",
-  "crates/comptext-sparkctl"
+  "crates/comptext-merkle",
+  "benchmarks"
 ]
 
 [workspace.package]

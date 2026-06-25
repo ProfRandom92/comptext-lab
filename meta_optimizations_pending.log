@@ -1,0 +1,5 @@
+[OPTIMIZATION PENDING] 2026-06-25T06:17:25Z
+File: "evidence\\comptext_kognitive_grenzwiss_proof.json"
+Overhead: 36.20% (> 8.0% target)
+Description: Merkle proof JSON payload exceeds the size threshold relative to DPL source.
+

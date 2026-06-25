@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CompText Benchmarks Cockpit (Lab)</title>
+<style>
+:root { --bg:#0f172a; --card:#1e2937; --accent:#22d3ee; --text:#e2e8f0; --good:#4ade80; --bad:#f87171; }
+body { font-family: system-ui, sans-serif; background:var(--bg); color:var(--text); margin:0; padding:24px; }
+h1, h2 { color:var(--accent); }
+.card { background:var(--card); border-radius:12px; padding:16px; margin-bottom:16px; box-shadow:0 2px 8px rgba(0,0,0,0.3); }
+table { width:100%; border-collapse:collapse; }
+th, td { padding:8px 12px; text-align:left; border-bottom:1px solid #334155; }
+th { background:#0f172a; }
+.status-pass { color:var(--good); font-weight:600; }
+.status-fail { color:var(--bad); font-weight:600; }
+small { color:#64748b; }
+.note { font-size:0.9em; color:#94a3b8; border-left:3px solid #64748b; padding-left:8px; }
+</style>
+</head>
+<body>
+<h1>CompText Benchmarks Cockpit <small>(Lab / Synthetic only)</small></h1>
+<p class="note">
+This dashboard is for internal development use only. All data is generated from synthetic fixtures.
+No production, forensic, legal, or regulatory claims are made. Results are environment-specific.
+</p>
+
+<div class="card">
+<h2>Run Summary</h2>
+<pre>{}</pre>
+<p><small>Generated: 2026-06-20T11:28:52.576201Z</small></p>
+</div>
+
+<div class="card">
+<h2>Divan Micro-Benchmarks</h2>
+<p>No latest_divan.json found.</p>
+</div>
+
+<div class="card">
+<h2>Hyperfine CLI Benchmarks</h2>
+<h3>Verify</h3>
+<pre>{
+  &quot;results&quot;: [
+    {
+      &quot;command&quot;: &quot;target/release/agy-ct.exe package verify -i crates/artifacts/spark/extraction.spkg&quot;,
+      &quot;mean&quot;: 0.013796019333333345,
+      &quot;stddev&quot;: 0.008086626318393434,
+      &quot;median&quot;: 0.011915286000000011,
+      &quot;user&quot;: 0.005,
+      &quot;system&quot;: 0.014791666666666667,
+      &quot;min&quot;: 0.0068154860000000095,
+      &quot;max&quot;: 0.022657286000000013,
+      &quot;times&quot;: [
+        0.0068154860000000095,
+        0.011915286000000011,
+        0.022657286000000013
+      ],
+      &quot;memory_usage_byte&quot;: [
+        0,
+        0,
+        0
+      ],
+      &quot;exit_codes&quot;: [
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}</pre><h3>Replay</h3><pre>{
+  &quot;results&quot;: [
+    {
+      &quot;command&quot;: &quot;target/release/agy-ct.exe package replay -i crates/artifacts/spark/extraction.spkg&quot;,
+      &quot;mean&quot;: 0.017845042,
+      &quot;stddev&quot;: 0.016933166293106563,
+      &quot;median&quot;: 0.011075941999999998,
+      &quot;user&quot;: 0.006874999999999999,
+      &quot;system&quot;: 0.0017708333333333332,
+      &quot;min&quot;: 0.005343541999999993,
+      &quot;max&quot;: 0.037115642000000004,
+      &quot;times&quot;: [
+        0.011075941999999998,
+        0.037115642000000004,
+        0.005343541999999993
+      ],
+      &quot;memory_usage_byte&quot;: [
+        0,
+        0,
+        0
+      ],
+      &quot;exit_codes&quot;: [
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}</pre>
+</div>
+
+<div class="card">
+<h2>Claim Hygiene Reminder</h2>
+<ul>
+<li>Synthetic SPARK-Style Fixture only</li>
+<li>Deterministic packaging &amp; replay on synthetic data</li>
+<li>Lab tooling — no production readiness or compliance claims</li>
+<li>Human review required for any interpretation</li>
+</ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "tool": "agy-ct",
+  "project": "CompText-Sparkctl",
+  "phase": "6E",
+  "result": "PASS",
+  "stages": [
+    {
+      "index": 1,
+      "name": "workspace doctor",
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "name": "context pipeline",
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "name": "spark demo",
+      "status": "PASS"
+    },
+    {
+      "index": 4,
+      "name": "handoff check",
+      "status": "PASS"
+    }
+  ],
+  "artifacts": [
+    "artifacts/spark/extraction.spkg",
+    "artifacts/spark/context.json",
+    "artifacts/spark/context_render.txt"
+  ],
+  "report": "reports/latest.json"
+}

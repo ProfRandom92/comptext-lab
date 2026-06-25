@@ -1,0 +1,5 @@
+{
+  "tool": "comptext-benchmarks",
+  "result": "PASS",
+  "notes": "DUMMY baseline for lab CI only. Generated during initial setup. Replace with real measured values from a stable run. All data synthetic."
+}

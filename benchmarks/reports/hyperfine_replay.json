@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "command": "target/release/agy-ct.exe package replay -i crates/artifacts/spark/extraction.spkg",
+      "mean": 0.017845042,
+      "stddev": 0.016933166293106563,
+      "median": 0.011075941999999998,
+      "user": 0.006874999999999999,
+      "system": 0.0017708333333333332,
+      "min": 0.005343541999999993,
+      "max": 0.037115642000000004,
+      "times": [
+        0.011075941999999998,
+        0.037115642000000004,
+        0.005343541999999993
+      ],
+      "memory_usage_byte": [
+        0,
+        0,
+        0
+      ],
+      "exit_codes": [
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}

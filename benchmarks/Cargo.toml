@@ -1,0 +1,22 @@
+[package]
+name = "comptext-benchmarks"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+divan = "0.1.14"
+comptext-lab = { path = "../crates/comptext-merkle" }
+serde_json = "1.0"
+hex = "0.4"
+
+[[bench]]
+name = "package_lifecycle"
+harness = false
+
+[[bench]]
+name = "merkle_proof"
+harness = false
+
+[[bench]]
+name = "context_pipeline"
+harness = false

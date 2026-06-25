@@ -1,0 +1,29 @@
+[package]
+name = "comptext-lab"
+version = "0.3.0"
+edition = "2021"
+license = "MIT"
+description = "CompText Lab - Verifizierbarer Forschungskorpus mit BLAKE3 Merkle"
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "4.4", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+hex = "0.4"
+blake3 = "1"
+
+[[bin]]
+name = "sparkctl"
+path = "src/bin/sparkctl.rs"
+
+[[bin]]
+name = "agy-ct"
+path = "src/bin/agy_ct.rs"
+
+[[bin]]
+name = "spark-bench"
+path = "src/bin/spark_bench.rs"
+
+

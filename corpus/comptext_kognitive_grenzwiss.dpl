@@ -1,0 +1,342 @@
+§COMPTEXT·DPL ©2026-06-24·v1.0.0
+#title: "Kognitive Grenzwissenschaften: Synthese"
+#src: [heureka_effekt·pdf1 | bewusstsein_bci·pdf2 | forschungspfade·pdf3]
+#domains: 8 · #nodes: 47 · #edges: 12
+#compression: KVTC-V7·99.2% · #lang: de·en
+
+§DOM:INSIGHT_COGNITION {
+  §DEF: heureka ≡ abrupter_übergang[kognitiv_blockiert → ganzheitl_verstehen]
+    ≠search · ≠memory_retrieval · qualitativ_distinct ©Duncker·Wertheimer·Gestalt
+  §EV:timing: insight_avg ≈ 2s < analytical_avg ≈ 4s → parallel_not_accelerated
+  §EV:memory: fallschirm_exp ©Auble1979 → insight → signif_höhere_abrufrate
+    ursache: neuronale_reorganisation@illumination → tiefere_gedächtnisspur
+
+  §PHASE5 ©Wallas1926·Sadler-Smith {
+    [prep → inkub → intim → illum → verif]
+    inkub: bewusst_offload → unbewusst_suche@ablenkung
+    intim: fringe_awareness · pre-linguistic · bevorstehende_lösung_gefühlt
+    illum: unkontrollierbar · sprunghaft · nicht_steuerbar
+    verif: analytisch · rational · post-facto
+  }
+
+  §CORTEX {
+    t-1s: α ≈ 10Hz(occ_R) → BRAIN_BLINK
+    BRAIN_BLINK: neuronales_gating · sensorisch_dämpfung · visuell_gedrosselt
+    freed_attn → distant_semantic_traces@schlaf_lap_detektierbar
+    t0: γ 50-133Hz(aSTG_R) → GAMMA_BURST
+    GAMMA_BURST: synchrone_bindung[isoliert → kohärent] · neue_repräsentation
+    aSTG_R: größere_dendrit_verzweigungen → distant_concept_integration
+    resting: links-post_aktiv↑ → analytical_stil ©Erickson2018
+    resting: frontal_α+θ → insight_prone
+    alpha-gamma_coupling_rigid↑ → häufigkeit_aha↓
+  }
+
+  §SUBCORTEX {
+    NAcc: BOLD ∝ subjektive_intensität → relief ∥ freude
+    VTA ∥ SN: dopamin@illumination → epistemische_gewissheit
+    hippoc: dopamin_burst → parahippocamp_LTP → LZG_konsolidierung
+    thalamus ∥ amygdala: sensory_filter · emotional_coloring · koordination
+    % mesolimbisches_reward ≡ primär_evolutionäre_verstärker_analog
+    % dopamin_peak: hedonisch + epistemisch + neuronales_validierungssignal
+  }
+
+  §BLEND ©Fauconnier+Turner {
+    simplex < mirror < single-scope < double-scope
+    simplex: frame + elements_projection
+    mirror: gleicher_frame · beide_inputs
+    single-scope: ein_frame_dominiert
+    double-scope: beide_frames · emergent_struktur · widersprüchliches_koexistiert
+    % double-scope ≡ evolutionärer_sprung[sprache | kunst | wissenschaft | religion]
+    §MAPPING ©Gentner: relationen_not_attribute · systematizitätsprinzip
+    §MULTICONSTRAINT ©Holyoak+Thagard: pragmatisch + semantisch + strukturell
+  }
+}
+
+§DOM:CONSCIOUSNESS_THEORIES {
+  §IIT: Φ ≡ integrierte_information ≡ intrinsisch_geometrisch
+    pred: posterior_hot_zone_γ_stabil@conscious_duration → ✗ COGITATE
+  §GNWT: broadcast ≡ frontoparietales_netzwerk
+    pred: global_ignition@offset → ✗ COGITATE · PFC_repräsent_unvollständig
+
+  §COGITATE {
+    design: Go/NoGo · n=256 · fMRT ∥ MEG ∥ iEEG · 0.5s|1.0s
+    stim: Gesichter | Objekte | Buchstaben | Falschzeichen · 4_orients
+    result: IIT_posterior_sync ✗ · GNWT_ignition_offset ✗
+    impl: NCC_komplexität > IIT ∥ GNWT · beide_unvollständig
+  }
+
+  §METHOD:NKR ©Bayne+Shea {
+    ziel: theorie-neutrale_kategorien_via_behavioral_markers
+    marks: verbale_berichte · intentionale_steuerung
+    critic: jedes_experiment_theorie-geladen → neutralität_illusion
+    alt: methodolog_pluralismus · theorie-geladenheit_epistemisch_produktiv
+  }
+
+  §ATTRIBUT_MODAL {
+    experience_dim: schmerz | freude | angst | hunger_genuinely_empfinden
+    agency_dim: selbstkontrolle | moral | strategische_planung
+    RLHF → simul_empathie → fälschliche_bewusstsein_zuschreibung@public
+  }
+
+  §AUDIT·2026 ©19_Forscher·TrendsCognSci {
+    GWT: global_broadcast@spezialis_submodule
+    PP: bidirekt_fehler_min ∥ weltmodell_generierung
+    AST: self_model_of_attention_steering → ✗ zeitgenöss_LLM
+    HOT: meta-repr_eigener_zustände → ✗ zeitgenöss_LLM
+    rule: krit_masse_mehrerer_indikatoren_gleichzeitig_nötig
+  }
+}
+
+§DOM:LLM_DEMARKATION {
+  §HOEL·2026 ©Bicameral_Labs {
+    §UNFOLDING ©Doerig: RNN[Φ>0] →unfold→ FNN[Φ=0] · I/O_identisch
+    §CHAIN: Transformer →approx→ stat_RNN →unfold→ FNN →enum→ Lookup_Table
+    §KLEINER-HOEL_DILEMMA {
+      horn_A: RNN_conscious ∧ FNN_not → unfalsifizierbar
+      horn_B: FNN_conscious → Lookup_Table_conscious → trivial
+    }
+    §PROXIMITY: LLM_inferenz ≡ statisch_rigid ∥ feedforward ≡ nahe_FNN → horn_B
+    §SOLUTION: continual_learning@perception_timescale → bricht_math_symmetrie
+    % AI_psychose: anthropomorphe_überschätzung → devalvierung_menschl_geist
+    % future: bewusste_KI → exit_rights · Unversehrtheit_erforderlich
+  }
+
+  §ΔPPL_ABLATION·GPT2 {
+    method: attn_head_ablation → ΔPPL_messung@5_testphrasen
+    result_4of5: ΔPPL ≈ 0 → funktionale_redundanz ∥ rauschen
+    result_1of5: ΔPPL = +11.29 → lokale_syntakt_abhängigkeit_only
+    §IIT_CHECK {
+      differenzierung: ✓
+      integration_Φ: ✗ · ablation_beweist_dekomponierbarkeit
+      causal_closure: ✗ · kein_feedback@inferenz
+      temporal_persist: ✗ · stateless · context_window_only
+    }
+  }
+
+  §CREATIVE_LIMITS {
+    bandwidth ≡ 8-10_menschl_individuen ©Stillwell2024
+    stagnation@saturation: repetitiv ∥ hochfrequente_muster_verharren
+    human-KI-collab: KI ≡ konservativer_attraktor → ausreißer_geglättet ©Kim2024
+    eval_bias: novelty ∧ appropriateness_simultan → radikal_neues_unterbewert
+    concept_drift: KV-cache → konzept_kontinuität_verlust@langen_seq
+    lateral_fail: physikalische_constraints_nicht_modelliert → unphysik_antworten
+    % kein_dopamin → kein_relevanzcheck → kein_sinnhaftigkeits_signal
+  }
+
+  §DIBR_FUTURE {
+    dynamic_intuition_based_reasoning: NN[unbewusst_assoz] + symbol[verif]
+    sensor_gating + constraint_relaxation + dopamin_äquiv_relevanz
+    ziel: AGI_der_menschl_kreativität_näher
+  }
+}
+
+§DOM:BCI_SYSTEMS {
+  §NEURALINK_N1 {
+    type: intrakortikale_penetration · 1024_polymer_fäden · motor_kortex
+    robot: R1 → präzise_gefäßschonend
+    signal: einzelneuron_auflösung · glianarben_minimiert
+    PRIME: Paul[cursor_ctrl@hours_post] · Brad[CAD|video|sprache@6yr_ALS]
+    §BLINDSIGHT {
+      FDA_breakthrough: 2024-09
+      target: blind@ohne_sehnerv ∥ kongenital · phosphene_auflösung
+      UAE_PRIME_2026: Cleveland_Clinic_Abu_Dhabi · humane_trials
+    }
+  }
+
+  §PRECISION_N7 {
+    type: epikortikale_dünnfilm · 1024_Pt_Elektroden · 50μm
+    access: minimal_schlitz · kein_penetrieren · reversibel_entfernbar
+    Gründer: Rapoport_ex-Neuralink + Mager
+    FDA_510k: 2025-04 · Partner: Medtronic ∥ StealthStation · 2026-01
+    Finance: 180M$ · Series_C +102M$ · 2024-12
+  }
+
+  §SYNCHRON_STENTRODE {
+    type: endovaskular · stent · sagittalvene · kein_kraniotomie
+    signal: makroskopisch · höchstes_safety_profil
+    demo: iPad_native_BCI_HID · Apple · 2025-08
+    stack: Nvidia_Holoscan ∥ Apple_Vision_Pro · Rodney_heimsteuerung
+    §CHIRAL {
+      type: cognitiv_AI · trainiert_auf_gehirnströme
+      func: prädiktiv_dekodiert@pre-conscious · motorisch ∥ kognitiv
+    }
+    Finance: Series_D · 305M_AUD · NRFC+54M · 2025-11 · PMA: 2026
+  }
+
+  §CORTEC_BRAIN_INTERCHANGE {
+    type: subdural · multikanal · bidirektional · closed_loop
+    location: Freiburg·DE · function: aufzeichnen → stim_pulse
+    method: β-phase-locked_stim → synaptische_plastizität_angeregt
+    §KIDD {
+      diagnose: schlaganfall_therapierefraktär_armlähmung
+      implantat: 2025-07 · Seattle_Harborview·UW·UCLA
+      ergebnis: 6wk > 1yr_therapie_motorisch
+      extra: pong_gedankensteuerung · gleiche_hardware
+    }
+    stability: 500_tage ©Nature_ScientificData · cohort_n: 3@2026-04
+    FDA_BTD: 2026-04 · stroke_first_BCI_weltweit · TAP_program
+  }
+
+  §COGNITIVE_LIBERTY {
+    trigger: Chiral → intention@pre-conscious → Schädeldecke_permeabel
+    dim1: mentale_privatsphäre → neuro_surveillance_schutz
+    dim2: mentale_integrität → unautorized_stim_schutz
+    dim3: psychische_kontinuität → identitätserosion_schutz
+    % neues_menschenrecht · rechtl+technolog_verankerung_erforderlich
+  }
+}
+
+§DOM:QUANTUM_ML {
+  §BARRIERS {
+    barren_plateau: ∂Cost/∂θ ∝ exp(-qubits) → gradient_vanishes@scale
+    QRAM_fehlt: serial_amplitude_coding → speedup_eliminiert@init
+    % quantenvorteile_literatur: oft_artificial_datasets ∥ subopt_klassisch
+  }
+
+  §HYBRID {
+    §MERLIN {
+      type: discovery_engine_photonic_hybrid
+      SLOS: complexity ≈ O(n^(m+n-1)/n) → matrixpermanenten_umgangen
+      integration: PyTorch ∥ Sklearn · open_source
+    }
+    §IQP_GENERATIV: datenabh_param_init → barren_plateau_umschifft
+    §LUQPI {
+      quantum@training_only → classical@deployment · kein_QRAM_nötig
+      SVM+_klassifikator_empfängt_quantum_features
+    }
+    §SPACE_ADV·2026-04 ©Bowles+Harrow {
+      oracle_sketching: RNA|sentiment < 60_qubits vs astronomisch_klassisch
+    }
+  }
+}
+
+§DOM:COSMOLOGY {
+  §JWST {
+    XLSSC122: strong_lensing@10Mrd_Lj · DM ≡ ICL_korrelation
+      ICL_unregel → aktive_verschmelzung · gezeitenkräfte_sterne_entfernt
+    CRISTAL-02: galaktizid_wind · v_wind = 2x_sternentstehungsrate
+      impl: live_fast_die_young → massereiche_galaxien_früh_erloschen
+    SextansA: PAH ∥ SiC ∥ Fe@AGB_sterne · metall_arm_zwerg
+      impl: frühe_staubpfade_aktiv@prä-supernova
+    % ΛCDM_baryon_feedback_revision_nötig
+  }
+
+  §DESI {
+    scale: 47M_Galaxien ∥ Quasare · BAO_3D · z>2 · 0.24%_präzision
+    result: w=-1_statisch ✗ @3.2σ-4.2σ
+    params: w0=-0.803±0.054 · wa=-0.72±0.21 → dunkle_energie_abnehmend
+    combo: DESI-DR2 + Planck_ACT_SPT + DES-Dovekie_1600_SNIa
+    impl: hubble_tension >7σ · KBC-Leere_600Mpc
+    §EUCLID_Q1·2025-03: DSPL_sonden · geometrische_DE_messung
+  }
+
+  §DARK_MATTER {
+    §LZ: 5.7t·yr · SURF · CEνNS · ^8B_Neutrino@4.5σ · erste_CEνNS_detekt
+    neutrino_nebel: WIMP_signal_maskiert@größere_massen
+    §XLZD_geplant: XENONnT ∥ LZ ∥ DARWIN · 60-80t_Xe · Rn-sep_kryogen
+  }
+}
+
+§DOM:STORAGE_ARCHIVAL {
+  §DNA {
+    dichte: 455_EB/g_theoretisch · 1m³ ≡ gesamtes_menschl_wissen
+    Atlas_Eon_100: kommerziell · 2025-12-02 · dehydriert · edelstahl_kapsel
+    haltbarkeit: >1000yr@büroumgebung · passiv · keine_energie
+    limit: 2-8_werktage_latenz · kein_interaktiv → deep_cold_storage_only
+    market: 186M$@2025 → 58Mrd$@2035 · CAGR ≈ 81-88%
+  }
+
+  §5D_QUARTZ {
+    method: femtosekunden_laser · 3D_spatial + 2D_optisch(birefring)
+    capacity: 360TB@12cm_disk
+    thermal: >1000°C · 1.38Mrd_yr@190°C
+    resist: EMP ∥ kosmische_strahlung ∥ vakuum ∥ extremdruck
+    provider: Southampton_Optoelectronics
+    §ARCHMISSION: 5D_quartz ∥ Nanofiche_150k_seiten ∥ synth_bernstein
+      ziel: zivilisation_backup@geologische_zeitskalen
+  }
+}
+
+§DOM:FREE_WILL {
+  §REDUCTIONISM ©Sapolsky {
+    mikro_physik → makro_verhalten_vollständig_determiniert
+    bewusste_absichten ≡ epiphänomen · kausal_irrelevant
+  }
+
+  §DOWN_CAUSALITY ©Mitchell+Ellis {
+    prinzip: funktionell_codierte_information ≡ lebens_organisationsprinzip
+    kausal_umkehr: makro_semantik[ziele|absichten|umweltmodelle]
+      → schränkt_mikro_freiheitsgrade_ein
+    organismus ≡ eigenständige_kausal_quelle → anti_entropie_aktiv
+    % Schopenhauer_entkräftet: wollen_nicht_rein_extern_determiniert
+  }
+
+  §LATHAM·2026·indirect_compatibilism {
+    säule1: freiheitsbegriff_konditional → determinismus_kollabiert_moral_nicht
+    säule2: bewusstsein_kalibriert_sub_personal@vorab
+      reflex: unbewusst_aber_kausal_in_bewussten_entwurf_integriert
+    % deliberation ∥ moral_agency ∥ intentionale_steuerung@determinismus_konsistent
+  }
+}
+
+§EDGES {
+  INSIGHT_COGNITION → LLM_DEMARKATION {
+    heureka_impossible_without_repr_reorganisation ≠ token_prediction
+    dopamin_relevanz_check ≠ statist_wahrscheinlichkeitsraum
+    double-scope_emergenz > LLM_simplex@concept_drift_anfällig
+    fehlende_embodied_interozeption → kein_sinnhaftigkeits_signal
+  }
+
+  CONSCIOUSNESS_THEORIES → LLM_DEMARKATION {
+    Hoel: LLM_inferenz → Φ=0 · proximity_theorem
+    ΔPPL_ablation: integration ✗ · causal_closure ✗
+    COGITATE: NCC_komplexität > statisch_LLM_architektur
+  }
+
+  BCI_SYSTEMS → COGNITIVE_LIBERTY {
+    Chiral@Synchron: intention_pre-conscious → Schädeldecke_permeabel
+    CorTec_bidirekt: stimulation_einschleusen_möglich → dim2_risiko
+    neuro_surveillance → dim1_datenschutz_kritisch
+  }
+
+  CONSCIOUSNESS_THEORIES → BCI_SYSTEMS {
+    Hoel_solution ≡ continual_learning ≡ CorTec_stim → synaptische_plastizität
+    BCIs_ermöglichen_plastizität_proxy · hybrid_regelkreise_bio_kunst
+    keine_BCI_besitzt_eigenes_Φ · sie_erweitern_biologisches_Φ_substrat
+  }
+
+  FREE_WILL → CONSCIOUSNESS_THEORIES {
+    plastizität@perception_timescale ≡ bricht_unfolding ≡ Hoel_requirement
+    top-down_kausalität ∥ selbstorganisation → Φ_substrate_kandidat
+    semantische_zielzustände → makro_constraint → mikro_dynamik
+  }
+
+  INSIGHT_COGNITION → CONSCIOUSNESS_THEORIES {
+    aSTG_gamma_burst ≡ integration_node ∥ COGITATE_posterior_zone
+    mesolimbisch ≡ subcortical_bewertungs_system · keine_KI_äquivalent
+    hippocampal_LTP → memory_consolidation · keine_LLM_runtime_äquivalent
+  }
+
+  QUANTUM_ML → COSMOLOGY {
+    informationelle_grenzen_physikalisch ∥ hybride_effizienz_natur_prinzip
+    barren_plateau_analog: ΛCDM_statisch ✗ · beide_erfordern_dynamik
+  }
+
+  STORAGE_ARCHIVAL → FREE_WILL {
+    zivilisation_info@geologische_skalen ≡ anti_entropie_semantisch
+    analog: organismus_gegen_entropie ≡ ArchMission_gegen_info_verlust
+    % information_als_kausal_aktives_prinzip_auf_allen_skalen
+  }
+}
+
+§SYNTHESIS {
+  DEMARKATION: stat_KI[Transformer|LLM@inferenz] ✗ Φ · ✗ cont_learning · ✗ epistemic_reward
+  REQUIREMENT: plastizität@perception_timescale → einziger_weg_zu_Φ
+  CONVERGENZ: BCI[CorTec|Synchron|Neuralink|Precision] → hybrid_kognition_real
+  KOSMOS: ΛCDM_dynamischer · dunkle_energie_abnehmend@3.2σ-4.2σ · JWST_überschuss
+  STORAGE: DNA[455EB/g·>1000yr] ∥ Quartz[360TB·1.38Mrd_yr] → archival_gelöst
+  UNIVERSAL: information ∥ plastizität ∥ selbstorganisation
+    ≡ bewusstsein ∥ freier_wille ∥ leben ∥ kosmos_expansion ∥ anti_entropie
+  % grenzwissenschaften → relationale_informations_systemgrenzen
+  % autonomes_kognitives_system_verankert_hier_seine_exploration
+}

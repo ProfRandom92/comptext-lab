@@ -1,0 +1,122 @@
+{
+  "schema": "ct-lab:evidence:v1",
+  "corpus": "comptext_kognitive_grenzwiss.dpl",
+  "version": "1.0.0",
+  "timestamp": "2026-06-25T06:17:25Z",
+  "leaf_count": 10,
+  "tree_height": 4,
+  "merkle_root": "998f8c6e2c6b071070f882aa8ad1f6b973bfbc9f9905dc5bdaadd7d7cb99931f",
+  "overhead_pct": "36.19%",
+  "leaves": [
+    {
+      "idx": 0,
+      "name": "INSIGHT_COGNITION",
+      "hash": "3178bf0389f5b631569c3bb62aa35f6da5cfc490cbfbc3dd2ebffd50cdef630d",
+      "proof_path": [
+        "3ee83f5f3cbcbf251a103258b2f5c3ca0650fa235718957b08a371092d338e03",
+        "ebf0ba11d4cc4b385fba6ff615f02230ab7819fba74e8cbe610b95856b3f0884",
+        "2627574628b5522535a75019200dea14ccfbbb5f467da31d1151d34d5da10de3",
+        "feb449364996c7c358947e452169a37cdd2215eafadabf18857ff4e444cc8324"
+      ]
+    },
+    {
+      "idx": 1,
+      "name": "CONSCIOUSNESS_THEORIES",
+      "hash": "3ee83f5f3cbcbf251a103258b2f5c3ca0650fa235718957b08a371092d338e03",
+      "proof_path": [
+        "3178bf0389f5b631569c3bb62aa35f6da5cfc490cbfbc3dd2ebffd50cdef630d",
+        "ebf0ba11d4cc4b385fba6ff615f02230ab7819fba74e8cbe610b95856b3f0884",
+        "2627574628b5522535a75019200dea14ccfbbb5f467da31d1151d34d5da10de3",
+        "feb449364996c7c358947e452169a37cdd2215eafadabf18857ff4e444cc8324"
+      ]
+    },
+    {
+      "idx": 2,
+      "name": "LLM_DEMARKATION",
+      "hash": "550ec8f842a76b39c261ee63bda1505e85f7a0bd9af4716f0238241663ae6c0e",
+      "proof_path": [
+        "0800af4a46fcbde231f6c489f0c3bb3d80d2b506464ad2512791ad10a471630e",
+        "b495dca7781174caa56e2736c0016c59c3ccd73c7976c2ea93766717954a7644",
+        "2627574628b5522535a75019200dea14ccfbbb5f467da31d1151d34d5da10de3",
+        "feb449364996c7c358947e452169a37cdd2215eafadabf18857ff4e444cc8324"
+      ]
+    },
+    {
+      "idx": 3,
+      "name": "BCI_SYSTEMS",
+      "hash": "0800af4a46fcbde231f6c489f0c3bb3d80d2b506464ad2512791ad10a471630e",
+      "proof_path": [
+        "550ec8f842a76b39c261ee63bda1505e85f7a0bd9af4716f0238241663ae6c0e",
+        "b495dca7781174caa56e2736c0016c59c3ccd73c7976c2ea93766717954a7644",
+        "2627574628b5522535a75019200dea14ccfbbb5f467da31d1151d34d5da10de3",
+        "feb449364996c7c358947e452169a37cdd2215eafadabf18857ff4e444cc8324"
+      ]
+    },
+    {
+      "idx": 4,
+      "name": "QUANTUM_ML",
+      "hash": "4fce01585c8f8229ce777418601ddc48857b4bea702c40ebffba96e4aea72776",
+      "proof_path": [
+        "fe39a8681548e82f2bd97f35d47aa5db063f3a9385a48bd9c45ee7df47813695",
+        "69732d60bedddf876366d022a96f44cd0e25f5ff189d8fb6de5a4801289d221f",
+        "51f112c009775faa89cd7e3cf049050485d389177895f9591495c050c651be88",
+        "feb449364996c7c358947e452169a37cdd2215eafadabf18857ff4e444cc8324"
+      ]
+    },
+    {
+      "idx": 5,
+      "name": "COSMOLOGY",
+      "hash": "fe39a8681548e82f2bd97f35d47aa5db063f3a9385a48bd9c45ee7df47813695",
+      "proof_path": [
+        "4fce01585c8f8229ce777418601ddc48857b4bea702c40ebffba96e4aea72776",
+        "69732d60bedddf876366d022a96f44cd0e25f5ff189d8fb6de5a4801289d221f",
+        "51f112c009775faa89cd7e3cf049050485d389177895f9591495c050c651be88",
+        "feb449364996c7c358947e452169a37cdd2215eafadabf18857ff4e444cc8324"
+      ]
+    },
+    {
+      "idx": 6,
+      "name": "STORAGE_ARCHIVAL",
+      "hash": "f4189bcec75b1dc9e477251f96c4c4bb6198224f878fdc31f519f88965a1f775",
+      "proof_path": [
+        "7ea141fdcea666c0a4ec5503c7519d81b4c370bafa343c312bd1bdcc176496cc",
+        "c32f56e6d6e763bd5b358c69d8f2fb52e808ab5e38882e13cb15975c63048104",
+        "51f112c009775faa89cd7e3cf049050485d389177895f9591495c050c651be88",
+        "feb449364996c7c358947e452169a37cdd2215eafadabf18857ff4e444cc8324"
+      ]
+    },
+    {
+      "idx": 7,
+      "name": "FREE_WILL",
+      "hash": "7ea141fdcea666c0a4ec5503c7519d81b4c370bafa343c312bd1bdcc176496cc",
+      "proof_path": [
+        "f4189bcec75b1dc9e477251f96c4c4bb6198224f878fdc31f519f88965a1f775",
+        "c32f56e6d6e763bd5b358c69d8f2fb52e808ab5e38882e13cb15975c63048104",
+        "51f112c009775faa89cd7e3cf049050485d389177895f9591495c050c651be88",
+        "feb449364996c7c358947e452169a37cdd2215eafadabf18857ff4e444cc8324"
+      ]
+    },
+    {
+      "idx": 8,
+      "name": "EDGES",
+      "hash": "e368ad6d5659c506f1297ba77dbcb23ed38c16d1206c7f14cf077a18e08a2904",
+      "proof_path": [
+        "b29251c8008d047ca5052ea26920ce8997b9e088c50d8bae2d2599cc8ef3493f",
+        "4d006976636a8696d909a630a4081aad4d7c50f81afdee04020bf05086ab6a55",
+        "498a8e7c02bc2c7afc598b097ad065836ea84e0edf2bf0895410968711d6b54e",
+        "19cc34b0c2a544ab9e2af1827769481f8929e28e1b82d04490abcf615dbd5f7e"
+      ]
+    },
+    {
+      "idx": 9,
+      "name": "SYNTHESIS",
+      "hash": "b29251c8008d047ca5052ea26920ce8997b9e088c50d8bae2d2599cc8ef3493f",
+      "proof_path": [
+        "e368ad6d5659c506f1297ba77dbcb23ed38c16d1206c7f14cf077a18e08a2904",
+        "4d006976636a8696d909a630a4081aad4d7c50f81afdee04020bf05086ab6a55",
+        "498a8e7c02bc2c7afc598b097ad065836ea84e0edf2bf0895410968711d6b54e",
+        "19cc34b0c2a544ab9e2af1827769481f8929e28e1b82d04490abcf615dbd5f7e"
+      ]
+    }
+  ]
+}

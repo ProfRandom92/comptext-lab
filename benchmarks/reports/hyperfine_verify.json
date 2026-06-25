@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "command": "target/release/agy-ct.exe package verify -i crates/artifacts/spark/extraction.spkg",
+      "mean": 0.013796019333333345,
+      "stddev": 0.008086626318393434,
+      "median": 0.011915286000000011,
+      "user": 0.005,
+      "system": 0.014791666666666667,
+      "min": 0.0068154860000000095,
+      "max": 0.022657286000000013,
+      "times": [
+        0.0068154860000000095,
+        0.011915286000000011,
+        0.022657286000000013
+      ],
+      "memory_usage_byte": [
+        0,
+        0,
+        0
+      ],
+      "exit_codes": [
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}

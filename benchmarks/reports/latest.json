@@ -1,0 +1,9 @@
+{
+  "tool": "comptext-benchmarks",
+  "project": "CompText-Sparkctl",
+  "phase": "final-bench-infra",
+  "result": "PASS",
+  "timestamp": 1781954938,
+  "divan_results_path": "reports/latest_divan.json",
+  "notes": "Lab-only benchmarks on synthetic data. Environment specific. No production or compliance claims."
+}

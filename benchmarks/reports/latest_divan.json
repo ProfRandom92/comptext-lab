@@ -1,0 +1,85 @@
+   Compiling comptext-benchmarks v0.1.0 (C:\CompText-SPARK-Sandbox-TESTING\CompText-SPARK-Sandbox\repos\comptext-lab-feature-merkle\benchmarks)
+error[E0432]: unresolved import `serde_json`
+ --> benchmarks\benches\package_lifecycle.rs:7:5
+  |
+7 | use serde_json::json;
+  |     ^^^^^^^^^^ use of unresolved module or unlinked crate `serde_json`
+  |
+  = help: if you wanted to use a crate named `serde_json`, use `cargo add serde_json` to add it to your `Cargo.toml`
+
+error[E0432]: unresolved import `serde_json`
+ --> benchmarks\benches\context_pipeline.rs:3:5
+  |
+3 | use serde_json::json;
+  |     ^^^^^^^^^^ use of unresolved module or unlinked crate `serde_json`
+  |
+  = help: if you wanted to use a crate named `serde_json`, use `cargo add serde_json` to add it to your `Cargo.toml`
+
+error[E0601]: `main` function not found in crate `package_lifecycle`
+  --> benchmarks\benches\package_lifecycle.rs:57:2
+   |
+57 | }
+   |  ^ consider adding a `main` function to `benchmarks\benches\package_lifecycle.rs`
+
+error[E0601]: `main` function not found in crate `context_pipeline`
+  --> benchmarks\benches\context_pipeline.rs:44:2
+   |
+44 | }
+   |  ^ consider adding a `main` function to `benchmarks\benches\context_pipeline.rs`
+
+error[E0433]: cannot find module or crate `serde_json` in this scope
+ --> benchmarks\benches\context_pipeline.rs:5:30
+  |
+5 | fn make_minimal_package() -> serde_json::Value {
+  |                              ^^^^^^^^^^ use of unresolved module or unlinked crate `serde_json`
+  |
+  = help: if you wanted to use a crate named `serde_json`, use `cargo add serde_json` to add it to your `Cargo.toml`
+
+error[E0433]: cannot find module or crate `serde_json` in this scope
+  --> benchmarks\benches\context_pipeline.rs:26:29
+   |
+26 | fn make_minimal_schema() -> serde_json::Value {
+   |                             ^^^^^^^^^^ use of unresolved module or unlinked crate `serde_json`
+   |
+   = help: if you wanted to use a crate named `serde_json`, use `cargo add serde_json` to add it to your `Cargo.toml`
+
+Some errors have detailed explanations: E0432, E0433, E0601.
+For more information about an error, try `rustc --explain E0432`.
+error: could not compile `comptext-benchmarks` (bench "context_pipeline") due to 4 previous errors
+warning: build failed, waiting for other jobs to finish...
+error[E0308]: mismatched types
+  --> benchmarks\benches\package_lifecycle.rs:39:66
+   |
+39 |         if let Ok(envelope) = build_package_from_value(black_box(preimage.clone())) {
+   |                                                        --------- ^^^^^^^^^^^^^^^^ expected `&Value`, found `SparkEvidencePacketPreimage`
+   |                                                        |
+   |                                                        arguments to this function are incorrect
+   |
+help: the return type of this call is `SparkEvidencePacketPreimage` due to the type of the argument passed
+  --> benchmarks\benches\package_lifecycle.rs:39:56
+   |
+39 |         if let Ok(envelope) = build_package_from_value(black_box(preimage.clone())) {
+   |                                                        ^^^^^^^^^^----------------^
+   |                                                                  |
+   |                                                                  this argument influences the return type of `black_box`
+note: function defined here
+  --> /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library\core\src\hint.rs:490:13
+
+error[E0308]: mismatched types
+   --> benchmarks\benches\package_lifecycle.rs:49:51
+    |
+ 49 |     let envelope = match build_package_from_value(preimage) {
+    |                          ------------------------ ^^^^^^^^ expected `&Value`, found `SparkEvidencePacketPreimage`
+    |                          |
+    |                          arguments to this function are incorrect
+    |
+note: function defined here
+   --> crates\comptext-sparkctl\src\codec\package.rs:674:8
+    |
+674 | pub fn build_package_from_value(value: &serde_json::Value) -> anyhow::Result<serde_json::Value> {
+    |        ^^^^^^^^^^^^^^^^^^^^^^^^
+
+Some errors have detailed explanations: E0308, E0432, E0601.
+For more information about an error, try `rustc --explain E0308`.
+error: could not compile `comptext-benchmarks` (bench "package_lifecycle") due to 4 previous errors
+

@@ -5215,6 +5215,32 @@ fn handle_verify(file_path: &str, parent: Option<&str>) -> Result<(), String> {
         );
     }
 
+    // Reject forbidden files and directories by examining the raw path first.
+    // This ensures we reject them on security grounds even if they do not exist.
+    let file_name = path.file_name().and_then(|n| n.to_str()).unwrap_or("");
+    if file_name == ".env"
+        || file_name.starts_with(".env.")
+        || file_name.ends_with(".key")
+        || file_name.ends_with(".pem")
+        || file_name == "id_rsa"
+        || file_name == "id_ed25519"
+    {
+        return Err(
+            "Security Policy Violation: Accessing secrets or configuration files is forbidden."
+                .to_string(),
+        );
+    }
+
+    for component in path.components() {
+        if let std::path::Component::Normal(os_str) = component {
+            if let Some(s) = os_str.to_str() {
+                if s == ".git" || s == ".ssh" || s == ".aws" {
+                    return Err("Security Policy Violation: Accessing sensitive directories (.git, .ssh, .aws) is forbidden.".to_string());
+                }
+            }
+        }
+    }
+
     // 2. Reject directory traversal escaping the repository boundary
     let current_dir = std::env::current_dir()
         .map_err(|e| format!("failed to get current working directory: {e}"))?;
@@ -5234,21 +5260,6 @@ fn handle_verify(file_path: &str, parent: Option<&str>) -> Result<(), String> {
     if !canonical_path.starts_with(&canonical_current_dir) {
         return Err(
             "Security Policy Violation: Target path escapes the repository boundary.".to_string(),
-        );
-    }
-
-    // 3. Reject forbidden files and directories: .env, .env.*, *.key, *.pem, .git/, .ssh/, .aws/, id_rsa, id_ed25519
-    let file_name = path.file_name().and_then(|n| n.to_str()).unwrap_or("");
-    if file_name == ".env"
-        || file_name.starts_with(".env.")
-        || file_name.ends_with(".key")
-        || file_name.ends_with(".pem")
-        || file_name == "id_rsa"
-        || file_name == "id_ed25519"
-    {
-        return Err(
-            "Security Policy Violation: Accessing secrets or configuration files is forbidden."
-                .to_string(),
         );
     }
 
