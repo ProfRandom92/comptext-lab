@@ -306,9 +306,10 @@ struct Report {
 
 #[derive(Serialize)]
 struct StageReport {
-    index: usize,
+    index: usize, // Static Stage ID / Identifier (from contract)
     name: String,
     status: String,
+    execution_order: usize, // Actual chronological order in execution sequence
 }
 
 fn write_report(stages: Vec<StageReport>, result: &str) -> Result<()> {
@@ -344,11 +345,13 @@ fn write_report(stages: Vec<StageReport>, result: &str) -> Result<()> {
 fn run_orchestrator() -> Result<()> {
     println!("CompText-Sparkctl run");
     println!();
-    println!("plan");
-    println!("  1 workspace doctor");
-    println!("  2 context pipeline");
-    println!("  3 spark demo");
-    println!("  4 handoff check");
+    println!("plan (topologically sorted by dependency order)");
+    println!("  - Execution Step 1 [Stage ID 1]: workspace doctor");
+    println!(
+        "  - Execution Step 2 [Stage ID 3]: spark demo (generates extraction.spkg/context.json)"
+    );
+    println!("  - Execution Step 3 [Stage ID 2]: context pipeline (depends on Stage 3 artifacts)");
+    println!("  - Execution Step 4 [Stage ID 4]: handoff check");
     println!();
     println!("run");
 
@@ -357,21 +360,25 @@ fn run_orchestrator() -> Result<()> {
             index: 1,
             name: "workspace doctor".to_string(),
             status: "SKIPPED".to_string(),
+            execution_order: 1,
         },
         StageReport {
             index: 2,
             name: "context pipeline".to_string(),
             status: "SKIPPED".to_string(),
+            execution_order: 3,
         },
         StageReport {
             index: 3,
             name: "spark demo".to_string(),
             status: "SKIPPED".to_string(),
+            execution_order: 2,
         },
         StageReport {
             index: 4,
             name: "handoff check".to_string(),
             status: "SKIPPED".to_string(),
+            execution_order: 4,
         },
     ];
 
@@ -388,20 +395,7 @@ fn run_orchestrator() -> Result<()> {
     stages[0].status = "PASS".to_string();
     println!("  [1/4] workspace doctor   PASS");
 
-    // Stage 2: context pipeline
-    stages[1].status = "RUNNING".to_string();
-    if let Err(e) = sparkctl::context_all::run_context_all() {
-        stages[1].status = "FAIL".to_string();
-        println!("  [2/4] context pipeline   FAIL");
-        println!();
-        println!("result FAIL");
-        let _ = write_report(stages, "FAIL");
-        return Err(e);
-    }
-    stages[1].status = "PASS".to_string();
-    println!("  [2/4] context pipeline   PASS");
-
-    // Stage 3: spark demo
+    // Stage 3: spark demo (executed first to generate required artifacts)
     stages[2].status = "RUNNING".to_string();
     if let Err(e) = sparkctl::spark_demo::run_spark_demo() {
         stages[2].status = "FAIL".to_string();
@@ -413,6 +407,19 @@ fn run_orchestrator() -> Result<()> {
     }
     stages[2].status = "PASS".to_string();
     println!("  [3/4] spark demo         PASS");
+
+    // Stage 2: context pipeline (executed after artifacts are generated)
+    stages[1].status = "RUNNING".to_string();
+    if let Err(e) = sparkctl::context_all::run_context_all() {
+        stages[1].status = "FAIL".to_string();
+        println!("  [2/4] context pipeline   FAIL");
+        println!();
+        println!("result FAIL");
+        let _ = write_report(stages, "FAIL");
+        return Err(e);
+    }
+    stages[1].status = "PASS".to_string();
+    println!("  [2/4] context pipeline   PASS");
 
     // Stage 4: handoff check
     stages[3].status = "RUNNING".to_string();
