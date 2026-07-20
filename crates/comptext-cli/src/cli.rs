@@ -5221,12 +5221,13 @@ fn handle_verify(file_path: &str, parent: Option<&str>) -> Result<(), String> {
 
     // 2. Reject forbidden files and directories by filename check: .env, .env.*, *.key, *.pem, id_rsa, id_ed25519
     let file_name = path.file_name().and_then(|n| n.to_str()).unwrap_or("");
-    if file_name == ".env"
-        || file_name.starts_with(".env.")
-        || file_name.ends_with(".key")
-        || file_name.ends_with(".pem")
-        || file_name == "id_rsa"
-        || file_name == "id_ed25519"
+    let file_name_lower = file_name.to_ascii_lowercase();
+    if file_name_lower == ".env"
+        || file_name_lower.starts_with(".env.")
+        || file_name_lower.ends_with(".key")
+        || file_name_lower.ends_with(".pem")
+        || file_name_lower == "id_rsa"
+        || file_name_lower == "id_ed25519"
     {
         return Err(
             "Security Policy Violation: Accessing secrets or configuration files is forbidden."
@@ -5251,7 +5252,8 @@ fn handle_verify(file_path: &str, parent: Option<&str>) -> Result<(), String> {
             }
             std::path::Component::Normal(os_str) => {
                 if let Some(s) = os_str.to_str() {
-                    if s == ".git" || s == ".ssh" || s == ".aws" {
+                    let s_lower = s.to_ascii_lowercase();
+                    if s_lower == ".git" || s_lower == ".ssh" || s_lower == ".aws" {
                         return Err("Security Policy Violation: Accessing sensitive directories (.git, .ssh, .aws) is forbidden.".to_string());
                     }
                 }
@@ -5291,7 +5293,8 @@ fn handle_verify(file_path: &str, parent: Option<&str>) -> Result<(), String> {
     for component in canonical_path.components() {
         if let std::path::Component::Normal(os_str) = component {
             if let Some(s) = os_str.to_str() {
-                if s == ".git" || s == ".ssh" || s == ".aws" {
+                let s_lower = s.to_ascii_lowercase();
+                if s_lower == ".git" || s_lower == ".ssh" || s_lower == ".aws" {
                     return Err("Security Policy Violation: Accessing sensitive directories (.git, .ssh, .aws) is forbidden.".to_string());
                 }
             }
@@ -6507,8 +6510,6 @@ mod tests {
             .contains("Absolute paths are forbidden"));
 
         // Rejects secret files (.env)
-        // Note: we don't write it, we just check validation rejection logic
-        // But since verify check requires file to exist, let's check .env.example or create .env.temp.key
         std::fs::write("test_prov.key", "dummy").unwrap();
         let key_res = handle_verify("test_prov.key", None);
         assert!(key_res.is_err());
@@ -6517,12 +6518,22 @@ mod tests {
             .contains("Accessing secrets or configuration files is forbidden"));
         let _ = std::fs::remove_file("test_prov.key");
 
-        // Rejects sensitive directory (.git/config)
-        let git_res = handle_verify(".git/config", None);
-        assert!(git_res.is_err());
-        assert!(git_res
-            .unwrap_err()
-            .contains("Accessing sensitive directories"));
+        // Case-insensitive secret file tests
+        std::fs::write("test_prov.KEY", "dummy").unwrap();
+        let key_res_upper = handle_verify("test_prov.KEY", None);
+        assert!(key_res_upper.is_err());
+        let _ = std::fs::remove_file("test_prov.KEY");
+
+        assert!(handle_verify(".ENV", None).is_err());
+        assert!(handle_verify(".Env.local", None).is_err());
+        assert!(handle_verify("id_RSA", None).is_err());
+
+        // Rejects sensitive directory (.git/config) and case-insensitive versions
+        assert!(handle_verify(".git/config", None).is_err());
+        assert!(handle_verify(".GIT/config", None).is_err());
+        assert!(handle_verify(".Ssh/config", None).is_err());
+        assert!(handle_verify(".aws/credentials", None).is_err());
+        assert!(handle_verify(".AWS/credentials", None).is_err());
 
         // Rejects directory traversal
         let traverse_res = handle_verify("../outside.txt", None);
