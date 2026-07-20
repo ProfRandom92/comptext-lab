@@ -3304,6 +3304,7 @@ fn unknown_agent_kind_fails_with_json_error() {
 #[test]
 fn apply_and_validate_succeeds() {
     let _guard = test_lock();
+    let _ = std::fs::create_dir_all("proposals");
     let mock_file = std::path::Path::new("tests/mock_applied_patch.rs");
     let _mock_file_guard = FileGuard::new(mock_file);
     std::fs::write(mock_file, "// initial\n").unwrap();
@@ -3349,6 +3350,7 @@ fn apply_and_validate_succeeds() {
 #[test]
 fn apply_rejects_disallowed_paths() {
     let _guard = test_lock();
+    let _ = std::fs::create_dir_all("proposals");
     let mock_proposal = serde_json::json!({
         "schema_version": "0.1",
         "task": "Malicious task",

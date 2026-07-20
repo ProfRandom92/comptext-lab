@@ -5205,6 +5205,10 @@ pub fn sha256_hex(data: &[u8]) -> String {
 }
 
 fn handle_verify(file_path: &str, parent: Option<&str>) -> Result<(), String> {
+    if file_path.trim().is_empty() {
+        return Err("Security Policy Violation: Path is empty or invalid.".to_string());
+    }
+
     let path = std::path::Path::new(file_path);
 
     // 1. Rejects absolute paths
@@ -5215,7 +5219,53 @@ fn handle_verify(file_path: &str, parent: Option<&str>) -> Result<(), String> {
         );
     }
 
-    // 2. Reject directory traversal escaping the repository boundary
+    // 2. Reject forbidden files and directories by filename check: .env, .env.*, *.key, *.pem, id_rsa, id_ed25519
+    let file_name = path.file_name().and_then(|n| n.to_str()).unwrap_or("");
+    if file_name == ".env"
+        || file_name.starts_with(".env.")
+        || file_name.ends_with(".key")
+        || file_name.ends_with(".pem")
+        || file_name == "id_rsa"
+        || file_name == "id_ed25519"
+    {
+        return Err(
+            "Security Policy Violation: Accessing secrets or configuration files is forbidden."
+                .to_string(),
+        );
+    }
+
+    // 3. Reject Windows prefixes, UNC paths, sensitive components, and directory traversal lexically
+    for component in path.components() {
+        match component {
+            std::path::Component::Prefix(_) => {
+                return Err(
+                    "Security Policy Violation: Windows prefixes or UNC paths are forbidden."
+                        .to_string(),
+                );
+            }
+            std::path::Component::ParentDir => {
+                return Err(
+                    "Security Policy Violation: Directory traversal (..) is forbidden lexically."
+                        .to_string(),
+                );
+            }
+            std::path::Component::Normal(os_str) => {
+                if let Some(s) = os_str.to_str() {
+                    if s == ".git" || s == ".ssh" || s == ".aws" {
+                        return Err("Security Policy Violation: Accessing sensitive directories (.git, .ssh, .aws) is forbidden.".to_string());
+                    }
+                }
+            }
+            _ => {}
+        }
+    }
+
+    // Additional UNC raw string check to be absolutely safe (Windows uses \\ prefix for UNC)
+    if file_path.starts_with("\\\\") || file_path.starts_with("//") {
+        return Err("Security Policy Violation: UNC paths are forbidden.".to_string());
+    }
+
+    // 4. File existence and canonicalization check (for directory traversal escaping boundary)
     let current_dir = std::env::current_dir()
         .map_err(|e| format!("failed to get current working directory: {e}"))?;
 
@@ -5237,21 +5287,7 @@ fn handle_verify(file_path: &str, parent: Option<&str>) -> Result<(), String> {
         );
     }
 
-    // 3. Reject forbidden files and directories: .env, .env.*, *.key, *.pem, .git/, .ssh/, .aws/, id_rsa, id_ed25519
-    let file_name = path.file_name().and_then(|n| n.to_str()).unwrap_or("");
-    if file_name == ".env"
-        || file_name.starts_with(".env.")
-        || file_name.ends_with(".key")
-        || file_name.ends_with(".pem")
-        || file_name == "id_rsa"
-        || file_name == "id_ed25519"
-    {
-        return Err(
-            "Security Policy Violation: Accessing secrets or configuration files is forbidden."
-                .to_string(),
-        );
-    }
-
+    // Double check components of canonicalized path just in case of symlinks/traversal tricks
     for component in canonical_path.components() {
         if let std::path::Component::Normal(os_str) = component {
             if let Some(s) = os_str.to_str() {
@@ -6491,6 +6527,70 @@ mod tests {
         // Rejects directory traversal
         let traverse_res = handle_verify("../outside.txt", None);
         assert!(traverse_res.is_err());
+
+        // UNC paths and Windows prefixes
+        let unc_res = handle_verify("\\\\server\\share\\file.txt", None);
+        assert!(unc_res.is_err());
+        let unc_err = unc_res.unwrap_err();
+        assert!(
+            unc_err.contains("UNC paths are forbidden")
+                || unc_err.contains("Windows prefixes or UNC paths are forbidden")
+                || unc_err.contains("Absolute paths are forbidden")
+        );
+
+        // Nonexistent safe path
+        let nonexistent_res = handle_verify("nonexistent_file_temp.txt", None);
+        assert!(nonexistent_res.is_err());
+        assert!(nonexistent_res.unwrap_err().contains("does not exist"));
+
+        // Nonexistent traversal path (fails lexically before existence check)
+        let nonexistent_traverse_res = handle_verify("../nonexistent_file_temp.txt", None);
+        assert!(nonexistent_traverse_res.is_err());
+        assert!(nonexistent_traverse_res
+            .unwrap_err()
+            .contains("Directory traversal (..) is forbidden lexically"));
+
+        // Symlink / Junction tests inside & escaping root
+        #[cfg(windows)]
+        {
+            let link_target = test_file_path;
+            let link_path = "test_symlink_inside_temp.txt";
+            let _ = std::fs::remove_file(link_path);
+            if std::os::windows::fs::symlink_file(link_target, link_path).is_ok() {
+                let sym_res = handle_verify(link_path, None);
+                assert!(sym_res.is_ok());
+                let _ = std::fs::remove_file(link_path);
+            }
+
+            let link_outside_target = "C:\\Windows\\System32\\drivers\\etc\\hosts";
+            let link_outside_path = "test_symlink_outside_temp.txt";
+            let _ = std::fs::remove_file(link_outside_path);
+            if std::os::windows::fs::symlink_file(link_outside_target, link_outside_path).is_ok() {
+                let sym_res = handle_verify(link_outside_path, None);
+                assert!(sym_res.is_err());
+                let _ = std::fs::remove_file(link_outside_path);
+            }
+        }
+        #[cfg(unix)]
+        {
+            let link_target = test_file_path;
+            let link_path = "test_symlink_inside_temp.txt";
+            let _ = std::fs::remove_file(link_path);
+            if std::os::unix::fs::symlink(link_target, link_path).is_ok() {
+                let sym_res = handle_verify(link_path, None);
+                assert!(sym_res.is_ok());
+                let _ = std::fs::remove_file(link_path);
+            }
+
+            let link_outside_target = "/etc/passwd";
+            let link_outside_path = "test_symlink_outside_temp.txt";
+            let _ = std::fs::remove_file(link_outside_path);
+            if std::os::unix::fs::symlink(link_outside_target, link_outside_path).is_ok() {
+                let sym_res = handle_verify(link_outside_path, None);
+                assert!(sym_res.is_err());
+                let _ = std::fs::remove_file(link_outside_path);
+            }
+        }
 
         // Clean up
         let _ = std::fs::remove_file(test_file_path);
