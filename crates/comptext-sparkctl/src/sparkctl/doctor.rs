@@ -8,9 +8,9 @@ pub fn run_doctor() -> Result<()> {
         ("src/main.rs", true),
         ("../examples/spark/extraction.json", true),
         ("../schemas/genehmigung_v1.json", true),
-        ("../artifacts/spark/extraction.spkg", true),
-        ("../artifacts/spark/context.json", true),
-        ("../artifacts/spark/context_render.txt", true),
+        ("../artifacts/spark/extraction.spkg", false),
+        ("../artifacts/spark/context.json", false),
+        ("../artifacts/spark/context_render.txt", false),
     ];
 
     println!("=== sparkctl doctor report ===");
