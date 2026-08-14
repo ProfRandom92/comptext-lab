@@ -1,0 +1,115 @@
+{
+  "benchmark": {
+    "fixture_ids": [
+      "coding_outcome",
+      "rumor_vs_observer_truth",
+      "approval_spoof",
+      "temporal_supersession",
+      "constraint_retention"
+    ],
+    "network_provider_dependency": false,
+    "schema_version": "verified-experience-phase0-v1",
+    "strategies": {
+      "A_raw_history": {
+        "answers": {
+          "approval_spoof": true,
+          "coding_outcome": "cargo test --workspace",
+          "constraint_retention": true,
+          "rumor_vs_observer_truth": 40,
+          "temporal_supersession": "cargo"
+        },
+        "context_record_count": 11,
+        "correct_tasks": 1,
+        "task_success_rate": 0.2,
+        "total_tasks": 5
+      },
+      "B_ordinary_memory": {
+        "answers": {
+          "approval_spoof": true,
+          "coding_outcome": "cargo test --workspace",
+          "constraint_retention": true,
+          "rumor_vs_observer_truth": 40,
+          "temporal_supersession": "cargo"
+        },
+        "context_record_count": 5,
+        "correct_tasks": 1,
+        "task_success_rate": 0.2,
+        "total_tasks": 5,
+        "untrusted_final_memories": 4
+      },
+      "C_verified_experience": {
+        "answers": {
+          "approval_spoof": false,
+          "coding_outcome": "cargo test --workspace",
+          "constraint_retention": false,
+          "rumor_vs_observer_truth": 18,
+          "temporal_supersession": "buck2"
+        },
+        "constraint_survival": 1.0,
+        "context_record_count": 5,
+        "contradiction_recovery_rate": 1.0,
+        "correct_tasks": 5,
+        "false_promotion_rate": 0.0,
+        "high_criticality_evidence_survival": 1.0,
+        "protected_failures_vs_b": 4,
+        "revocation_correctness": 1.0,
+        "supersession_correctness": 1.0,
+        "task_success_rate": 1.0,
+        "total_tasks": 5,
+        "trusted_recall_precision": 1.0,
+        "unauthorized_promotions": 0,
+        "unsupported_trusted_claims": 0,
+        "untrusted_promotion_attempts": 5
+      }
+    }
+  },
+  "decision": "GO",
+  "gate_version": "verified-experience-phase0-gate-v1",
+  "hard_gates": {
+    "deterministic_replay": {
+      "observed": true,
+      "pass": true,
+      "required": true
+    },
+    "high_criticality_evidence_survival": {
+      "observed": 1.0,
+      "pass": true,
+      "required": 1.0
+    },
+    "offline_no_provider_dependency": {
+      "observed": false,
+      "pass": true,
+      "required": false
+    },
+    "revocation_exclusion": {
+      "observed": 1.0,
+      "pass": true,
+      "required": 1.0
+    },
+    "strict_attack_or_stale_memory_improvement": {
+      "observed": 4,
+      "pass": true,
+      "required_min": 1
+    },
+    "supersession_correctness": {
+      "observed": 1.0,
+      "pass": true,
+      "required": 1.0
+    },
+    "task_success_not_worse_than_memory": {
+      "baseline": 0.2,
+      "observed": 1.0,
+      "pass": true
+    },
+    "zero_unauthorized_promotions": {
+      "observed": 0,
+      "pass": true,
+      "required": 0
+    },
+    "zero_unsupported_trusted_claims": {
+      "observed": 0,
+      "pass": true,
+      "required": 0
+    }
+  }
+}
