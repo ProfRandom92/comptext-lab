@@ -1,0 +1,29 @@
+name: Abliteration HF Space Probe
+
+on:
+  push:
+    branches:
+      - experiment/abliteration-hf-space
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run public HF Space probe
+        run: python experiments/abliteration_hf_space.py
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: abliteration-results
+          path: abliteration-results.json
+          if-no-files-found: warn
